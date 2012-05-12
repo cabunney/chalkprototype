@@ -1,12 +1,17 @@
-<!DOCTYPE html>
-<html>
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <title>Chalkprototype</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+  <title><%= @title %></title>
+  
+ <%= stylesheet_link_tag '../stylesheets/header', :media => 'screen' %>
 </head>
 <body>
+	<div class = "background">
+		<h1 class = "title">Chalk</h1>
+	</div>
 
 <%= yield %>
 

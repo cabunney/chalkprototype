@@ -1,0 +1,52 @@
+html, body {
+   padding: 0;
+   margin: 0;
+   border-top:0px;
+   min-width:800px;
+}
+
+@font-face {
+ 	font-family: 'Lobster13Regular';
+    src: url(../fonts/Lobster_1.3-webfont.eot);
+	src: url(../fonts/Lobster_1.3-webfont.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1.title {
+	font: 40px/40px 'Lobster13Regular', Arial;
+	color:white;
+	padding-left:15px;
+	padding-top:7px;
+	float:left;
+
+}
+
+h2.class {
+	font: 14px/20px 'Georgia', Arial;
+	color:#191970;
+	padding-right:5px;
+	padding-top:32px;
+	float:right;
+	font-weight:bold;
+}
+
+div.background {
+	margin:none;
+	padding:none;
+	background:url(../images/chalkboard.jpg) no-repeat;
+	height:90px;
+	border-bottom:2px solid #900000 ;
+}
+img {
+	height:85px;
+}
+
+p, table.state {
+	margin:10px;
+}
+
+
+
+
+
