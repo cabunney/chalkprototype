@@ -1,6 +1,5 @@
 html, body {
-   padding: 0;
-   margin: 0;
+   margin-top:0px;
    border-top:0px;
    min-width:800px;
 }
@@ -19,6 +18,7 @@ h1.title {
 	padding-left:15px;
 	padding-top:7px;
 	float:left;
+	margin-top:none; 
 
 }
 
@@ -34,6 +34,7 @@ h2.class {
 div.background {
 	margin:none;
 	padding:none;
+	
 	background:url(../images/chalkboard.jpg) no-repeat;
 	height:90px;
 	border-bottom:2px solid #900000 ;

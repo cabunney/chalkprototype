@@ -11,11 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20120512212835) do
-=======
-ActiveRecord::Schema.define(:version => 20120513005640) do
->>>>>>> 9172b8e255355023521b526ef318cadf9fe70061
+ActiveRecord::Schema.define(:version => 20120513224501) do
 
   create_table "answers", :force => true do |t|
     t.string   "title"
@@ -36,7 +32,7 @@ ActiveRecord::Schema.define(:version => 20120513005640) do
   create_table "questions", :force => true do |t|
     t.string   "title"
     t.string   "description"
-    t.integer  "category"
+    t.integer  "category_id"
     t.integer  "user_id"
     t.datetime "timestamp"
     t.integer  "statistic_id"
