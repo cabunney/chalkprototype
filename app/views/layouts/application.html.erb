@@ -5,15 +5,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <title><%= @title %></title>
-  
- <%= stylesheet_link_tag '../stylesheets/header', :media => 'screen' %>
+  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag '../stylesheets/header', :media => 'screen' %>
+  <%= stylesheet_link_tag 'application', :media => 'screen' %>
+  <%= stylesheet_link_tag 'custom', :media => 'screen' %>
 </head>
 <body>
 	<div class = "background">
 		<h1 class = "title">Chalk</h1>
 	</div>
-
-<%= yield %>
+	<%= render 'layouts/header' %>
+    <div class="container">
+	  <% flash.each do |key, value| %>
+	  <div class="alert alert-<%= key %>"><%= value %></div>
+	  <% end %>
+      <%= yield %>
+	</div>
 
 </body>
 </html>
