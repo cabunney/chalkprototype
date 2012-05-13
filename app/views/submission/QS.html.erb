@@ -1,25 +1,33 @@
 <% @title = "Question Submission" %> 
 <div class = "middle">
+<% @question.errors.full_messages.each do |msg| %>
+  <p><%= msg %></p>
+<% end %>
+
 <table cellspacing = 0 class = "subtable">
 
-<%= form_for(@question) do |form| %>
+<%= form_for(:question, :url => {:action => :submitQ, :id => current_user.id}) do |form| %>
+  
   <tr class = "subrow">
-  <td><%= form.label(:title, "Name your question:") %></td>
+  <td><%= form.label(:title, "Name your question:", :class => "descript") %></td>
   <td><%= form.text_field(:title, :class => "textfield") %></td>
   </tr>
   <tr class = "subrow">
-  <td><%= form.label(:description, "Write our your question:") %></td>
-  <td><%= form.text_area(:description, :size => "50x6") %></td>
+  <td><%= form.label(:description, "Write our your question:", :class =>"descript")%></td>
+  <td><%= form.text_area(:description, :class => "textarea") %></td>
   </tr>
   <tr class = "subrow">
-  <td><%= form.label(:category, "Categorize your question:") %></td>
-  <td><%= form.collection_select(:category, Category.all, :id, :name) %></td>
+  <td><%= form.label(:category_id, "Categorize your question:", :class => "descript") %></td>
+  <td><%= form.collection_select(:category_id, Category.all, :id, :name) %></td>
+  <td>
   </tr>
-  <tr class = "sub"><td><%= form.submit "Submit Question", :class => "button"%></td></tr>
-<% end %> 
+
  
   
 </table>
 
+
+<%= form.submit "Submit Question", :class => "subbutton"%>
+<% end %> 
 
 </div>

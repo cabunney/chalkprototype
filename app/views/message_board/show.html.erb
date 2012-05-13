@@ -1,0 +1,6 @@
+<% provide(:title, "Message Board") %>
+<div class="span4">
+<% @questions.each do |q| %>
+	<div class = "question title"><%= q.title %></div>
+<% end %>
+</div>
