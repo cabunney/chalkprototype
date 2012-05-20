@@ -1,6 +1,35 @@
 <% provide(:title, "Message Board") %>
-<ul id="idea-slider">
+<!--<ul id="idea-slider">
 	<% @questions.each do |q| %>
 		<li><div class = "answer-block"><img src="http://placekitten.com/300/200" alt="place holder" style = "float:left; margine 0 0 2px 10px;" /><%= q.description %></div></li>
 	<% end %>
-</ul>
+</ul> -->
+
+<p class = "middle pagetitle">chalkboard</p>
+
+<div class = "ideas">
+<table cellspacing = "0" class = "fullwidth ideas">
+<tr>
+<td>
+
+<a id="prevslider" href=""></a>
+
+</td>
+<td>
+<div id="slider1" class = "panel">
+  <div class = "content">Slide one content</div>
+  <div  class = "content">Slide two content</div>
+  <div  class = "content">Slide three content</div>
+  <div  class = "content">And so on...</div>
+</div>
+</td>
+<td>
+
+<a id="nextslider" href=""></a>
+
+</td>
+</tr>
+</table>
+</div>
+<p class = "right" id = "auto-controls"></p>
+
