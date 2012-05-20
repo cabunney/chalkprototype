@@ -11,7 +11,18 @@
  <%= javascript_include_tag "application" %>
  <%= stylesheet_link_tag 'application', :media => 'screen' %>
  <%= stylesheet_link_tag 'custom', :media => 'screen' %>
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script> 
+<link rel="stylesheet" href="http://proloser.github.com/AnythingSlider/css/theme-metallic.css">
+<link rel="stylesheet" href="http://proloser.github.com/AnythingSlider/css/anythingslider.css">
+<!-- Anything Slider optional plugins --> 
+<script type="text/javascript" src="http://proloser.github.com/AnythingSlider/js/jquery.anythingslider.min.js"></script>
+<script type="text/javascript" src="http://proloser.github.com/AnythingSlider/js/jquery.easing.1.2.js"></script> 
 
+<script type="text/javascript">
+$(function(){
+			$('#idea-slider').anythingSlider();
+		});
+</script>
 </head>
 <body>
 	<div class = "background">
