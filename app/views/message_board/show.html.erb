@@ -1,6 +1,6 @@
 <% provide(:title, "Message Board") %>
-<div class="span4">
-<% @questions.each do |q| %>
-	<div class = "question title"><%= q.title %></div>
-<% end %>
-</div>
+<ul id="idea-slider">
+	<% @questions.each do |q| %>
+		<li><div class = "answer-block"><img src="http://placekitten.com/300/200" alt="place holder" style = "float:left; margine 0 0 2px 10px;" /><%= q.description %></div></li>
+	<% end %>
+</ul>

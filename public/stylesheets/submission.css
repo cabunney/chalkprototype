@@ -1,12 +1,18 @@
 .middle {
-	
-	
+	margin-left:auto; 
+	margin-right:auto;
 }
 
 .textfield {
 	font-size:16px; 
 	width:500px;
 	
+}
+
+.signinbox {
+	border-top:
+	font-size:16px; 
+	width:250px;
 }
 
 .textarea {
@@ -44,5 +50,13 @@ td {
 	margin-top:25px;
 }
 
+p.middle {
+	text-align:center; 
+}
+
+p.pagetitle {
+	font: 20px/20px 'Lobster13Regular', Arial;
+	color:black;
+}
 
 

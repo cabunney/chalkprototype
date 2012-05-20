@@ -5,8 +5,6 @@ class CreateUsers < ActiveRecord::Migration
 	      t.column :first_name,			:string
         t.column :last_name, 			:string
         t.column :school_name, 		:string
-        t.column :password, 			:string
-        t.column :password_confirmation, 		:string
         t.column :password_digest, 			    :string
         t.column :account_type,		:string
         t.column :email, 				  :string

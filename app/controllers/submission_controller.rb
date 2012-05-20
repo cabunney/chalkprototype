@@ -14,7 +14,7 @@ class SubmissionController < ApplicationController
 		 if @question.update_attributes(params[:question]) then
     		redirect_to(:action => :showQ)
   		else
-   			 render(:action => :edit)
+   			 render(:action => :QS)
   		end
 	end
 	

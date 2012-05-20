@@ -16,7 +16,7 @@ h1.title {
 	font: 40px/40px 'Lobster13Regular', Arial;
 	color:white;
 	padding-left:15px;
-	padding-top:7px;
+	padding-top:10px;
 	float:left;
 	margin-top:none; 
 
@@ -34,10 +34,13 @@ h2.class {
 div.background {
 	margin:none;
 	padding:none;
-	
 	background:url(../images/chalkboard.jpg) no-repeat;
-	height:90px;
+	height:70px;
 	border-bottom:2px solid #900000 ;
+	border-top:2px solid #900000 ;
+	position:relative; 
+	top:-20px; 
+	width:auto; 
 }
 img {
 	height:85px;
