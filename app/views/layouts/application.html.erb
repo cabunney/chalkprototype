@@ -19,8 +19,16 @@
 <script type="text/javascript" src="http://proloser.github.com/AnythingSlider/js/jquery.easing.1.2.js"></script> 
 
 <script type="text/javascript">
+var slider2 = ['Test1', 'Test2'];
+		function formatText(index, panel) {
+			return slider2[index - 1];
+		}
+
 $(function(){
-			$('#idea-slider').anythingSlider();
+			$('#idea-slider').anythingSlider({
+				autoPlay            : true,
+				navigationFormatter : formatText
+			});
 		});
 </script>
 </head>
