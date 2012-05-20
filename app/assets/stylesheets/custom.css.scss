@@ -15,6 +15,7 @@ html {
 
 body {
   padding-top: 60px;
+  height:100%;
 }
 
 section {
@@ -165,12 +166,20 @@ td {
 
 
 .subbutton {
-	font: 20px/20px  Arial; 
+	font: 12px/22px  helvetica; 
 	background-color:#FFCC66;
 	margin-left:400px; 
 	margin-right:auto; 
 	margin-top:25px;
 }
+
+/* 
+.subbutton:hover {
+	background-color:black;
+}
+ */
+
+
 
 p.middle {
 	text-align:center; 
@@ -188,12 +197,18 @@ p.pagetitle {
 	height:30px; 
 	background-color:#202020 ; 
 	clear:both; 
-	position:relative;
-	bottom:0px; 
-	min-width:100%; 
 	text-align:right;
 	color:white; 
 	border-top:2px solid #900000;
+	position:static;
+    bottom:0;
+    width:100%;
+    height:35px;   /* Height of the footer */
+    
+    z-index: 100; 
+
+    left: 0;
+
 }
 
 .bluebutton {
@@ -201,9 +216,12 @@ p.pagetitle {
 }
 
 
-ul#idea-slider, ul#idea-slider li {
-    width: 80%;
-    height: 200px;
-    list-style: none;
-	easing: 'easeInOutExpo';
-}
+
+
+
+
+
+
+
+
+
