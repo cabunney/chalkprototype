@@ -1,4 +1,7 @@
 <% @title = "Question Submission" %> 
+<div>
+<p  class = "middle pagetitle">submit your question.</p>
+</div>
 <div class = "middle">
 <% @question.errors.full_messages.each do |msg| %>
   <p><%= msg %></p>
@@ -27,7 +30,7 @@
 </table>
 
 
-<%= form.submit "Submit Question", :class => "subbutton"%>
+<p class = "middle"><%= form.submit "Submit Question", class: "btn btn-large btn-primary bluebutton" %></p>
 <% end %> 
 
 </div>

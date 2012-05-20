@@ -117,3 +117,94 @@ input{
 	border:none; 
 	
 }
+
+div.middle {
+	margin-left:auto; 
+	margin-right:auto;
+	min-width:800px;
+}
+
+.textfield {
+	font-size:16px; 
+	width:500px;
+	
+}
+
+.signinbox {
+	font-size:16px; 
+	width:300px;
+	height:20px;
+}
+
+
+.textarea {
+	width:500px; 
+	height:100px; 
+}
+
+.subtable {
+	margin-top:25px; 
+	margin-left:auto; 
+	margin-right:auto;
+	width:50%;
+}
+
+.subrow {
+	font: 14px/14px 'Lobster13Regular', Arial;
+	vertical-align:top;
+	margin-bottom:20px; 
+}
+
+.descript {
+	width:175px; 
+}
+
+td {
+	width:auto; 
+}
+
+
+.subbutton {
+	font: 20px/20px  Arial; 
+	background-color:#FFCC66;
+	margin-left:400px; 
+	margin-right:auto; 
+	margin-top:25px;
+}
+
+p.middle {
+	text-align:center; 
+	clear:both;
+	padding-left:5px;
+}
+
+p.pagetitle {
+	font: 26px 'Lobster13Regular', Arial;
+	color:black;
+	padding-bottom:10px;
+}
+
+#footer {
+	height:30px; 
+	background-color:#202020 ; 
+	clear:both; 
+	position:relative;
+	bottom:0px; 
+	min-width:100%; 
+	text-align:right;
+	color:white; 
+	border-top:2px solid #900000;
+}
+
+.bluebutton {
+	margin:10px;
+}
+
+
+
+
+
+
+
+
+
