@@ -117,3 +117,13 @@ input{
 	border:none; 
 	
 }
+
+/*** Set Slider dimensions here! Version 1.7+ ***/
+/* added #slider li to make panels the same size in case "resizeContents" is false */
+ul#idea-slider, ul#idea-slider li {
+    width: 80%;
+    height: 200px;
+    list-style: none;
+	easing: 'easeInOutExpo';
+}
+
