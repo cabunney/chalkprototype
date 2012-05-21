@@ -22,4 +22,11 @@ class MessageBoardController < ApplicationController
     @questions = Question.find_by_answer_id(params[:id])
   end
   
+  def details
+  	@question = Question.new(:title => "Sharing Student IPad work", :description => "Sending invididual emails takes too long. Is there a better way to share work?",
+  	:category_id => 1, :user_id => 1)
+  	@category = Category.find_by_id(@question.category_id); 
+  	@user = User.find_by_id(@question.user_id);
+  end
+  
 end
