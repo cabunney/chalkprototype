@@ -227,6 +227,7 @@ table.ideas {
 }
 .fullwidth {
 	width:100%;
+	
 }
 
 div.panel {
@@ -240,14 +241,22 @@ div.content {
 .right {
 	float:right;
 	padding-right:5%;
+	margin:10px; 
 }
 
 div.ideas {
 	border-top:1px solid #787878;
 	border-bottom:1px solid #787878;
 	height:100px;
+	margin-bottom:40px; 
 
 }
+
+div.divider {
+	width:100%;
+	margin-bottom:10px; 
+}
+
 
 
 

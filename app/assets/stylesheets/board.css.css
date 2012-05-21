@@ -1,13 +1,17 @@
+/* 
 @import url('reset.css');
+/* 
 body{
 	background:#f7f7f7;
 	color:#000;
 	font-family:'Georgia', 'Trebuchet MS', serif;
 	font-size:14px;
 }
+ */
 .clr{
 	clear:both;
 }
+/* 
 a{
 	color:#fff;
 	text-decoration:none;
@@ -20,24 +24,34 @@ a.more_link{
 	font-family:'Droid Sans', Arial, sans-serif;
 	font-style:normal;
 }
+ */
 a.more_link:hover{
 	border-bottom:1px dotted #ddd;
 }
+/* 
 .container {
 	position:relative;
 	margin:10px;
 	width:100%;
 }
+ */
+/* 
 h1, h2{
 	font-family:'Oswald', Arial, sans-serif;
 }
+ */
+/* 
 h1{
 	font-size:80px;
 	text-shadow:0px 0px 1px rgba(0,0,0,0.8);
 }
+ */
+/* 
 .container{
 	min-width:800px;
 }
+ */
+/* 
 .background {
 	background:url(../chalkheaderv5.png);
 	background-repeat: no-repeat;
@@ -45,6 +59,7 @@ h1{
 	height:140px; 
 	border-bottom: 6px solid #FFEFD5;
 }
+ */
 
 .fancy{
 	font-family:'Ovo', 'Georgia', Baskerville, "Hoefler Text", Garamond, serif;
@@ -107,3 +122,4 @@ p.subline{
 .block img{
 	display:block;
 }
+ */
