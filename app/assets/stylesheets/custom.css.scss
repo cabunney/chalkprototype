@@ -193,6 +193,13 @@ p.pagetitle {
 	padding-bottom:10px;
 }
 
+p.pagetitle2 {
+	font: 26px 'arial', Arial;
+	color:black;
+	font-weight:bold; 
+	padding-bottom:10px;
+}
+
 #footer {
 	height:30px; 
 	background-color:#202020 ; 
@@ -256,6 +263,59 @@ div.divider {
 	width:100%;
 	margin-bottom:10px; 
 }
+
+.left {
+	float:left;
+}
+
+#questiontable {
+	width:60%; 
+	margin-top:30px;
+	margin-bottom:0px; 
+}
+
+p.questiontext {
+	font:20px 'helvetica'; 
+	color:black;
+	padding-left:4px; 
+	padding-right:7px; 
+}
+
+td.questionblock {
+	vertical-align:middle;
+	width:80%;
+}
+
+.quotetop {
+	vertical-align:top;
+	position:relative;
+	top:-5px;
+}
+
+.quotebottom {
+	vertical-align:bottom;
+	padding-bottom:5px; 
+	
+}
+
+td.fullblock {
+	width:100%;
+}
+
+#infotable {
+	width:60%; 
+	margin-bottom:5px;
+}
+
+p.infotext {
+	font:14px 'helvetica'; 
+	color:#003366 ;
+	padding-left:4px; 
+	padding-right:7px; 
+	text-align:center; 
+}
+
+
 
 
 
