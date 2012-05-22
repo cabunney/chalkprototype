@@ -4,6 +4,7 @@ Chalkprototype::Application.routes.draw do
   resources :users 
   resources :questions
   resources :sessions, only: [:new, :create, :destroy]
+  resources :message_board
   
   match '/signup',  to: 'users#new'
   match '/signin',  to: 'sessions#new'

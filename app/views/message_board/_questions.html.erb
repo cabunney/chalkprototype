@@ -9,7 +9,7 @@
 				<div class = "content"><%= i.description %></div>
 				<div class = "user"><%= i.user.first_name + " " + i.user.last_name +  "," + i.user.school_name %></div>
 				<br/>
-			 	<%= link_to "More Info", "message_board/details" %>
+			 	<%= link_to "More Info", :action => :details, :id => i.id %>
 			</div>
 		</div>
 		<% end %>	
