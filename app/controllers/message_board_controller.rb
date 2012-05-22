@@ -16,11 +16,22 @@ class MessageBoardController < ApplicationController
   
   def details
   	@question = Question.find_by_id(params[:id])
+  	@answers = @question.answers
   	@category = Category.find_by_id(@question.category_id); 
   	@user = User.find_by_id(@question.user_id);
     @new_answer = Answer.new
   end
   
+  def post_answer
+    	@answer = Answer.new
+  		if @answer.update_attributes(params[:new_answer]) then
+      		flash.now[:success] = "Answer submitted!"
+    	else
+    		  flash.now[:error] = @answer.errors.full_messages
+    	end  
+      render(:action => :details, :id => @answer.question_id)
+      
+  end
   
   
 end
