@@ -2,6 +2,14 @@ class MessageBoardController < ApplicationController
   def show
     @questions = Question.find(:all)
     @answers = Answer.find(:all)
+    @ans_user_map = {}
+    @ans_questions_map = {}
+    @answers.each do |a| 
+        user = User.find(a.user_id)
+        question = Question.find(a.question_id)
+        @ans_user_map[a.id]=user
+        @ans_questions_map[a.id]=question
+    end 
   end
   
   def question
