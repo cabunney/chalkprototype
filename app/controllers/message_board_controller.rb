@@ -22,7 +22,7 @@ class MessageBoardController < ApplicationController
     @new_answer = Answer.new
   end
   
-<<<<<<< HEAD
+
   def post_answer
     	@answer = Answer.new
   		if @answer.update_attributes(params[:new_answer]) then
@@ -34,10 +34,8 @@ class MessageBoardController < ApplicationController
       
   end
   
-=======
   def post_details
   	
   end
->>>>>>> b614693793dc7a16827bccc3d744895c83977381
   
 end
