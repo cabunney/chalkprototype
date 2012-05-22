@@ -18,6 +18,9 @@ class MessageBoardController < ApplicationController
   	@question = Question.find_by_id(params[:id])
   	@category = Category.find_by_id(@question.category_id); 
   	@user = User.find_by_id(@question.user_id);
+    @new_answer = Answer.new
   end
+  
+  
   
 end

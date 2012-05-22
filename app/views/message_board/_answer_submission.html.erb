@@ -1,0 +1,13 @@
+<%= form_for(@new_answer, :url => {:action => :post_answer}, :multipart => true) do |form| %>
+  <% if signed_in?%> 
+	<%= form.hidden_field(:user_id, :value => current_user.id) %>
+  <% end %>
+  <%= form.hidden_field(:question_id, :value => params[:id]) %>
+  <%= form.label "Title (optional)" %> 
+  <%= form.text_field :title %>
+  <%= form.label "Your answer" %> 
+  <%= form.text_area :description %>
+<br/>
+<br/>
+<%= form.submit "Answer" %>
+<% end %>
