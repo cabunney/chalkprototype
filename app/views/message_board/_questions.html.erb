@@ -1,27 +1,18 @@
- <%= stylesheet_link_tag 'board', :media => 'screen' %>
-	<div class="container" id="container">
+ 	<div class="container" id="container">
+			<!-- if questions selected-->
+		<% @questions.each do |i| %>	
 		<div class="item block">
-			<h2 class="title idea">Idea</h2>
-			<p class="subline">Technology <span class="fancy">&amp;</span> Parental Engagement</p>
+			<% type ="Question" %>
+			<h2 class=<%= "'title "+ type.downcase+"'" %> ><%= type %></h2>
+			<p class="subline"><%= i.category.name %></p>
 			<div class="intro">
-				<p>I think we should try out Ebackpack.“<br/><br/><b>Jessica Aron, 1st grade, Lincoln Elementary</b></p>
+				<div class = "content"><%= i.description %></div>
+				<div class = "user"><%= i.user.first_name + " " + i.user.last_name +  "," + i.user.school_name %></div>
+				<br/>
+			 	<%= link_to "More Info", "message_board/details" %>
 			</div>
 		</div>
-		<div class="item block">
-			<h2 class="title idea">Idea</h2>
-			<p class="subline">Technology</p>
-			<div class="intro">
-				<p>We should buy web version of Type to Learn so students can practice at home.<br/><br/><b>Mrs. Mazi Azad, Montclaire Elementary</b>   <a href="#" class="more_link">More info</a></p>
-			</div>
-		</div>
-		<div class="item block question">
-			<h2 class="title question">Question</h2>
-			<p class="subline">Technology <span class="fancy">&amp;</span> Parental Engagement</p>
-			<div class="intro">
-				<p>What do we do?<br/><br/><b>Jessica Aron, 1st grade, Lincoln Elementary</b></p>
-			</div>
-		</div>
-		
+		<% end %>	
 		
 	</div>
 	

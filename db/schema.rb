@@ -11,22 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120513230732) do
+ActiveRecord::Schema.define(:version => 20120521081023) do
 
   create_table "answers", :force => true do |t|
     t.string   "title"
     t.string   "description"
-    t.integer  "category"
+    t.integer  "category_id"
     t.integer  "user_id"
-    t.datetime "timestamp"
+    t.datetime "created_at"
     t.integer  "question_id"
     t.integer  "statistic_id"
   end
 
   create_table "categories", :force => true do |t|
-    t.string  "name"
-    t.integer "question_id"
-    t.integer "answer_id"
+    t.string "name"
+    t.string "question_id"
+    t.string "answer_id"
   end
 
   create_table "questions", :force => true do |t|
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(:version => 20120513230732) do
     t.string   "description"
     t.integer  "category_id"
     t.integer  "user_id"
-    t.datetime "timestamp"
+    t.datetime "created_at"
     t.integer  "statistic_id"
   end
 
@@ -50,7 +50,10 @@ ActiveRecord::Schema.define(:version => 20120513230732) do
 
   create_table "statistics", :force => true do |t|
     t.integer "likes"
+    t.integer "pushes"
     t.integer "views"
+    t.integer "question_id"
+    t.integer "answer_id"
   end
 
   create_table "tags", :force => true do |t|
@@ -60,16 +63,16 @@ ActiveRecord::Schema.define(:version => 20120513230732) do
   end
 
   create_table "users", :force => true do |t|
-    t.string "username"
-    t.string "first_name"
-    t.string "last_name"
-    t.string "school_name"
-    t.string "password"
-    t.string "password_confirmation"
-    t.string "password_digest"
-    t.string "account_type"
-    t.string "email"
-    t.string "remember_token"
+    t.string   "username"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "school_name"
+    t.string   "position"
+    t.string   "password_digest"
+    t.string   "account_type"
+    t.string   "email"
+    t.datetime "created_at"
+    t.string   "remember_token"
   end
 
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"

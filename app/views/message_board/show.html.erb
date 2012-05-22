@@ -1,3 +1,4 @@
+<%= stylesheet_link_tag 'board', :media => 'screen' %>
 <% provide(:title, "Message Board") %>
 <!--<ul id="idea-slider">
 	<% @questions.each do |q| %>
@@ -7,30 +8,5 @@
 
 <p class = "middle pagetitle">chalkboard</p>
 
-<div class = "ideas">
-<table cellspacing = "0" class = "fullwidth ideas">
-<tr>
-<td>
-
-<a id="prevslider" href=""></a>
-
-</td>
-<td>
-<div id="slider1" class = "panel">
-  <div class = "content">Slide one content</div>
-  <div  class = "content">Slide two content</div>
-  <div  class = "content">Slide three content</div>
-  <div  class = "content">And so on...</div>
-</div>
-</td>
-<td>
-
-<a id="nextslider" href=""></a>
-
-</td>
-</tr>
-</table>
-<p class = "right" id = "auto-controls"></p>
-</div>
-
+<%= render 'message_board/ideas' %>
 <%= render 'message_board/questions' %>
