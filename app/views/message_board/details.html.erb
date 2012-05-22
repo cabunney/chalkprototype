@@ -2,23 +2,43 @@
 <p class = "pagetitle2 middle"><%= @question.title %></p>
 
 
+<div class = "questionbox">
 <table id = "questiontable" cellspacing = "0">
   <tr>
   <td class = "quotetop"><%= image_tag "../images/openquote.png"%></td>
   <td class = "questionblock"><p class = "questiontext"><%= @question.description %></p></td>
   <td class = "quotebottom"><%= image_tag "../images/closequote.png"%></td>
   </tr>
-</table>
-
-<table id = "buttontable" cellspacing = "0">
-	<tr> 
-	<td><input
-
-<table id = "infotable" cellspacing = "0">
   <tr>
-  <td class = "fullblock"><p class = "infotext">submitted by: <%= @user.first_name + " " + @user.last_name %> | category: <%= @category.name %></p></td>
+  <td class = "quotetop"><div></div></td>
+  <td class = "questionblock"><p class = "infotext">submitted by: <%= @user.first_name + " " + @user.last_name %> | <%= @question.created_at %></p></td>
+  <td class = "quotetop"><div></div></td>
+
+  </tr>
+  <tr>
+  <td class = "quotetop"><div></div></td>
+  <td class = "questionblock"><p class = "infotext">category: <%= @category.name %></p></td>
+  <td class = "quotetop"><div></div></td>
+
   </tr>
 </table>
+
+
+<%= form_for(@question, :url => {:action => :post_comment}) do |form| %>
+<table id = "buttontable" cellspacing = "0">
+	<tr>
+	<%= form.hidden_field(:id, :value => params[:id]) %>
+	<td><%= form.submit "↑", :class => "upvote" %></td>	
+	</tr>
+	<tr><td><%= form.submit "push", :class => "pushbutton" %></td></tr>
+		
+</table>
+<% end %>
+</div>
+
+
+<p class = "pagetitle middle">current ideas</p>
+
 
 <%= render "message_board/answer_submission"%>
 

@@ -1,13 +1,10 @@
-<script type="text/javascript">
+<script type="text/javascript" src="path/to/jquery-1.3.2.min.js"></script>  
+<script type="text/javascript"> 
 $(document).ready(function(){
-$(".subbutton").hover(
-function() {
-$(this).stop().animate({"opacity": "0.3"}, "slow");
-},
-function() {
-$(this).stop().animate({"opacity": "1"}, "slow");
-
+   $('.upvote').hover(function() {
+  $(this).fadeOut('slow', function() {
+    // Animation complete.
+  });
 });
- 
 });
-</script>
+</script>  

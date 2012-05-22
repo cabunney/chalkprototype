@@ -3,11 +3,8 @@
 	<%= form.hidden_field(:user_id, :value => current_user.id) %>
   <% end %>
   <%= form.hidden_field(:question_id, :value => params[:id]) %>
-  <%= form.label "Title (optional)" %> 
-  <%= form.text_field :title %>
-  <%= form.label "Your answer" %> 
-  <%= form.text_area :description %>
-<br/>
-<br/>
-<%= form.submit "Answer" %>
+  <%= form.text_field :title, :class => "ideaentertitle", :onfocus => "if(this.value == 'Enter idea title...') { this.value = '';  }", :value=>'Enter idea title...',:onblur => "if(this.value == '') { this.value = 'Enter idea title...';  }"  %>
+  <%= form.text_area :description, :class => "ideaenterarea", :onfocus => "if(this.value == 'Enter idea description...') { this.value = '';  }", :value=>'Enter idea description...',:onblur => "if(this.value == '') { this.value = 'Enter idea description...';  }"  %>
+
+<p class = "middle"><%= form.submit "Answer", :class => "ideabutton" %></p>
 <% end %>

@@ -21,6 +21,8 @@ class MessageBoardController < ApplicationController
     @new_answer = Answer.new
   end
   
-  
+  def post_details
+  	
+  end
   
 end
