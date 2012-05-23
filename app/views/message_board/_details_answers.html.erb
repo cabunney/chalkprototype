@@ -1,5 +1,5 @@
 	<% @question.answers.each do |i| %>	
-	<div class = "questionbox">
+	<div class = "ideabox">
 	<table id = "questiontable" cellspacing = "0">
 	  <tr>
 	  <td class = "quotetop"><%= image_tag "../images/openquote.png"%></td>
@@ -21,7 +21,6 @@
 	  </tr>
 	</table>
 	<%= render "message_board/voting"%>
-
 	</div>
 	<% end %>	
 

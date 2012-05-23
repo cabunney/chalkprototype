@@ -4,7 +4,6 @@
   <% end %>
   <%= form.hidden_field(:question_id, :value => params[:id]) %>
 <%= form.hidden_field(:category_id, :value => @question.category.id) %>  
-<%= form.label "My answer", :class => "ideaenterlabel" %>
 <%= form.text_field :title, :class => "ideaentertitle", :onfocus => "if(this.value == 'Enter idea title...') { this.value = '';  }", :value=>'Enter idea title...',:onblur => "if(this.value == '') { this.value = 'Enter idea title...';  }"  %>
   <%= form.text_area :description, :class => "ideaenterarea", :onfocus => "if(this.value == 'Enter idea description...') { this.value = '';  }", :value=>'Enter idea description...',:onblur => "if(this.value == '') { this.value = 'Enter idea description...';  }"  %>
 
