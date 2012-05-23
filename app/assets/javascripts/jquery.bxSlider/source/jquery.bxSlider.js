@@ -29,10 +29,10 @@
 			pagerShortSeparator: '/',						// string - ex: 'of' pager would display 1 of 4
 			pagerActiveClass: 'pager-active',		// string - classname attached to the active pager link
 			nextText: '',										// string - text displayed for 'next' control
-			nextImage: '../images/arrowright.jpg',											// string - filepath of image used for 'next' control. ex: 'images/next.jpg'
+			nextImage: '../images/arrowright.png',											// string - filepath of image used for 'next' control. ex: 'images/next.jpg'
 			nextSelector: '#nextslider',									// jQuery selector - element to contain the next control. ex: '#next'
 			prevText: '',										// string - text displayed for 'previous' control
-			prevImage: '../images/arrowleft.jpg',											// string - filepath of image used for 'previous' control. ex: 'images/prev.jpg'
+			prevImage: '../images/arrowleft.png',											// string - filepath of image used for 'previous' control. ex: 'images/prev.jpg'
 			prevSelector: '#prevslider',									// jQuery selector - element to contain the previous control. ex: '#next'
 			captions: false,										// true, false - display image captions (reads the image 'title' tag)
 			captionsSelector: null,							// jQuery selector - element to contain the captions. ex: '#captions'

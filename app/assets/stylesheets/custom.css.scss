@@ -16,6 +16,7 @@ html {
 body {
   padding-top: 60px;
   height:100%;
+  background-color:#F5F5DC;
 }
 
 section {
@@ -194,7 +195,7 @@ p.pagetitle {
 }
 
 p.pagetitle2 {
-	font: 26px 'arial', Arial;
+	font: 35px 'Lobster13Regular', Arial;
 	color:black;
 	font-weight:bold; 
 	padding-bottom:10px;
@@ -260,7 +261,8 @@ div.content {
 	margin-bottom:0px; 
 	float:left;
 	min-height:100px; 
-		margin-top:16px; 
+	margin-top:10px; 
+	margin-bottom:15px; 
 
 }
 
@@ -293,7 +295,7 @@ td.fullblock {
 
 #infotable {
 	width:45%; 
-	margin-bottom:5px;
+	margin-bottom:15px;
 	float:left; 
 }
 
@@ -310,7 +312,7 @@ p.infotext {
 	margin-bottom:5px;
 	margin-left:10px; 
 	float:left;
-	background-color:white ;
+	
 	margin-top:14px; 
 }
 
@@ -374,21 +376,41 @@ p.infotext {
 	opacity:0.9;
 	filter:alpha(opacity=90);
 	border:1px solid black; 
-	background-color:#EE7942;
+	background-color:#A0A0A0 ;
 
 }
 
 .ideabutton:hover {
-	background-color:#8B3626;
+	background-color:#D8D8D8 ;
 }
 
-div.questionbox {
-	border:3px solid black; 
-	margin-bottom:30px; 
-	height:125px;
-	
+div.divide {
+	min-width:90%; 
+	margin-left:auto; 
+	margin-right:auto; 
+	background:url(../images/chalkboardlines.png) no-repeat;
+	min-height:10px; 
+	clear:both;
+	margin-top:10px; 
+	margin-bottom:10px; 
+
 }
 
+div.bar {
+	min-width:90%; 
+	margin-left:auto; 
+	margin-right:auto; 
+	background:url(../images/chalkboardlines.png) no-repeat;
+	min-height:70px;  
+}
+
+p.vertcenter {
+	padding-top:17px; 
+}
+
+div.white {
+	background-color:white; 
+}
 
 
 

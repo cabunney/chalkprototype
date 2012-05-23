@@ -1,8 +1,8 @@
 <% @title = "Solution Space" %> 
-<p class = "pagetitle middle">current question</p>
+<div class = "bar"><p class = "pagetitle2 middle vertcenter">current question</p></div>
 
 
-<div class = "questionbox">
+<div class = "white">
 <table id = "questiontable" cellspacing = "0">
   <tr>
   <td class = "quotetop"><%= image_tag "../images/openquote.png"%></td>
@@ -36,8 +36,10 @@
 <% end %>
 </div>
 
+<div class = "divide"></div>
 
 <p class = "pagetitle middle">current ideas</p>
+
 
 
 <%= render "message_board/answer_submission"%>
