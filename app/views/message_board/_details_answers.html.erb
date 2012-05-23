@@ -1,0 +1,27 @@
+	<% @question.answers.each do |i| %>	
+	<div class = "questionbox">
+	<table id = "questiontable" cellspacing = "0">
+	  <tr>
+	  <td class = "quotetop"><%= image_tag "../images/openquote.png"%></td>
+	  <td class = "questionblock"><p class = "questiontext"><%= i.description %></p></td>
+	  <td class = "quotebottom"><%= image_tag "../images/closequote.png"%></td>
+	  </tr>
+	
+	  <tr>
+	  <td class = "quotetop"><div></div></td>
+	  <td class = "questionblock"><p class = "infotext">submitted by: <%= i.user.first_name + " " + i.user.last_name %> | <%= i.created_at %></p></td>
+	  <td class = "quotetop"><div></div></td>
+
+	  </tr>
+	  <tr>
+	  <td class = "quotetop"><div></div></td>
+	  <td class = "questionblock"><p class = "infotext">category: <%= i.category.name %></p></td>
+	  <td class = "quotetop"><div></div></td>
+
+	  </tr>
+	</table>
+	<%= render "message_board/voting"%>
+
+	</div>
+	<% end %>	
+
