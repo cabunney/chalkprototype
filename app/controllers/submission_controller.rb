@@ -22,5 +22,16 @@ class SubmissionController < ApplicationController
 	
 	end	
 	
+	def showA
+  end
+  
+	def submit_answer
+		@answer = Answer.new
+		 if @answer.update_attributes(params[:answer]) then
+    		redirect_to(:action => :showA)
+  		else
+   			 render(:action => :AS)
+  		end
+	end
 	 
 end
