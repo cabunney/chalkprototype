@@ -1,0 +1,44 @@
+<% @title = "Idea Submission" %> 
+<div>
+<p  class = "middle pagetitle">submit your idea.</p>
+</div>
+<div class = "middle">
+<% @answer.errors.full_messages.each do |msg| %>
+  <p><%= "Answer: " + msg %></p>
+<% end %>
+<% @question.errors.full_messages.each do |msg| %>
+  <p><%= "Question: " + msg %></p>
+<% end %>
+
+<table cellspacing = 0 class = "subtable">
+
+<%= form_for(:answer, :url => {:action => :submitA, :id => current_user.id}) do |form| %>
+  <%= form.hidden_field(:user_id, :value => current_user.id) %> 
+  	<tr class = "subrow">
+  		<td><%= form.label(:title, "Headline your idea:", :class => "descript") %></td>
+  		<td><%= form.text_field(:title, :class => "textfield") %></td>
+  	</tr>
+  	<tr class = "subrow">
+  		<td><%= form.label(:description, "Write our your idea:", :class =>"descript")%></td>
+  		<td><%= form.text_area(:description, :class => "textarea") %></td>
+  	</tr>
+  	<tr class = "subrow">
+  		<td><%= form.label(:category_id, "Categorize your idea:", :class => "descript") %></td>
+  		<td><%= form.collection_select(:category_id, Category.all, :id, :name) %></td>
+  	</tr>
+  	<%= fields_for :question do |qForm| %>
+  		<tr class = "subrow">
+  			<td><%= qForm.label(:title, "What question does your idea help answer?", :class => "descript") %></td>
+  			<td><%= qForm.text_field(:title, :class => "textfield") %></td>
+  		</tr>
+  		<tr class = "subrow">
+  			<td><%= qForm.label(:title, "Additional description of question:", :class => "descript") %></td>
+  			<td><%= qForm.text_area(:description, :class => "textarea") %></td>
+  		</tr>
+		<%= qForm.hidden_field(:user_id, :value => current_user.id) %>  
+	<% end %>
+</table>
+<p class = "middle"><%= form.submit "Submit Idea", class: "btn btn-large btn-primary bluebutton" %></p>
+<% end %> 
+
+</div>

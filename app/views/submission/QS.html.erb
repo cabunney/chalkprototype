@@ -10,7 +10,7 @@
 <table cellspacing = 0 class = "subtable">
 
 <%= form_for(:question, :url => {:action => :submitQ, :id => current_user.id}) do |form| %>
-  
+  <%= form.hidden_field(:user_id, :value => current_user.id) %>  
   <tr class = "subrow">
   <td><%= form.label(:title, "Name your question:", :class => "descript") %></td>
   <td><%= form.text_field(:title, :class => "textfield") %></td>
@@ -23,10 +23,7 @@
   <td><%= form.label(:category_id, "Categorize your question:", :class => "descript") %></td>
   <td><%= form.collection_select(:category_id, Category.all, :id, :name) %></td>
   <td>
-  </tr>
-
- 
-  
+  </tr> 
 </table>
 
 
