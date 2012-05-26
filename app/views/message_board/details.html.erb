@@ -9,28 +9,25 @@
   <td class = "questionblock"><p class = "questiontext"><%= @question.description %></p></td>
   <td class = "quotebottom"><%= image_tag "../images/closequote.png"%></td>
   </tr>
+
   <tr>
   <td class = "quotetop"><div></div></td>
   <td class = "questionblock"><p class = "infotext">submitted by: <%= @question.user.first_name + " " +  @question.user.last_name %> | <%= @question.created_at %></p></td>
   <td class = "quotetop"><div></div></td>
-
   </tr>
+
   <tr>
   <td class = "quotetop"><div></div></td>
   <td class = "questionblock"><p class = "infotext">category: <%= @question.category.name %></p></td>
   <td class = "quotetop"><div></div></td>
-
   </tr>
 </table>
-
 <%= render :partial => "voting" %>
 <%= render :partial => "pushing" %>
 </div>
 
 <div class = "divide"></div>
-
 <p class = "pagetitle middle">current ideas</p>
-
 
 <%= render "message_board/details_answers"%>
 
