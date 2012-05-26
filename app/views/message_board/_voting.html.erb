@@ -1,10 +1,8 @@
-<%= form_for(@question, :url => {:action => :post_comment}) do |form| %>
+<%= form_for(@question, :url => {:action => :post_vote}) do |form| %>
 <table id = "buttontable" cellspacing = "0">
 	<tr>
 	<%= form.hidden_field(:id, :value => params[:id]) %>
 	<td><%= form.submit "↑", :class => "upvote" %></td>	
-	</tr>
-	<tr><td><%= form.submit "push", :class => "pushbutton" %></td></tr>
-		
+	</tr>	
 </table>
 <% end %>
