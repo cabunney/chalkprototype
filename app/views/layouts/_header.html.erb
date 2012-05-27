@@ -2,9 +2,11 @@
   <div class="navbar-inner">
     <div class="container">
       <nav>
+      	<ul class = "nav pull-left">
+      	<li>Chalk</li>
+		</ul>
         <ul class="nav pull-right">
-          <li><%= link_to "Chalkboard", :controller => :message_board, :action => :show%></li>
-          <li><%= link_to "Help", help_path %></li>
+          <li><%= link_to "Chalkboard", {:controller => :message_board, :action => :show}%></li>
           <% if signed_in? %>
             <li id="fat-menu" class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
