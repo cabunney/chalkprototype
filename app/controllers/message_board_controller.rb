@@ -42,6 +42,25 @@ class MessageBoardController < ApplicationController
     	
   end
   
+  def post_vote
+  #  $("widget<%=@widget.id%>").update("<%=@text%>");
+  #  new Effect.Highlight("widget<%=@widget.id%>", {duration: 1.5, startcolor: "<%=@start_color%>"});
+    	#console.log("is this getting called?")
+    	if (params[:type] == "Answer")
+    	  @item = Answer.find_by_id(params[:id])
+    	elsif
+        @item = Question.find_by_id(params[:id])
+      end
+    	current_user.vote_for(@item)
+    	#format.js { render :action => "post_vote", :locals => {:item => @item}, :layout => false }
+      respond_to do |format|
+        #format.js { render :content_type => 'text/javascript', :action => "post_vote" }
+        format.js { render :content_type => 'text/javascript', :action => "post_vote", :layout => false }
+        #format.js  { render(:post_vote) do |page| page.replace_html 'vote_2', :partial => 'voting_item', :locals => {:item => @item} end}
+      end
+  end
+    
+  
 
   
 end
