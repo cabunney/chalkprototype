@@ -5,40 +5,18 @@ class VotesController < ApplicationController
   # First, figure out our nested scope. User or Voteable? 
   before_filter :find_votes_for_my_scope, :only => [:index]
      
-  before_filter :login_required, :only => [:new, :edit, :destroy, :create, :update]
   before_filter :must_own_vote,  :only => [:edit, :destroy, :update]
   before_filter :not_allowed,    :only => [:edit, :update, :new]
 
-  # GET /users/:user_id/votes/
-  # GET /users/:user_id/votes.xml
-  # GET /users/:user_id/voteables/:voteable_id/votes/
-  # GET /users/:user_id/voteables/:voteable_id/votes.xml
   def index
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @votes }
-    end
   end
 
-  # GET /users/:user_id/votes/1
-  # GET /users/:user_id/votes/1.xml
-  # GET /users/:user_id/voteables/:voteable_id/votes/1
-  # GET /users/:user_id/voteables/:voteable_id/1.xml
   def show
     @voteable = Vote.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @vote }
-    end
   end
 
-  # POST /users/:user_id/voteables/:voteable_id/votes
-  # POST /users/:user_id/voteables/:voteable_id/votes.xml
   def create
     @voteable = Voteable.find(params[:quote_id])
-    
-    respond_to do |format|
       if current_user.vote(@voteable, params[:vote])
         format.rjs  { render :action => "create", :vote => @vote }
         format.html { redirect_to([@voteable.user, @voteable]) }
@@ -50,15 +28,7 @@ class VotesController < ApplicationController
       end
     end
   end
-
-  # PUT /users/:id/votes/1
-  # PUT /users/:id/votes/1.xml
-  def update
-    # Not generally used
-  end
   
-  # DELETE /users/:id/votes/1
-  # DELETE /users/:id/votes/1.xml
   def destroy
     @vote = Vote.find(params[:id])
     @vote.destroy
