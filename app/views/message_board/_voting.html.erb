@@ -1,8 +1,0 @@
-<%= form_for(@question, :url => {:action => :post_vote}) do |form| %>
-<table id = "buttontable" cellspacing = "0">
-	<tr>
-	<%= form.hidden_field(:id, :value => params[:id]) %>
-	<td><%= form.submit "↑", :class => "upvote" %></td>	
-	</tr>	
-</table>
-<% end %>

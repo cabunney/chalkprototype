@@ -1,0 +1,14 @@
+<% 
+	unless question.user == current_user ||
+	!signed_in? ||
+	current_user.voted_on?(@voteable)
+%>
+
+	<%= link_to_remote "Up", 
+		:url => user_voteable_votes_path(voteable.user, voteable, :vote => :true, :format => :rjs), 
+		:method => :post
+	%> 
+	
+<% end %>
+
+Votes: <%= voteable.votes_for - voteable.votes_against %>

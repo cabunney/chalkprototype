@@ -1,0 +1,15 @@
+<table id = "buttontable" cellspacing = "0">
+	<tr>
+		<td><%= link_to "↑", 
+			:remote => true,
+			:class => "upvote",
+			:url => {:action => :post_vote, :item => item, :vote => :true, :format => :rjs}, 
+			:method => :post
+		%></td>
+		
+	</tr>	
+	
+	<tr>
+		<td><%= item.votes_for %></td> 
+	</tr>
+</table>

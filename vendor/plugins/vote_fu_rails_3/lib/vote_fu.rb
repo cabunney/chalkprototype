@@ -11,4 +11,3 @@ ActiveRecord::Base.send(:include, PeteOnRails::Acts::Voter)
 ActiveRecord::Base.send(:include, Juixe::Acts::Pushable)
 ActiveRecord::Base.send(:include, PeteOnRails::Acts::Pusher)
 ActiveRecord::Base.send(:include, PeteOnRails::VoteFu::Karma)
-RAILS_DEFAULT_LOGGER.info "** vote_fu: initialized properly."

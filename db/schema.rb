@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120521081023) do
+ActiveRecord::Schema.define(:version => 20120527003406) do
 
   create_table "answers", :force => true do |t|
     t.string   "title"
@@ -28,6 +28,20 @@ ActiveRecord::Schema.define(:version => 20120521081023) do
     t.string "question_id"
     t.string "answer_id"
   end
+
+  create_table "pushes", :force => true do |t|
+    t.boolean  "push",          :default => false
+    t.integer  "pushable_id",                      :null => false
+    t.string   "pushable_type",                    :null => false
+    t.integer  "pusher_id"
+    t.string   "pusher_type"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+  end
+
+  add_index "pushes", ["pushable_id", "pushable_type"], :name => "fk_pushables"
+  add_index "pushes", ["pusher_id", "pusher_type", "pushable_id", "pushable_type"], :name => "uniq_one_push_only", :unique => true
+  add_index "pushes", ["pusher_id", "pusher_type"], :name => "fk_pushers"
 
   create_table "questions", :force => true do |t|
     t.string   "title"
@@ -76,5 +90,19 @@ ActiveRecord::Schema.define(:version => 20120521081023) do
   end
 
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
+
+  create_table "votes", :force => true do |t|
+    t.boolean  "vote",          :default => false
+    t.integer  "voteable_id",                      :null => false
+    t.string   "voteable_type",                    :null => false
+    t.integer  "voter_id"
+    t.string   "voter_type"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+  end
+
+  add_index "votes", ["voteable_id", "voteable_type"], :name => "fk_voteables"
+  add_index "votes", ["voter_id", "voter_type", "voteable_id", "voteable_type"], :name => "uniq_one_vote_only", :unique => true
+  add_index "votes", ["voter_id", "voter_type"], :name => "fk_voters"
 
 end

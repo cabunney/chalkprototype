@@ -22,7 +22,7 @@
   <td class = "quotetop"><div></div></td>
   </tr>
 </table>
-<%= render :partial => "voting" %>
+<%= render :partial => "voting_item", :locals => {:item => @question} %>
 <%= render :partial => "pushing" %>
 </div>
 
@@ -33,7 +33,7 @@
 
 <div class = "divide2"></div>
 
-<%= render :patial => "answer_submission"%>
+<%= render :partial => "answer_submission"%>
 
 
 

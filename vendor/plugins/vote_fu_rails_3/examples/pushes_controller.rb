@@ -33,18 +33,6 @@ class PushesController < ApplicationController
     end
   end
 
-  # GET /users/:id/pushes/new      
-  # GET /users/:id/pushes/new.xml  
-  # GET /users/:id/pushes/new      
-  # GET /users/:id/pushes/new.xml  
-  def new
-    # Not generally used. Most people want to push via AJAX calls.
-  end
-
-  # GET /users/:id/pushes/1/edit
-  def edit
-    # Not generally used. Most people don't want to allow editing of pushes.
-  end
 
   # POST /users/:user_id/pushables/:pushable_id/pushes
   # POST /users/:user_id/pushables/:pushable_id/pushes.xml
@@ -87,7 +75,7 @@ class PushesController < ApplicationController
     if params[:pushable_id]
       @pushes = Push.for_pushable(Pushable.find(params[:pushable_id])).descending
     elsif params[:user_id]
-      @pushes = Push.for_pushr(User.find(params[:user_id])).descending         
+      @pushes = Push.for_pusher(User.find(params[:user_id])).descending         
     else  
       @pushes = []
     end

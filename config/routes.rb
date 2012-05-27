@@ -12,7 +12,21 @@ Chalkprototype::Application.routes.draw do
   
   match '/help',    to: 'static_pages#help'
   
-
+  
+  # resources :users do |user|
+  #     user.resources :votes
+  #     user.resources :voteable do |mv|
+  #       mv.resources :votes
+  #     end
+  #   end
+  # 
+  #   resources :users do |user|
+  #     user.resources :pushes
+  #     user.resources :pushable do |mv|
+  #       mv.resources :pushes
+  #     end
+  #   end
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

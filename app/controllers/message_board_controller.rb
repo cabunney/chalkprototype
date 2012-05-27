@@ -4,19 +4,28 @@ class MessageBoardController < ApplicationController
     @answers = Answer.find(:all)
   end
   
-  def question
-    @question = Question.find(params[:id])
-    @answers = Answer.find_by_question_id(params[:id])
-  end
-  
-  def answer
-    @answer = Answer.find(params[:id])
-    @questions = Question.find_by_answer_id(params[:id])
-  end
+  # def question
+  #     @question = Question.find(params[:id])
+  #     current_user.vote_for(@question)
+  #     @question_votes = Vote.for_voteable(@question)
+  #     @answers = Answer.find_by_question_id(params[:id])
+  #     @answers_votes = Vote.for_voteable(@answers).descending
+  #   end
+  #   
+  #   def answer
+  #     @answer = Answer.find(params[:id])
+  #     @questions = Question.find_by_answer_id(params[:id])
+  #   end
   
   def details
   	@question = Question.find_by_id(params[:id])
     @new_answer = Answer.new
+    #details for all the votes on question
+    @question_votes = Vote.for_voteable(@question)
+    @answers = Answer.find_by_question_id(params[:id])
+    #details for all the votes on answers sorted by #votes 
+    @answers_votes = Vote.for_voteable(@answers).descending
+    
   end
   
 
@@ -33,8 +42,6 @@ class MessageBoardController < ApplicationController
     	
   end
   
-  def post_details
-  	
-  end
+
   
 end

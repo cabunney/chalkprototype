@@ -33,19 +33,6 @@ class VotesController < ApplicationController
     end
   end
 
-  # GET /users/:id/votes/new      
-  # GET /users/:id/votes/new.xml  
-  # GET /users/:id/votes/new      
-  # GET /users/:id/votes/new.xml  
-  def new
-    # Not generally used. Most people want to vote via AJAX calls.
-  end
-
-  # GET /users/:id/votes/1/edit
-  def edit
-    # Not generally used. Most people don't want to allow editing of votes.
-  end
-
   # POST /users/:user_id/voteables/:voteable_id/votes
   # POST /users/:user_id/voteables/:voteable_id/votes.xml
   def create
