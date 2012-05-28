@@ -71,6 +71,7 @@ class MessageBoardController < ApplicationController
     else
       @item = Question.find_by_id(params[:id])
       current_user.push_for(@item)
+      @progress = @item.pushes_for.to_f/User.find(:all).count.to_f * 100
     	respond_to do |format|
         format.js { render :content_type => 'text/javascript', :action => "post_push", :layout => false }
       end
