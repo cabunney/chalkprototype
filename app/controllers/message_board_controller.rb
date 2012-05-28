@@ -21,15 +21,18 @@ class MessageBoardController < ApplicationController
   	@question = Question.find_by_id(params[:id])
     @new_answer = Answer.new
     #details for all the votes on question
-    @question_votes = Vote.for_voteable(@question)
-    @answers = Answer.find_by_question_id(params[:id])
+    @question_votes = Vote.for_voteable(@question).descending
+    @answers = @question.answers.sort{ |x,y| y.votes_for <=> x.votes_for }
     #details for all the votes on answers sorted by #votes 
-    @answers_votes = Vote.for_voteable(@answers).descending
-    
+    #@answers_votes = Vote.for_voteable(@question.answers).descending   
   end
   
 
   def post_answer
+      if !signed_in?
+        flash.now[:error] = "Please log in before submitting an answer."
+        redirect_to(:action => :details, :id => params[:id])
+      else 
   	  @question = Question.find_by_id(params[:id])
   	  @new_answer = Answer.new
   		if @new_answer.update_attributes(params[:answer]) then
@@ -39,28 +42,39 @@ class MessageBoardController < ApplicationController
     		  flash.now[:error] = @new_answer.errors.full_messages
           render(:action => :details, :id => params[:id])
     	end
-    	
+  	end
   end
   
   def post_vote
-  #  $("widget<%=@widget.id%>").update("<%=@text%>");
-  #  new Effect.Highlight("widget<%=@widget.id%>", {duration: 1.5, startcolor: "<%=@start_color%>"});
-    	#console.log("is this getting called?")
+    if !signed_in?
+      flash.now[:error] = "Please log in before voting."
+      redirect_to(:action => :details, :id => params[:id])
+    else
     	if (params[:type] == "Answer")
     	  @item = Answer.find_by_id(params[:id])
     	elsif
         @item = Question.find_by_id(params[:id])
       end
     	current_user.vote_for(@item)
-    	#format.js { render :action => "post_vote", :locals => {:item => @item}, :layout => false }
-      respond_to do |format|
-        #format.js { render :content_type => 'text/javascript', :action => "post_vote" }
+    	respond_to do |format|
         format.js { render :content_type => 'text/javascript', :action => "post_vote", :layout => false }
-        #format.js  { render(:post_vote) do |page| page.replace_html 'vote_2', :partial => 'voting_item', :locals => {:item => @item} end}
       end
+    end
   end
     
   
+  def post_push
+    if !signed_in?
+      flash.now[:error] = "Please log in before pushing."
+      redirect_to(:action => :details, :id => params[:id])
+    else
+      @item = Question.find_by_id(params[:id])
+      current_user.push_for(@item)
+    	respond_to do |format|
+        format.js { render :content_type => 'text/javascript', :action => "post_push", :layout => false }
+      end
+    end
+  end
 
   
 end

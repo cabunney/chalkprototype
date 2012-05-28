@@ -23,13 +23,13 @@
   </tr>
 </table>
 <div id = "voting"><%= render :partial => "voting_item", :locals => {:item => @question} %></div>
-<%= render :partial => "pushing" %>
+<%= render :partial => "pushing", :locals => {:item => @question} %>
 </div>
 
 <div class = "divide"></div>
 <p class = "pagetitle middle">current ideas</p>
 
-<%= render :partial => "details_answers"%>
+<%= render :partial => "details_answers", :locals => {:answers => @answers}%>
 
 <div class = "divide2"></div>
 

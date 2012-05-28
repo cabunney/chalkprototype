@@ -11,5 +11,6 @@ class Question < ActiveRecord::Base
 	validates :description, presence: true
 	
 	acts_as_voteable
+	acts_as_pushable
 	
 end
