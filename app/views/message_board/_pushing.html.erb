@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag 'progress', :media => 'screen' %>
+
 <table id = "buttontable" cellspacing = "0">
 	<tr>
 		<td id = <%= "'pushes_#{item.class.name}_#{item.id}'".html_safe%>><%= item.pushes_for %></td> 
@@ -6,3 +8,7 @@
 		<td ><%= link_to "push", {:action => :post_push, :id => item.id, :type => item.class.name, :remote => true },  :class => "vote" %></td>
 	</tr>	
 </table>
+<div class="prog progress progress-striped">
+  <div class="bar"
+       style=<%= "'width: #{@progress}%;'" %> ></div>
+</div>
