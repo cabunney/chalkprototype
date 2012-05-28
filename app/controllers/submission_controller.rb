@@ -12,7 +12,7 @@ class SubmissionController < ApplicationController
 	def submitQ
 		@question = Question.new
 		 if @question.update_attributes(params[:question]) then
-    		 redirect_to(:controller => message_board, :action => :show)
+    		 redirect_to(:controller => :message_board, :action => :show)
   		else
    			 render(:action => :QS)
   		end
