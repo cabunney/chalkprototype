@@ -1,3 +1,2 @@
-console.log("inside post_vote.js.erb");
 $("#votes_<%=@item.class.name%>_<%=@item.id%>").html('<%=escape_javascript @item.votes_for.to_s %>');
 

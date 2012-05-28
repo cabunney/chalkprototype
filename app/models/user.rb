@@ -22,6 +22,7 @@ class User < ActiveRecord::Base
   validates :password_confirmation, presence: true
   
   acts_as_voter
+  acts_as_pusher
   
   private
      def create_remember_token
