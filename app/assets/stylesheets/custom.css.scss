@@ -1,7 +1,11 @@
 $navbarLinkColor:white; 
 $navbarHeight:50px; 
 $navbarLinkColorHover:#999; 
+$btnBackground:#999; 
+$dropdownLinkColorHover:#999; 
+$btnBackgroundHighlight:darken(white,10%); 
 @import "bootstrap";
+
 
 
 
@@ -18,6 +22,14 @@ $navbarLinkColorHover:#999;
 	position:relative;
 }
 
+.caret {
+	opacity:1; 
+}
+
+.caret:hover {
+	opacity:0.0; 
+}
+
 .nav a{
 	-webkit-transition:color .2s ease-in-out;  
    -moz-transition:color .2s ease-in-out;  
@@ -27,11 +39,102 @@ $navbarLinkColorHover:#999;
 }
 
 
+
+.navbar div.container {
+	width:95%; 
+	min-width:800px; 
+	
+}
+
+.container {
+	width:90%; 
+}
+
+.navbar {
+	position:absolute;
+	top:0px; 
+	margin:none;
+	padding:none;
+	border:none; 
+	border-bottom:3px solid black; 	
+	width:100%; 
+}
+
+.navbar-inner {
+	margin:none;
+	padding:none;
+	border:none; 
+	height:45px; 
+	background:url(../images/chalkboard.jpg) no-repeat;
+	font-size:14px; 
+}
+
+
+
+
+
 @mixin box_sizing {
   -moz-box-sizing: border-box; 
   -webkit-box-sizing: border-box; 
   box-sizing: border-box;
 }
+
+
+h1 {
+	font: 35px , Arial;
+	color:white; 
+	padding-top:10px; 
+	padding-left:20px;
+	text-shadow: black 0.1em 0.1em 0.2em; 
+}
+
+h1 small {
+	color:white; 	
+}	
+
+.page-header {
+   -webkit-border-radius:5px; 
+   -moz-border-radius:5px;  
+   -o-border-radius:5px; 
+   background-color:#444;
+}
+
+
+.linkright  {
+	float:right; 
+	vertical-align:center; 
+	padding-top:6px;  
+	padding-right:10px; 
+	text-shadow:none;
+	/* 
+-webkit-transition:color .2s ease-in-out;  
+   -moz-transition:color .2s ease-in-out;  
+   -o-transition:color .2s ease-in-out ;  
+   transition:color .2s ease-in-out ;  
+ */
+}
+
+.btn {
+	color:#5C755E; 
+	font-weight:bold; 
+}
+
+.btn:hover {
+	background-color:#eee; 
+	color:#5C755E;
+}
+
+h1 .dropdown-menu a {
+	font-size:14px; 
+	
+}
+
+h1 .dropdown-menu a:hover {
+	background-color:#eee;
+	text-decoration:none; 
+	
+}
+
 
 /* universal */
 
@@ -42,7 +145,7 @@ html {
 body {
   padding-top: 60px;
   height:100%;
-  background-color:#F5F5DC;
+  background-color:#FFFFFF;
 }
 
 section {
@@ -124,30 +227,6 @@ input{
   @extend .control-group;
   @extend .error;
  }
-
-.navbar div.container {
-	width:90%; 
-	min-width:800px; 
-	
-}
-
-.navbar-fixed-top {
-	margin:none;
-	padding:none;
-	border:none; 
-	border-bottom:3px solid black; 	
-}
-
-.navbar-inner {
-	margin:none;
-	padding:none;
-	border:none; 
-	height:45px; 
-	background:url(../images/chalkboard.jpg) no-repeat;
-	font-size:14px; 
-	width:100%;
-}
-
 
 
 div.middle {
