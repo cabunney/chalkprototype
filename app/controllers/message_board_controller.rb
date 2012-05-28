@@ -23,6 +23,7 @@ class MessageBoardController < ApplicationController
     #details for all the votes on question
     @question_votes = Vote.for_voteable(@question).descending
     @answers = @question.answers.sort{ |x,y| y.votes_for <=> x.votes_for }
+    @progress = @question.pushes_for.to_f/User.find(:all).count.to_f * 100
     #details for all the votes on answers sorted by #votes 
     #@answers_votes = Vote.for_voteable(@question.answers).descending   
   end
