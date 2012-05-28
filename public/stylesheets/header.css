@@ -36,7 +36,7 @@ h2.class {
 	font-weight:bold;
 }
 
-div.background {
+/*div.background {
 	margin:none;
 	padding:none;
 	background:url(../images/chalkboard.jpg) no-repeat;
@@ -48,7 +48,7 @@ div.background {
 	width:auto; 
 }
 
-
+*/
 p, table.state {
 	margin:10px;
 }

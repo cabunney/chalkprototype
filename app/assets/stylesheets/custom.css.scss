@@ -4,8 +4,8 @@ $navbarLinkColorHover:#999;
 $btnBackground:#999; 
 $dropdownLinkColorHover:#999; 
 $btnBackgroundHighlight:darken(white,10%); 
-$linkColorHover:white; 
-$linkColor:white; 
+//$linkColorHover:white; 
+//$linkColor:white; 
 @import "bootstrap";
 
 
@@ -603,17 +603,6 @@ p.infotext {
 	background-color:#D8D8D8 ;
 }
 
-div.divide {
-	min-width:90%; 
-	margin-left:auto; 
-	margin-right:auto; 
-	background:url(../images/chalkboardlines.png) no-repeat;
-	min-height:10px; 
-	clear:both;
-	margin-top:10px; 
-	margin-bottom:10px; 
-
-}
 
 div.divide2 {
 	min-width:90%; 
