@@ -4,7 +4,8 @@ $navbarLinkColorHover:#999;
 $btnBackground:#999; 
 $dropdownLinkColorHover:#999; 
 $btnBackgroundHighlight:darken(white,10%); 
-$linkColorHover:black; 
+$linkColorHover:white; 
+$linkColor:white; 
 @import "bootstrap";
 
 
@@ -167,16 +168,41 @@ h1 small {
 
 .moreinfo {
 	position:relative;
-	top:-10px; 
+	top:-13px;
 	width:100%; 
 	height:17px; 
 	color:black; 
 	text-align:center; 
-	border:1px solid black; 
-	background-color:black;
-	padding-right:10px; 
-	margin-left:-7px;
+	background-color:#999;
+	padding-top:3px;
+	padding-bottom:3px;  
+	padding-right:18px; 
+	margin-left:-9px;
+   -webkit-transition:background-color .2s ease-in-out;  
+   -moz-transition:background-color .2s ease-in-out;  
+   -o-transition:background-color .2s ease-in-out ;  
+   transition:background-color .2s ease-in-out ; 
+    -webkit-border-bottom-right-radius:6px; 
+   -moz-border-bottom--right-radius:6px;  
+   -o-border-bottom-right-radius:6px; 
+    -webkit-border-bottom-left-radius:6px; 
+   -moz-border-bottom--left-radius:6px;  
+   -o-border-bottom-left-radius:6px; 
+    
 
+}
+
+.moreinfo:hover {
+	background-color:#555; 
+}
+
+.moreinfo a {
+	display:block; 
+	 -webkit-transition:color .2s ease-in-out;  
+   -moz-transition:color .2s ease-in-out;  
+   -o-transition:color .2s ease-in-out ;  
+   transition:color .2s ease-in-out ;  
+   	text-decoration:none; 
 }
 
 
