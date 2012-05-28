@@ -4,6 +4,7 @@
 		<div class = "well">
 			<% type ="Question" %>
 			<div class="page-header questiontitle"><h3><%= i.title.capitalize %><small>&nbsp&nbsp<%= i.category.name.downcase %></small></h3></div>
+			<div class = "asker"><%= i.user.first_name + " " + i.user.last_name +  " "%> asked, </div>
 			<div class="questiondescription">
 				<p class = "descripttext">
 				<% if i.description.length > 370
@@ -11,9 +12,11 @@
 				   else text = i.description; 
 				   end
 				 %><%=text%></p>
-				<%= i.user.first_name + " " + i.user.last_name +  "," + i.user.school_name %>
 				<br/>
-			 	<%= link_to "More Info", :action => :details, :id => i.id %>
+				<div class = "moreinfo">
+  				<%= link_to "More Info", :action => :details, :id => i.id %>
+ 				</div>
+ 				</div>
 			</div>
 		</div>
 		<% end %>	

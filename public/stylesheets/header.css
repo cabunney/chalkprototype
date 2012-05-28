@@ -19,6 +19,13 @@ html, body {
     font-style: normal;
 }
 
+@font-face {
+ 	font-family: 'FFF_Tusj';
+    src: url(../fonts/FFF_Tusj/FFF_Tusj.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 h2.class {
 	font: 14px/20px 'Georgia', Arial;
