@@ -12,15 +12,13 @@ html, body {
     font-style: normal;
 }
 
-h1.title {
-	font: 40px/40px 'Lobster13Regular', Arial;
-	color:white;
-	padding-left:15px;
-	padding-top:10px;
-	float:left;
-	margin-top:none; 
-
+@font-face {
+ 	font-family: 'Hattori_Hanzo';
+    src: url(../fonts/Hattori-Hanzo/Hattori_Hanzo.otf);
+    font-weight: normal;
+    font-style: normal;
 }
+
 
 h2.class {
 	font: 14px/20px 'Georgia', Arial;
@@ -42,9 +40,7 @@ div.background {
 	top:-20px; 
 	width:auto; 
 }
-img {
-	height:85px;
-}
+
 
 p, table.state {
 	margin:10px;

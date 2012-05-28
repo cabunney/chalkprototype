@@ -1,5 +1,31 @@
+$navbarLinkColor:white; 
+$navbarHeight:50px; 
+$navbarLinkColorHover:#999; 
 @import "bootstrap";
-$grayMediumLight: #eaeaea;
+
+
+
+.pull-left {
+	font-family:'Lobster13Regular'; 
+	font-size:30px; 
+	padding-top:17px; 
+	color:white; 
+	text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+
+.nav a{
+	position:relative;
+}
+
+.nav a{
+	-webkit-transition:color .2s ease-in-out;  
+   -moz-transition:color .2s ease-in-out;  
+   -o-transition:color .2s ease-in-out ;  
+   transition:color .2s ease-in-out ;  
+   font-family:"arial"; 
+}
+
 
 @mixin box_sizing {
   -moz-box-sizing: border-box; 
@@ -99,26 +125,30 @@ input{
   @extend .error;
  }
 
-.container {
-	margin:none; 
-	padding:none;
-	border:none; 
+.navbar div.container {
+	width:90%; 
+	min-width:800px; 
+	
 }
 
 .navbar-fixed-top {
 	margin:none;
 	padding:none;
 	border:none; 
-	
-	
+	border-bottom:3px solid black; 	
 }
 
 .navbar-inner {
 	margin:none;
 	padding:none;
 	border:none; 
-	
+	height:45px; 
+	background:url(../images/chalkboard.jpg) no-repeat;
+	font-size:14px; 
+	width:100%;
 }
+
+
 
 div.middle {
 	margin-left:auto; 
@@ -189,15 +219,14 @@ p.middle {
 }
 
 p.pagetitle {
-	font: 26px 'Lobster13Regular', Arial;
+	font: 26px 'Hattori_Hanzo', Arial;
 	color:black;
 	padding-bottom:10px;
 }
 
 p.pagetitle2 {
-	font: 35px 'Lobster13Regular', Arial;
+	font: 35px 'Hattori_Hanzo', Arial;
 	color:black;
-	font-weight:bold; 
 	padding-bottom:10px;
 }
 
@@ -429,8 +458,6 @@ div.ideabox {
 	background-color:white; 
 	overflow:auto;
 }
-
-
 
 
 
