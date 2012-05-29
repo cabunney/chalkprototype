@@ -1,6 +1,10 @@
 <table id = "buttontable" cellspacing = "0">
 	<tr>
-		<td ><%= link_to image_tag("../images/vote.png", :class => "arrowdetail"), {:action => :post_vote_detail, :id => item.id, :type => item.class.name, :remote => true },  :class => "vote detail" %></td>
+		<td ><div class="vote-img">
+			<% if (current_user.voted_for?(item)) %>
+				<div class = "vote-msg">You voted!</div>
+			<% end %>
+			<%= link_to image_tag("../images/vote.png", :class => "arrowdetail"), {:action => :post_vote_detail, :id => item.id, :type => item.class.name, :remote => true },  :class => "vote detail" %></td>
 	</tr>	
 	<tr>
 		<td id = <%= "'votes_#{item.class.name}_#{item.id}'".html_safe%><span class="label label-info votecounter detail"><%= pluralize(item.votes_for, " vote")%> </span></td> 

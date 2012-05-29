@@ -9,6 +9,7 @@
 
 <table cellspacing = 0 class = "subtable">
 
+
 <%= form_for(:answer,:url => {:action => :updateA, :id => @answer.id}) do |form| %>
   <tr class = "subrow">
   <td><%= form.label(:title, "Name your answer:", :class => "descriptans") %></td>

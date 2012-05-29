@@ -14,6 +14,51 @@
 	background: transparent;
 	text-align: center;
 	display:none;
+	top:-10px;
+	
+}
+
+.progressbar.detail {
+	position:relative; 
+	height:70px;
+	float:right; 
+	left:-10px; 
+	width:400px; 
+	top:10px; 
+}
+
+.btn.detail {
+	width:80px; 
+	margin-left:330px;
+	height:15px; 
+	position:relative; 
+	top:-48px; 
+	font-size:20px;
+	color:black; 
+	font-weight:bold;
+}
+
+.btn.detail a{
+	color: black;
+	margin-bottom:10px; 
+	display:block;
+	position:relative; 
+	top:-3px; 
+	  
+}
+
+.btn.detail a:hover{
+	text-decoration:none; 
+}
+
+.push.detail {
+	text-align:center; 
+	margin-left:70px; 
+	width:160px; 
+	position:relative;
+	top:10px;
+	font-size:16px;  
+	left:80px; 
 }
 
 .vote-msg{
@@ -27,19 +72,24 @@
 	height: 40px;
 	top: 15px;
 	left: 7px;
-	display:block;
 	padding-top:6px;
+	display:block;
 }
 
 .push-msg{
-	position: absolute;
 	color: black;
-	background-color: transport;
-	font-weight: bold;
-	border: none;
-	text-align: center;
-	width: 50px;
-	height: 40px;
+	position: absolute;
+	font-size: 14px;
+	background-color: #66CC66;
+	left: 6px;
+	top: 1px;
+	padding: 2px;
+	padding-left: 4px;
+	padding-right: 4px;
 	display:block;
-	padding-top:6px;
 }
+
+
+
+
+

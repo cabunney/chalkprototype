@@ -596,9 +596,9 @@ div.content {
 
 .detailtitle {
 	border:1px solid black; 
-	padding-right:20px; 
+	padding-right:30px; 
 	background-color:#555;
-	min-width:880px; 
+	min-width:900px; 
 	position:relative;
 	left:15px; 
 	height:40px; 
@@ -647,47 +647,7 @@ div.content {
 	text-align:right;  
 }
 
-.progressbar.detail {
-	position:relative; 
-	height:70px;
-	float:right; 
-	left:-10px; 
-	width:400px; 
-	top:10px; 
-}
 
-.btn.detail {
-	width:80px; 
-	margin-left:330px;
-	height:25px; 
-	position:relative; 
-	top:-49px; 
-}
-
-.btn.detail a {
-	color:black;
-	font-weight:bold; 
-	margin-bottom:10px; 
-	font-size:16px;
-	display:block;
-	position:relative; 
-	top:-3px; 
-	  
-}
-
-.btn.detail a:hover {
-	text-decoration:none; 
-}
-
-.push.detail {
-	text-align:center; 
-	margin-left:70px; 
-	width:160px; 
-	position:relative;
-	top:10px;
-	font-size:16px;  
-	left:80px; 
-}
 
 
 #questiontable {
