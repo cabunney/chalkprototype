@@ -16,9 +16,12 @@
 	<% else %>	
   		<div class = "prog-done">Pushed!</div>
 	<% end %>  
-	
+
 	</div>
 </div>
-<button class = "btn detail"><%= link_to "push", {:action => :post_push, :id => item.id, :type => item.class.name, :remote => true },  :class => "vote" %></button>
-
+<div class = "btn detail"><%= link_to "push", {:action => :post_push, :id => item.id, :type => item.class.name, :remote => true },  :class => "vote" %>
+		<% if (current_user.pushed_for?(item)) %>
+				<div class="push-msg">You pushed!</div>
+		<% end %>
+</div>
 

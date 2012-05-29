@@ -24,6 +24,8 @@ class MessageBoardController < ApplicationController
   #     @questions = Question.find_by_answer_id(params[:id])
   #   end
   
+
+
   def details
      if !signed_in?
         flash[:error] = "Please log in to see this question."
@@ -100,8 +102,7 @@ def post_vote_detail
       @item = Question.find_by_id(params[:id])
       current_user.push_for(@item)
       @progress = @item.pushes_for.to_f/User.find(:all).count.to_f * 100
-      #@progress = 100
-    	respond_to do |format|
+      respond_to do |format|
           format.js { render :content_type => 'text/javascript', :action => "post_push", :layout => false }
       end
     end
