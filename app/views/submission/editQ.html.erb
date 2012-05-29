@@ -22,7 +22,7 @@
   <tr class = "subrow">
   <td><%= form.label(:category_id, "Categorize your question:", :class => "descript") %></td>
   <td><%= form.collection_select(:category_id, Category.all, :id, :name) %></td>
-  <td><p class = "submitbutton"><%= form.submit "edit question", class: "btn-small btn-primary bluebutton" %></p></td>
+  <td><p class = "submitbutton"><%= form.submit "edit answer", class: "btn-small btn-primary bluebutton" %></p></td>
   </tr> 
 </table>
 
