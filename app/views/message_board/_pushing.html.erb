@@ -8,7 +8,18 @@
 		<td ><%= link_to "push", {:action => :post_push, :id => item.id, :type => item.class.name, :remote => true },  :class => "vote" %></td>
 	</tr>	
 </table>
-<div class="prog progress progress-striped">
-  <div class="bar"
-       style=<%= "'width: #{@progress}%;'" %> ></div>
+<% if @progress >= 100 %>
+	<div class="prog progress progress-success">
+<% else %>		
+	<div class="prog progress progress-success progress-striped">
+<% end %>
+  	<div class="bar"
+       style=<%= "'width: #{@progress}%;'" %> >
+	<% if @progress >= 100 %>
+  		<div class = "prog-done" style = "display:block;">Pushed!</div>
+	<% else %>	
+  		<div class = "prog-done">Pushed!</div>
+	<% end %>  
+
+	</div>
 </div>

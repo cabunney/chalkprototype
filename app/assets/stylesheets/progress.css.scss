@@ -1,5 +1,18 @@
+.progress {
+	border: 1px solid black;
+}
 .prog{
 	position: relative;
 	left: -350px;
 	width: 300px;
+
+}
+
+.prog-done{
+	position: relative;
+	color: white;
+	background-color: transparent;
+	background: transparent;
+	text-align: center;
+	display:none;
 }
