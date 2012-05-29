@@ -25,26 +25,23 @@
 </table>-->
 
 <div class="hero-unit question">
-  <h2><%=@question.title.capitalize%><small>&nbsp&nbsp<%=@question.category.name.downcase%></small></h2>  
- 
+
+  <div class = "detailtitle"><h2><%=@question.title.capitalize%><small>&nbsp&nbsp<%=@question.category.name.downcase%></small> <div class = "progressbar detail"><%= render :partial => "pushing", :locals => {:item => @question} %></div></h2>  </div>
   <table id = "questiontable" cellspacing = "0">
   <tr>
   <td class = "buttonbox">
-  <div class = "upvotebox detail"><%= render :partial => "voting_item", :locals => {:item => @question}%></div>
-  <div class="alert alert-info detail">This question was asked on <%=@question.created_at.localtime%></div>
-  <div class = "progressbar detail"><%= render :partial => "pushing", :locals => {:item => @question} %></div>
+  <div class = "upvotebox detail"><%= render :partial => "voting_item_details", :locals => {:item => @question}%></div>
   </td>
   <td class = "quotetop"><%= image_tag "../images/openquote.png"%></td>
-  <td class = "questionblock"><p class = "longword"><%=@question.description%></p></td>
+  <td class = "questionblock"><div class ="questiondetail"><%=@question.description%></div></td>	
   <td class = "quotebottom"><%= image_tag "../images/closequote.png"%></td>
   </tr>
   </table> 
+<div class="alert alert-info detail">This question was asked by <%=@question.user().first_name + " " + @question.user().last_name%><br/> on <%=@question.created_at.localtime.strftime("%m/%d/%Y at %I:%M%p.")%></div>
 </div>
 
 
-<!--<div id = "voting"><%= render :partial => "voting_item", :locals => {:item => @question} %></div>
-<%= render :partial => "pushing", :locals => {:item => @question} %>
-</div>-->
+
 
 <p class = "pagetitle middle">current ideas</p>
 

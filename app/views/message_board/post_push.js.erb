@@ -1,4 +1,4 @@
-$("#pushes_<%=@item.class.name%>_<%=@item.id%>").html('<%=escape_javascript @item.pushes_for.to_s %>');
+$("#pushes_<%=@item.class.name%>_<%=@item.id%>").html('<%=escape_javascript pluralize(@item.pushes_for.to_s, " total push"), :class => "push detail"%>' );
 $(".bar").attr('style','<%=escape_javascript "width: #{@progress}%;" %>');
 <% if @progress >= 100 %>
 	$(".progress-striped").attr('class','prog progress progress-success');

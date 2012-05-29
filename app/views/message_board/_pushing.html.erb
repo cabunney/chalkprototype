@@ -1,26 +1,24 @@
 <%= stylesheet_link_tag 'progress', :media => 'screen' %>
-
+<!--<table id = "buttontable" cellspacing = "0">
+<tr>
+<td id = <%= "'pushes_#{item.class.name}_#{item.id}'".html_safe%><p class = "push detail"><%= pluralize(item.pushes_for, "total push") %></p></td> 
+</tr>
+</table>-->
 <% if @progress >= 100 %>
 	<div class="prog progress progress-success">
 <% else %>		
 	<div class="prog progress progress-success progress-striped">
 <% end %>
   	<div class="bar"
-       style=<%= "'width: #{@progress}%;'" %> >
+       style=<%= "'width: #{@progress}%;'" %>>
 	<% if @progress >= 100 %>
   		<div class = "prog-done" style = "display:block;">Pushed!</div>
 	<% else %>	
   		<div class = "prog-done">Pushed!</div>
 	<% end %>  
-
+	
 	</div>
 </div>
+<button class = "btn detail"><%= link_to "push", {:action => :post_push, :id => item.id, :type => item.class.name, :remote => true },  :class => "vote" %></button>
 
-<table id = "buttontable" cellspacing = "0">
-	<tr>
-		<td id = <%= "'pushes_#{item.class.name}_#{item.id}'".html_safe%>><%= item.pushes_for %></td> 
-	</tr>
-	<tr>
-		<td ><button class = "btn detail"><%= link_to "push", {:action => :post_push, :id => item.id, :type => item.class.name, :remote => true },  :class => "vote" %></button></td>
-	</tr>	
-</table>
+

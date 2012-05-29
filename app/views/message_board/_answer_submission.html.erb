@@ -7,6 +7,6 @@
 <%= form.text_field :title, :class => "ideaentertitle", :onfocus => "if(this.value == 'Enter idea title...') { this.value = '';  }", :value=>'Enter idea title...',:onblur => "if(this.value == '') { this.value = 'Enter idea title...';  }"  %>
   <%= form.text_area :description, :class => "ideaenterarea", :onfocus => "if(this.value == 'Enter idea description...') { this.value = '';  }", :value=>'Enter idea description...',:onblur => "if(this.value == '') { this.value = 'Enter idea description...';  }"  %>
 
-<p class = "middle"><%= form.submit "Answer", :class => "ideabutton" %></p>
+<p class = "mid"><%= form.submit "Answer", :class => "ideabutton" %></p>
 <% end %>
 

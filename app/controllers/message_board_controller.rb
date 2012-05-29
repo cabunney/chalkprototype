@@ -75,6 +75,22 @@ class MessageBoardController < ApplicationController
     end
   end
     
+def post_vote_detail
+    if !signed_in?
+      flash[:error] = "Please log in before voting."
+      redirect_to root_path
+    else
+    	if (params[:type] == "Answer")
+    	  @item = Answer.find_by_id(params[:id])
+    	elsif
+        @item = Question.find_by_id(params[:id])
+      end
+    	current_user.vote_for(@item)
+    	respond_to do |format|
+        format.js { render :content_type => 'text/javascript', :action => "post_vote_detail", :layout => false }
+      end
+    end
+  end
   
   def post_push
     if !signed_in?
