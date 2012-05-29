@@ -4,12 +4,10 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <title><%= @title %></title>
+ <title><%= @title %></title>
 
-	<%= javascript_include_tag :defaults %>
-	<%= csrf_meta_tag %>
- 
-<%= stylesheet_link_tag '../stylesheets/header', :media => 'screen' %>
+ <%= csrf_meta_tag %>
+ <%= stylesheet_link_tag '../stylesheets/header', :media => 'screen' %>
  <%= stylesheet_link_tag '../stylesheets/submission', :media => 'screen' %>
  <%= javascript_include_tag "application" %>
 

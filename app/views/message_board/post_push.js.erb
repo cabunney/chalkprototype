@@ -1,2 +1,6 @@
 $("#pushes_<%=@item.class.name%>_<%=@item.id%>").html('<%=escape_javascript @item.pushes_for.to_s %>');
 $(".bar").attr('style','<%=escape_javascript "width: #{@progress}%;" %>');
+<% if @progress >= 100 %>
+	$(".progress-striped").attr('class','prog progress progress-success');
+	$(".prog-done").attr('style','display: block;');
+<% end %>
