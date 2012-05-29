@@ -12,7 +12,8 @@
 .signinbox {
 	border-top:
 	font-size:16px; 
-	width:250px;
+	min-width:300px;
+	
 }
 
 .textarea {
@@ -37,9 +38,7 @@
 	width:175px; 
 }
 
-td {
-	width:auto; 
-}
+
 
 
 .subbutton {

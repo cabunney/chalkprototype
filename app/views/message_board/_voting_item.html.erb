@@ -3,7 +3,7 @@
 		<td ><%= link_to image_tag("../images/vote.png"), {:action => :post_vote, :id => item.id, :type => item.class.name, :remote => true },  :class => "vote" %></td>
 	</tr>	
 	<tr>
-		<td id = <%= "'votes_#{item.class.name}_#{item.id}'".html_safe%><span class="label label-info votecounter"><%= item.votes_for %></span></td> 
+		<td id = <%= "'votes_#{item.class.name}_#{item.id}'".html_safe%><span class="label label-info votecounter"><%= pluralize(item.votes_for, "vote")%> </span></td> 
 	</tr>
 </table>
 

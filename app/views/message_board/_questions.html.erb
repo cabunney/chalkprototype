@@ -8,18 +8,18 @@
 		   end %>	
 		<div class = "well">
 			<% type ="Question" %>
-			<div class="page-header questiontitle"><div><%=image_tag(pic)%><span class="label label-inverse ideacounter"><%=i.answers().length%> ideas</span></div><h3><%= i.title.capitalize %><small>&nbsp&nbsp<%= i.category.name.downcase %></small></h3></div>
+			<div class="page-header questiontitle"><h3><%= i.title.capitalize %><small>&nbsp&nbsp<%= i.category.name.downcase %></small></h3><div><span class="label label-inverse ideacounter"><%= link_to pluralize(i.answers.size, "answer"), {:action => :details, :id => i.id}, :class => "idealink"%></span><%= link_to image_tag(pic), {:action => :details, :id => i.id}, :class => "ideapic"%></div></div>
+			<div class = "upvotebox"><%= render :partial => "voting_item", :locals => {:item => i} %></div>
 			<div class = "asker"><%= i.user.first_name + " " + i.user.last_name +  " "%> asked, </div>
 			<div class="questiondescription">
 				<p class = "descripttext">
 				<% if i.description.length > 350
 					text = i.description[0..345].split[0...-1].map{|s| "#{s}"}.join(' ') + "..."
-				   else text = i.description; 
+				   else text = i.description 
 				   end
 				 %><%=text%></p>
 				<br/>
-				<div class = "upvotebox"><%= render :partial => "voting_item", :locals => {:item => i} %></div>
-				<div class = "moreinfo"><%= link_to "details", :action => :details, :id => i.id %></div>
+				<div class = "moreinfo"><%= link_to "see answers", :action => :details, :id => i.id %></div>
  				
 			</div>
 		</div>

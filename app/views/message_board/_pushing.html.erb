@@ -1,13 +1,5 @@
 <%= stylesheet_link_tag 'progress', :media => 'screen' %>
 
-<table id = "buttontable" cellspacing = "0">
-	<tr>
-		<td id = <%= "'pushes_#{item.class.name}_#{item.id}'".html_safe%>><%= item.pushes_for %></td> 
-	</tr>
-	<tr>
-		<td ><%= link_to "push", {:action => :post_push, :id => item.id, :type => item.class.name, :remote => true },  :class => "vote" %></td>
-	</tr>	
-</table>
 <% if @progress >= 100 %>
 	<div class="prog progress progress-success">
 <% else %>		
@@ -23,3 +15,12 @@
 
 	</div>
 </div>
+
+<table id = "buttontable" cellspacing = "0">
+	<tr>
+		<td id = <%= "'pushes_#{item.class.name}_#{item.id}'".html_safe%>><%= item.pushes_for %></td> 
+	</tr>
+	<tr>
+		<td ><button class = "btn detail"><%= link_to "push", {:action => :post_push, :id => item.id, :type => item.class.name, :remote => true },  :class => "vote" %></button></td>
+	</tr>	
+</table>

@@ -1,4 +1,4 @@
-<% @answers.each do |i| %>	
+<!--<% @answers.each do |i| %>	
 	<div class = "ideabox">
 	<table id = "questiontable" cellspacing = "0">
 	  <tr>
@@ -22,5 +22,29 @@
 	</table>
 	<%= render :partial => "voting_item", :locals => {:item => i} %>
 	</div>
-<% end %>	
+<% end %>	-->
+
+<div class = "questiondiv">
+			<!-- if questions selected-->
+		<% @question.answers().each do |i| %>
+		<div class = "well idea">
+			<% type ="Question" %>
+			<div class="page-header questiontitle"><h3><%= i.title.capitalize %><small>&nbsp&nbsp<%= i.category.name.downcase %></small></h3></div>
+			<div class = "upvotebox"><%= render :partial => "voting_item", :locals => {:item => i} %></div>
+			<div class = "asker answer"><%= i.user.first_name + " " + i.user.last_name +  " "%> answered, </div>
+			<div class="answerdescription">
+				<p class = "descripttext">
+				<% if i.description.length > 350
+					text = i.description[0..345].split[0...-1].map{|s| "#{s}"}.join(' ') + "..."
+				   else text = i.description 
+				   end
+				 %><%=text%></p>
+				<br/>
+ 				
+			</div>
+		</div>
+		<% end %>	
+		
+	</div>
+	
 

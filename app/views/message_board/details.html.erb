@@ -1,10 +1,9 @@
 <% @title = "Solution Space" %> 
-<div class="page-header title">
-  <h1>current question<small> and assosciated ideas</small>
-</small></h1>  
-</div>
+<!--<div class="page-header detail">
+  <h2><%=@question.title.capitalize%><small>&nbsp&nbsp<%=@question.category.name.downcase%></small></h2>  
+</div>-->
 
-<div class = "white">
+<!--0<div class = "white">
 <table id = "questiontable" cellspacing = "0">
   <tr>
   <td class = "quotetop"><%= image_tag "../images/openquote.png"%></td>
@@ -23,12 +22,30 @@
   <td class = "questionblock"><p class = "infotext">category: <%= @question.category.name %></p></td>
   <td class = "quotetop"><div></div></td>
   </tr>
-</table>
-<div id = "voting"><%= render :partial => "voting_item", :locals => {:item => @question} %></div>
-<%= render :partial => "pushing", :locals => {:item => @question} %>
+</table>-->
+
+<div class="hero-unit question">
+  <h2><%=@question.title.capitalize%><small>&nbsp&nbsp<%=@question.category.name.downcase%></small></h2>  
+ 
+  <table id = "questiontable" cellspacing = "0">
+  <tr>
+  <td class = "buttonbox">
+  <div class = "upvotebox detail"><%= render :partial => "voting_item", :locals => {:item => @question}%></div>
+  <div class="alert alert-info detail">This question was asked on <%=@question.created_at.localtime%></div>
+  <div class = "progressbar detail"><%= render :partial => "pushing", :locals => {:item => @question} %></div>
+  </td>
+  <td class = "quotetop"><%= image_tag "../images/openquote.png"%></td>
+  <td class = "questionblock"><p class = "longword"><%=@question.description%></p></td>
+  <td class = "quotebottom"><%= image_tag "../images/closequote.png"%></td>
+  </tr>
+  </table> 
 </div>
 
-<div class = "divide"></div>
+
+<!--<div id = "voting"><%= render :partial => "voting_item", :locals => {:item => @question} %></div>
+<%= render :partial => "pushing", :locals => {:item => @question} %>
+</div>-->
+
 <p class = "pagetitle middle">current ideas</p>
 
 <%= render :partial => "details_answers", :locals => {:answers => @answers}%>

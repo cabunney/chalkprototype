@@ -1,10 +1,10 @@
 <% provide(:title, "Sign in") %>
-<div>
-<p class = "middle pagetitle">sign in</p>
+<div class="page-header title">
+  <h1>sign in</h1>
 </div>
 
 <div class="row">
-  <div class="span7 offset4">
+  <div class="span6 offset5 signin">
     <%= form_for(:session, url: sessions_path) do |f| %>
 
       <%= f.label :email%>
@@ -12,9 +12,9 @@
 
       <%= f.label :password %>
       <%= f.password_field :password, class: "signinbox" %>
-
-      <%= f.submit "Sign in", class: "btn btn-medium btn-primary bluebutton" %>
+      
+      <%= f.submit "Sign in", class: "btn-large btn-primary bluebutton" %>
     <% end %>
   </div>
-   <p class = "middle">New user? <%= link_to "Sign up now!", signup_path %></p>
+   <!--<p class = "middle">New user? <%= link_to "Sign up now!", signup_path %></p>-->
 </div>
