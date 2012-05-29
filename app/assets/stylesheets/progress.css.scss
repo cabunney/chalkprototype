@@ -16,7 +16,7 @@
 	display:none;
 }
 
- .vote-msg{
+.vote-msg{
 	position: absolute;
 	color: black;
 	background-color: transport;
@@ -31,3 +31,15 @@
 	padding-top:6px;
 }
 
+.push-msg{
+	position: absolute;
+	color: black;
+	background-color: transport;
+	font-weight: bold;
+	border: none;
+	text-align: center;
+	width: 50px;
+	height: 40px;
+	display:block;
+	padding-top:6px;
+}
