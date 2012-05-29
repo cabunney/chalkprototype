@@ -1,6 +1,8 @@
+<%= stylesheet_link_tag 'progress', :media => 'screen' %>
+
 <table id = "buttontable" cellspacing = "0">
 	<tr>
-		<td ><%= link_to image_tag("../images/vote.png"), {:action => :post_vote, :id => item.id, :type => item.class.name, :remote => true },  :class => "vote" %></td>
+		<td ><div class="vote-img"><div class = "vote-msg">You voted!</div><%= link_to image_tag("../images/vote.png"), {:action => :post_vote, :id => item.id, :type => item.class.name, :remote => true },  :class => "vote" %></div></td>
 	</tr>	
 	<tr>
 		<td id = <%= "'votes_#{item.class.name}_#{item.id}'".html_safe%><span class="label label-info votecounter"><%= pluralize(item.votes_for, "vote")%> </span></td> 
