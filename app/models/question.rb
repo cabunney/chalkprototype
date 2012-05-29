@@ -6,8 +6,8 @@ class Question < ActiveRecord::Base
 	belongs_to	:user
 	has_many	  :tags
 	belongs_to	:category
-	
-	validates :title, presence: true
+
+	validates :title, presence: true, length: { maximum: 30 }
 	validates :description, presence: true
 	
 	acts_as_voteable

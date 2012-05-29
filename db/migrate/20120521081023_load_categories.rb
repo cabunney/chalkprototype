@@ -1,10 +1,10 @@
 class LoadCategories < ActiveRecord::Migration
   def up
-  	cats = ["Assessment","Common Core","Lesson Plans", 
+  	cats = ["Assessment","Classroom Management","Common Core","Lesson Plans", 
     "Literacy", "Parents",  "Professional Learning",
     "Resources","Technology"]
     cats.each do |c|
-      Category.create!(c)
+      Category.create!(:name=>c)
     end  
   end
 

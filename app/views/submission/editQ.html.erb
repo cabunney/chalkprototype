@@ -1,6 +1,6 @@
-<% @title = "Question Submission" %> 
+<% @title = "Edit Question" %> 
 <div>
-<p  class = "middle pagetitle">submit your question.</p>
+<p  class = "middle pagetitle">edit your question.</p>
 </div>
 <div class = "middle">
 <% @question.errors.full_messages.each do |msg| %>
@@ -9,8 +9,7 @@
 
 <table cellspacing = 0 class = "subtable">
 
-<%= form_for(:question, :url => {:action => :submitQ, :id => current_user.id}) do |form| %>
-  <%= form.hidden_field(:user_id, :value => current_user.id) %>  
+<%= form_for(:question, :url => {:action => :updateQ, :id => @question.id}) do |form| %>
   <tr class = "subrow">
   <td><%= form.label(:title, "Name your question:", :class => "descript") %></td>
   <td><%= form.text_field(:title, :class => "textfield") %></td>
@@ -25,9 +24,7 @@
   <td>
   </tr> 
 </table>
-
-
-<p class = "middle"><%= form.submit "Submit Question", class: "btn-large btn-primary bluebutton" %></p>
+<p class = "middle"><%= form.submit "Make Changes", class: "btn-large btn-primary bluebutton" %></p>
 <% end %> 
 
 </div>

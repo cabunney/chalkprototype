@@ -19,7 +19,7 @@
   		<td><%= form.text_field(:title, :class => "textfield") %></td>
   	</tr>
   	<tr class = "subrow">
-  		<td><%= form.label(:description, "Write our your idea:", :class =>"descript")%></td>
+  		<td><%= form.label(:description, "Write out your idea:", :class =>"descript")%></td>
   		<td><%= form.text_area(:description, :class => "textarea") %></td>
   	</tr>
   	<tr class = "subrow">
@@ -38,7 +38,7 @@
 		<%= qForm.hidden_field(:user_id, :value => current_user.id) %>  
 	<% end %>
 </table>
-<p class = "middle"><%= form.submit "Submit Idea", class: "btn btn-large btn-primary bluebutton" %></p>
+<p class = "middle"><%= form.submit "Submit Idea", class: "btn-large btn-primary bluebutton" %></p>
 <% end %> 
 
 </div>
