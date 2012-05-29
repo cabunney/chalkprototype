@@ -1,11 +1,13 @@
+require 'will_paginate/array'
+
 class MessageBoardController < ApplicationController
   def show
     if !signed_in?
       flash[:error] = "Please log in to see the message board."
       redirect_to root_path
     else
-      @questions = Question.find(:all)
-      @answers = Answer.find(:all)
+      @questions = Question.find(:all).sort{ |x,y| y.votes_for <=> x.votes_for }.paginate(:page => params[:page], :per_page => 10)   
+      @answers = Answer.find(:all)      
     end
   end
   
