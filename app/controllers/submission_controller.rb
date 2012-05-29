@@ -28,8 +28,7 @@ class SubmissionController < ApplicationController
   		  @answer = Answer.new   
   		  @question = Question.new
   	  end
-	end	
-	
+	end		
   
 	def submitA
 		@answer = Answer.new
