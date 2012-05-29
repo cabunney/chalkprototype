@@ -9,6 +9,33 @@ $btnBackgroundHighlight:darken(white,10%);
 $heroUnitHeadingColor:green; 
 @import "bootstrap";
 
+html, body {
+   margin-top:0px;
+   border-top:0px;
+   min-width:800px;
+}
+
+@font-face {
+ 	font-family: 'Lobster13Regular';
+    src: url(../fonts/Lobster_1.3-webfont.eot);
+	src: url(../fonts/Lobster_1.3-webfont.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+ 	font-family: 'Hattori_Hanzo';
+    src: url(../fonts/Hattori-Hanzo/Hattori_Hanzo.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+ 	font-family: 'FFF_Tusj';
+    src: url(../fonts/FFF_Tusj/FFF_Tusj.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 
 
