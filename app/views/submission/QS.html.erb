@@ -1,6 +1,6 @@
 <% @title = "Question Submission" %> 
 <div>
-<p  class = "middle pagetitle">submit your question.</p>
+<p  class = "submittitle">submit your question.</p>
 </div>
 <div class = "middle">
 <% @question.errors.full_messages.each do |msg| %>
@@ -22,12 +22,11 @@
   <tr class = "subrow">
   <td><%= form.label(:category_id, "Categorize your question:", :class => "descript") %></td>
   <td><%= form.collection_select(:category_id, Category.all, :id, :name) %></td>
-  <td>
+  <td><p class = "submitbutton"><%= form.submit "submit question", class: "btn-small btn-primary bluebutton" %></p></td>
   </tr> 
 </table>
 
 
-<p class = "middle"><%= form.submit "Submit Question", class: "btn-large btn-primary bluebutton" %></p>
 <% end %> 
 
 </div>

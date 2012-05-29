@@ -1,30 +1,31 @@
 <% @title = "Edit Answer" %> 
 <div>
-<p  class = "middle pagetitle">edit your answer.</p>
+<p  class = "submittitle">edit your answer.</p>
 </div>
 <div class = "middle">
 <% @answer.errors.full_messages.each do |msg| %>
   <p><%= msg %></p>
 <% end %>
-
 <table cellspacing = 0 class = "subtable">
 
-<%= form_for(:answer,:url => {:action => :updateA, :id => @answer.id}) do |form| %>
+<%= form_for(:question, :url => {:action => :updateA, :id => current_user.id}) do |form| %>
+  <%= form.hidden_field(:user_id, :value => current_user.id) %>  
   <tr class = "subrow">
-  <td><%= form.label(:title, "Name your answer:", :class => "descript") %></td>
+  <td><%= form.label(:title, "Name your question:", :class => "descript") %></td>
   <td><%= form.text_field(:title, :class => "textfield") %></td>
   </tr>
   <tr class = "subrow">
-  <td><%= form.label(:description, "Write out your answer:", :class =>"descript")%></td>
+  <td><%= form.label(:description, "Write our your question:", :class =>"descript")%></td>
   <td><%= form.text_area(:description, :class => "textarea") %></td>
   </tr>
   <tr class = "subrow">
-  <td><%= form.label(:category_id, "Categorize your answer:", :class => "descript") %></td>
+  <td><%= form.label(:category_id, "Categorize your question:", :class => "descript") %></td>
   <td><%= form.collection_select(:category_id, Category.all, :id, :name) %></td>
-  <td>
+  <td><p class = "submitbutton"><%= form.submit "edit answer", class: "btn-small btn-primary bluebutton" %></p></td>
   </tr> 
 </table>
-<p class = "middle"><%= form.submit "Make Changes", class: "btn-large btn-primary bluebutton" %></p>
+
+
 <% end %> 
 
 </div>

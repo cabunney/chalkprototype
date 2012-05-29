@@ -37,6 +37,7 @@
   <td class = "quotebottom"><%= image_tag "../images/closequote.png"%></td>
   </tr>
   </table> 
+ <% if current_user.id == @question.user().id then%><%=link_to "edit", {:controller => :submission, :action => :editQDetail, :id => @question.id}, :class => "edit detail"%><%end%>
 <div class="alert alert-info detail">This question was asked by <%=@question.user().first_name + " " + @question.user().last_name%><br/> on <%=@question.created_at.localtime.strftime("%m/%d/%Y at %I:%M%p.")%></div>
 </div>
 

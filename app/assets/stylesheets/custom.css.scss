@@ -147,6 +147,19 @@ h2 small {
 	
 }
 
+.edit {
+	margin-right:10px; 
+	position:relative; 
+	top:10px; 
+}
+
+.edit.detail {
+	float:right; 
+	position:relative; 
+	right:350px; 
+	top:35px; 
+}
+
 .page-header.questiontitle {
    background-color:transparent;
    border:none; 
@@ -473,35 +486,7 @@ div.middle {
 
 
 
-.textarea {
-	width:500px; 
-	height:100px; 
-}
 
-.subtable {
-	margin-top:25px; 
-	margin-left:auto; 
-	margin-right:auto;
-	width:50%;
-}
-
-.subrow {
-	font: 14px/14px 'Lobster13Regular', Arial;
-	vertical-align:top;
-	margin-bottom:20px; 
-}
-
-.descript {
-	width:175px; 
-}
-
-.subbutton {
-	font: 12px/22px  helvetica; 
-	background-color:#FFCC66;
-	margin-left:400px; 
-	margin-right:auto; 
-	margin-top:25px;
-}
 
 /* 
 .subbutton:hover {
@@ -611,11 +596,11 @@ div.content {
 
 .detailtitle {
 	border:1px solid black; 
-	padding-right:40px; 
+	padding-right:20px; 
 	background-color:#555;
-	min-width:800px; 
+	min-width:880px; 
 	position:relative;
-	left:20px; 
+	left:15px; 
 	height:40px; 
 	-webkit-border-radius:5px; 
    -moz-border-radius:5px;  

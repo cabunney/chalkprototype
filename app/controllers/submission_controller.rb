@@ -60,6 +60,21 @@ class SubmissionController < ApplicationController
          end
        end
   end
+  
+  def editQDetail 
+   	if !signed_in?
+        flash[:error] = "Please sign in to edit a question."
+        redirect_to :signin
+       else
+         @question = Question.find(params[:id])
+         if current_user.id!=@question.user_id
+            flash[:error] = "You can only edit a question you submitted."
+            redirect_to :controller => :message_board, :action => :details, :id => @question.id
+         end
+       end
+       
+    end
+  
 	 
 	 def editA
  	    if !signed_in?
@@ -84,11 +99,21 @@ class SubmissionController < ApplicationController
      end
    end
    
+    def updateQDetail
+     @question = Question.find(params[:id])
+     if @question.update_attributes(params[:question])
+       flash[:success] = "Question successfully updated!" 
+       redirect_to :controller => :message_board, :action => :details, :id => @question.id
+     else
+       render :action => :editQS
+     end
+   end
+   
    def updateA
       @answer = Answer.find(params[:id])
       if @answer.update_attributes(params[:answer])
         flash[:success] = "Answer successfully updated!" 
-        redirect_to :controller => :message_board, :action => :show
+        redirect_to :controller => :message_board, :action => :details, :id => @answer.question().id
       else
         render :action => :editAS
       end

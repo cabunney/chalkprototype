@@ -25,17 +25,26 @@
 	margin-top:25px; 
 	margin-left:auto; 
 	margin-right:auto;
-	width:50%;
+	position:relative;
+	left:60px; 
+	width:700px;
 }
 
 .subrow {
-	font: 14px/14px 'Lobster13Regular', Arial;
+	font: 14px/14px 'helvetica', Arial;
 	vertical-align:top;
 	margin-bottom:20px; 
 }
 
 .descript {
 	width:175px; 
+}
+
+.descriptanswer {
+		width:280px; 
+text-align:right; 
+		margin-right:10px; 
+
 }
 
 
@@ -49,13 +58,60 @@
 	margin-top:25px;
 }
 
-p.middle {
-	text-align:center; 
-}
+
 
 p.pagetitle {
-	font: 20px/20px 'Lobster13Regular', Arial;
+	font: 20px/20px 'helvetica', Arial;
 	color:black;
+}
+
+.submitbutton {
+	position:relative;
+	left:-250px; 
+}
+
+.submittitle {
+	margin-left:auto; 
+	margin-right:auto; 
+	font:26px 'helvetica';
+	border:1px solid black; 
+	padding-left:20px; 
+	width:700px; 
+	-webkit-border-radius:5px; 
+   -moz-border-radius:5px;  
+   -o-border-radius:5px; 
+   background-color:#555; 
+   color:white; 
+   margin-top:50px; 
+}
+
+.submittitleans {
+	margin-left:auto; 
+	margin-right:auto; 
+	font:26px 'helvetica';
+	border:1px solid black; 
+	padding-left:20px; 
+	width:800px; 
+	-webkit-border-radius:5px; 
+   -moz-border-radius:5px;  
+   -o-border-radius:5px; 
+   background-color:#555; 
+   color:white; 
+   margin-top:50px; 
+}
+
+
+.answertable {
+	margin-top:25px; 
+	margin-left:auto; 
+	margin-right:auto;
+	position:relative;
+	width:700px;
+}
+
+.answerbutton {
+	text-align:center; 
+	margin-top:10px; 
 }
 
 
