@@ -24,4 +24,5 @@ module SessionsHelper
       current_user = nil
       session.delete(:remember_token)
   end
+  
 end
