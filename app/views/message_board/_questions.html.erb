@@ -1,3 +1,6 @@
+
+
+
  	<div class = "questiondiv">
 			<!-- if questions selected-->
 		<% @questions.each do |i| %>
@@ -26,4 +29,5 @@
 		<% end %>	
 		
 	</div>
+	<div class="pagination"><%= will_paginate @questions %></div>
 	
