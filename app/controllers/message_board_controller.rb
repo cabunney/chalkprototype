@@ -47,7 +47,9 @@ class MessageBoardController < ApplicationController
       if !signed_in?
         flash[:error] = "Please log in before submitting an answer."
         redirect_to root_path
-      else 
+      else
+        flash[:success] = "Successfully posted your answer!"
+        
   	  @question = Question.find_by_id(params[:id])
   	  @new_answer = Answer.new
   		if @new_answer.update_attributes(params[:answer]) then
