@@ -9,8 +9,7 @@
 
 <table cellspacing = 0 class = "subtable">
 
-<%= form_for(:question, :url => {:action => :updateQ, :id => current_user.id}) do |form| %>
-  <%= form.hidden_field(:user_id, :value => current_user.id) %>  
+<%= form_for(:question, :url => {:action => :updateQ, :id => @question.id}) do |form| %>
   <tr class = "subrow">
   <td><%= form.label(:title, "Name your question:", :class => "descript") %></td>
   <td><%= form.text_field(:title, :class => "textfield") %></td>
