@@ -12,6 +12,7 @@ class SubmissionController < ApplicationController
 	def submitQ
 		@question = Question.new
 		 if @question.update_attributes(params[:question]) then
+		     flash[:success] = "Successfully posted your question!"
     		 redirect_to(:controller => :message_board, :action => :show)
   		else
    			 render(:action => :QS)
@@ -38,7 +39,7 @@ class SubmissionController < ApplicationController
   	if @question.update_attributes(params[:question]) then
   	  @answer.question_id = @question.id
 		  if @answer.update_attributes(params[:answer]) then
-            flash[:success] = "Idea submitted!"
+            flash[:success] = "Successfully posted your idea!"
     		    redirect_to(:controller => :message_board, :action => :show)
     		else
     		  render(:action => :AS)	  
@@ -92,7 +93,7 @@ class SubmissionController < ApplicationController
    def updateQ
      @question = Question.find(params[:id])
      if @question.update_attributes(params[:question])
-       flash[:success] = "Question successfully updated!" 
+       flash[:success] = "Updated your question!" 
        redirect_to :controller => :message_board, :action => :show
      else
        render :action => :editQS
@@ -102,7 +103,7 @@ class SubmissionController < ApplicationController
     def updateQDetail
      @question = Question.find(params[:id])
      if @question.update_attributes(params[:question])
-       flash[:success] = "Question successfully updated!" 
+       flash[:success] = "Updated your question!" 
        redirect_to :controller => :message_board, :action => :details, :id => @question.id
      else
        render :action => :editQS
@@ -112,7 +113,7 @@ class SubmissionController < ApplicationController
    def updateA
       @answer = Answer.find(params[:id])
       if @answer.update_attributes(params[:answer])
-        flash[:success] = "Answer successfully updated!" 
+        flash[:success] = "Updated your answer!" 
         redirect_to :controller => :message_board, :action => :details, :id => @answer.question().id
       else
         render :action => :editAS
