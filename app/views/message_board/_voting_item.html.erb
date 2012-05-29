@@ -1,12 +1,10 @@
 <table id = "buttontable" cellspacing = "0">
 	<tr>
-		<td id = <%= "'votes_#{item.class.name}_#{item.id}'".html_safe%>><%= item.votes_for %></td> 
-	</tr>
-	<tr>
-		<td ><%= link_to "↑", {:action => :post_vote, :id => item.id, :type => item.class.name, :remote => true },  :class => "vote" %></td>
+		<td ><%= link_to image_tag("../images/vote.png"), {:action => :post_vote, :id => item.id, :type => item.class.name, :remote => true },  :class => "vote" %></td>
 	</tr>	
-
-
+	<tr>
+		<td id = <%= "'votes_#{item.class.name}_#{item.id}'".html_safe%><span class="label label-info votecounter"><%= item.votes_for %></span></td> 
+	</tr>
 </table>
 
 
