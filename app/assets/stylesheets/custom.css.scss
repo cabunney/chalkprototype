@@ -141,16 +141,6 @@ p.pagetitle {
 	top:-36px;  
 }
 
-.textarea {
-	min-width:500px; 
-	height:125px; 
-}
-
-
-.textfield {
-	font-size:16px; 
-	min-width:500px;	
-}
 
 .pull-left {
 	font-family:'Lobster13Regular'; 
@@ -272,19 +262,20 @@ h2 small {
 		top:-15px; 
 }
 
-.well {
-	padding-left:10px; 
-	padding-right:10px; 
-	margin-bottom:20px; 
+.well.question {
 	padding-top:none; 
-	max-height:130px; 
-	border:1px solid black;
+	max-height:none;
+	height:auto;
+	min-height:27px; 
+	padding-bottom:2px;  
+	
 }
 
 .well.idea {
 	background-color:#eee; 
-	border:1px solid black; 
-	
+	max-height:none; 
+	height:auto; 
+	min-height:27px; 
 }
 
 .edit {
@@ -337,8 +328,13 @@ h2 small {
 }
 
 .questiondescription {
+	font-size:16px; 
+	width:auto; 
+	font-weight:lighter; 
 	position:relative;
+	margin-left:30px;  
 	top:-25px; 
+	height:auto;
 }
 
 .asker.answer {
@@ -353,12 +349,25 @@ h2 small {
 
 .descripttext {
 	min-height:57px;
-	max-height:57px; 
+	height:auto;
+	font-size:16px; 
+	font-weight:lighter; 
+	margin:none; 
+ 	word-wrap:break-word;
+ 	text-overflow:ellipsis; 
+ 	float:right; 
+ 	min-width:90%; 
+ 	max-width:90%; 
+}
+
+
+.answertext {
+	min-height:57px;
+	height:auto; 
 	font-size:20px; 
 	margin:none; 
 	overflow:hidden; 
  	word-wrap:break-word;
- 	text-overflow:ellipsis; 
  	float:right; 
  	min-width:90%; 
  	max-width:90%; 
@@ -417,17 +426,22 @@ h2 small {
 
 }
 
+.answerdescription {
+	font-size:16px; 
+	width:auto; 
+	position:relative;
+	margin-left:30px;  
+
+}
+
 .moreinfo {
 	position:relative;
+	left:-8px;
 	top:1px;
-	width:100%; 
+	width:101.8%; 
 	height:17px; 
 	text-align:center; 
 	background-color:#888;
-	padding-top:3px;
-	padding-bottom:3px;  
-	padding-right:20px; 
-	margin-left:-10px;
    -webkit-transition:background-color .2s ease-in-out;  
    -moz-transition:background-color .2s ease-in-out;  
    -o-transition:background-color .2s ease-in-out ;  
@@ -449,6 +463,7 @@ h2 small {
 
 .moreinfo a {
 	color:white;
+	width:100%; 
 	display:block; 
 	 -webkit-transition:color .2s ease-in-out;  
    -moz-transition:color .2s ease-in-out;  
@@ -601,6 +616,12 @@ div.middle {
 	margin-left:auto; 
 	margin-right:auto;
 	min-width:800px;
+}
+
+.textfield {
+	font-size:16px; 
+	width:500px;
+	
 }
 
 .signinbox {
@@ -951,7 +972,6 @@ div.ideabox {
 .pagination{
 	float: right;
 }
-
 
 
 
