@@ -28,12 +28,12 @@
   	</tr>
   	<%= fields_for :question do |qForm| %>
   		<tr class = "subrow">
-  			<td><%= qForm.label(:title, "Please describe the question your idea helps answer", :class => "descriptanswer") %></td>
+  			<td><%= qForm.label(:description, "Please describe the question your idea helps answer", :class => "descriptanswer") %></td>
   			<td><%= qForm.text_area(:description, :class => "textarea") %></td>
   		</tr>
   		<tr class = "subrow">
   			<td><%= qForm.label(:title, "Brief headline for this question:", :class => "descriptanswer") %></td>
-  			<td><%= qForm.text_field(:description, :class => "textfield") %></td>
+  			<td><%= qForm.text_field(:title, :class => "textfield") %></td>
   		</tr>
 		<%= qForm.hidden_field(:user_id, :value => current_user.id) %>  
 	<% end %>
