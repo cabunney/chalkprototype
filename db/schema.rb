@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(:version => 20120529020618) do
 
   create_table "answers", :force => true do |t|
     t.string   "title"
-    t.string   "description"
+    t.text     "description"
     t.integer  "category_id"
     t.integer  "user_id"
     t.datetime "created_at"
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(:version => 20120529020618) do
 
   create_table "questions", :force => true do |t|
     t.string   "title"
-    t.string   "description"
+    t.text     "description"
     t.integer  "category_id"
     t.integer  "user_id"
     t.datetime "created_at"
