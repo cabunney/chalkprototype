@@ -41,6 +41,7 @@ class SubmissionController < ApplicationController
             flash[:success] = "Successfully posted your idea!"
     		    redirect_to(:controller => :message_board, :action => :show)
     		else
+    		  @question.delete
     		  render(:action => :AS)	  
   		  end
   		else

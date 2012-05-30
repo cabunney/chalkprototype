@@ -7,8 +7,10 @@ class Question < ActiveRecord::Base
 	has_many	  :tags
 	belongs_to	:category
 
-	validates :title, presence: true, length: { maximum: 30 }
-	validates :description, presence: true
+  validates :user_id, presence: true
+	validates :title, presence: true, length: { maximum: 37 }, :allow_blank => false, uniqueness: { case_sensitive: false }
+	validates :description, presence: true, :allow_blank => false
+	validates :category, presence: true
 	
 	acts_as_voteable
 	acts_as_pushable

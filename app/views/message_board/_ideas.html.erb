@@ -14,7 +14,7 @@
 		<div class = "title"><%= a.title %></div>
 		<div class = "content"><%= a.description %></div>
 		<div class = "user"><%= a.user.first_name + " " + a.user.last_name +  "," + a.user.school_name %></div>
-		<div class = "created_at"><%= a.user.created_at.localtime %></div>
+		<div class = "created_at"><%= a.user.created_at.in_time_zone.strftime("%m/%d/%Y at %I:%M%p.") %></div>
 	</span>
 	<span class = "question">
 		<p class="question">answered question: </p>

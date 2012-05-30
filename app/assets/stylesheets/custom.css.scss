@@ -142,11 +142,16 @@ p.pagetitle {
 }
 
 .textarea {
-
-min-width:500px; 
-height:125px; 
-
+	min-width:500px; 
+	height:125px; 
 }
+
+
+.textfield {
+	font-size:16px; 
+	min-width:500px;	
+}
+
 .pull-left {
 	font-family:'Lobster13Regular'; 
 	font-size:30px; 
@@ -598,12 +603,6 @@ div.middle {
 	min-width:800px;
 }
 
-.textfield {
-	font-size:16px; 
-	width:500px;
-	
-}
-
 .signinbox {
 	font-size:20px; 
 	width:350px;
@@ -947,6 +946,10 @@ div.ideabox {
 	border:1px solid black; 
 	background-color:white; 
 	overflow:auto;
+}
+
+.pagination{
+	float: right;
 }
 
 
