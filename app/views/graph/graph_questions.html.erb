@@ -1,0 +1,79 @@
+ <script type="text/javascript">
+ //<![CDATA[
+    
+	var chart1; // globally available
+	$(document).ready(function() {
+	      chart1 = new Highcharts.Chart({
+	         chart: {
+	            renderTo: 'container',
+	            type: 'line', 
+	            showaxes:false
+	         },
+	         title: {
+	            text: 'ideas vs. problems',
+	            style: {
+	            	fontSize: '16px',
+	            	fontFamily: 'Georgia', 
+	            	fontWeight: 'bold', 
+	            	color: 'black'
+	            }
+	         },
+	         xAxis: {
+	            categories: ['Human Resources/Policies', 'Technology + Parental Engagement', 'ELL'],
+	            labels: {
+	             	style: {
+	             		fontSize: '12px'
+	             	}
+	             }
+	         },
+	         yAxis: {
+	            gridLineWidth: 2,
+	             min: -1, 
+	             labels: {
+	             	style: {
+	             		fontSize: '12px'
+	             	}
+	             }
+	        },
+	         plotOptions: {
+	            series: {
+	                lineWidth: 7,
+	                cursor: 'pointer',
+	                point: {
+	                    events: {
+	                        click: function() {
+	                            location.href = this.options.url;
+	                        }
+	                    }
+	                }
+
+	            }
+
+
+	        },
+	       tooltip: {
+				crosshairs: true,
+				shared: true
+			},
+	         series: [{
+	           	marker: {
+					symbol: 'circle',
+					radius: 8
+				},
+	            name: 'Ideas',
+	            data: [
+
+	            {y:1,  url: 'http://bing.com/search?q=foo'}, {y:0, url:'http://google.com'}, 4]
+	         }, {
+	         	marker: {
+					symbol: 'circle',
+					radius: 8
+				},
+	            name: 'Problems',
+	            data: [5, 7, 3]
+	         }]
+	      });
+	   });
+
+ //]]>
+ 

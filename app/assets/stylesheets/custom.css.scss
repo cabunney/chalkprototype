@@ -536,7 +536,8 @@ section {
 }
 
 textarea {
-  resize: vertical;
+  height: 175px;
+  width: 500px;
 }
 
 .center {
@@ -620,8 +621,7 @@ div.middle {
 
 .textfield {
 	font-size:16px; 
-	width:500px;
-	
+	width:500px;	
 }
 
 .signinbox {
@@ -919,7 +919,7 @@ p.infotext {
 }
 
 .ideaenterarea {
-	max-height:30px; 
+	max-height:50px; 
 	min-width:100%; 
 	font-size:13px; 
 	margin:none; 
