@@ -29,7 +29,7 @@ gem 'bcrypt-ruby', '~> 3.0.1'
 
 gem 'will_paginate', :git => 'git://github.com/mislav/will_paginate.git', :branch => 'rails3'
 gem 'bootstrap-will_paginate', '0.0.6'
-gem "highcharts-rails", "~> 2.2.1"
+#gem "highcharts-rails", "~> 2.2.1"
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
