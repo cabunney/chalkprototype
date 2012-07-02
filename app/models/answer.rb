@@ -3,7 +3,7 @@ class Answer < ActiveRecord::Base
 	scope :descending, :order => "created_at DESC"
   
 	belongs_to	:question
-	has_many	:tags
+	has_and_belongs_to_many	:tags
 	belongs_to	:category
 
   validates :user_id, presence: true

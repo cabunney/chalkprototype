@@ -1,4 +1,4 @@
 class Tag < ActiveRecord::Base
-	belongs_to	:question
-	belongs_to	:answer
+	has_and_belongs_to_many	:question
+	has_and_belongs_to_many	:answer
 end
