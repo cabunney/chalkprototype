@@ -6,12 +6,18 @@ class SubmissionController < ApplicationController
     else
       @categories = Category.find(:all, :order =>'id DESC');
 		  @question = Question.new   
+  	  @tags = Tag.find_by_question_id(@question.id)
+
 	  end
+	  @tags = Tag.all
 	end
 	
 	def submitQ
 		@question = Question.new
 		 if @question.update_attributes(params[:question]) then
+		     @tag = Tag.find_by_id(params[:id])
+		     @tag.question_id = @question.id
+		     @tag.save
 		     flash[:success] = "Successfully posted your question!"
     		 redirect_to(:controller => :message_board, :action => :show)
   		else
@@ -19,6 +25,27 @@ class SubmissionController < ApplicationController
   		end
 	end
 	
+	def tagItem
+      @tag = Tag.new
+      #if params[:is_question]
+      #  @tag.question_id = params[:id]
+      #else
+      #  @tag.answer_id = params[:id]
+      #end
+      @tag.user_id = params[:user_id]
+      @tag.name = params[:name]
+      @tag.save
+
+      if params[:is_question]      
+        @tags = Tag.find_by_question_id(params[:id])
+      else
+        @tags = Tag.find_by_answer_id(params[:id])
+      end
+      @tags = []
+      @tags << @tag
+      render :partial =>"tag", :layout => false
+  end
+  
 	def AS
 	  if !signed_in?
       flash[:error] = "Please sign in to submit a question."

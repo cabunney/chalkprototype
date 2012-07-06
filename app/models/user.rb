@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 	has_many	:questions
 	has_many	:answers
+	has_many  :tags
 	
 	attr_accessible :username, :email, :school_name, :first_name, :last_name, 
 	  :password, :password_confirmation

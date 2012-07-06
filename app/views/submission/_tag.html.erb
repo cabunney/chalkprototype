@@ -1,0 +1,11 @@
+<%= stylesheet_link_tag 'tag', :media => 'screen' %>
+<div id = "tag_editor">
+	<span id = 'tag_space'>
+	<% @tags.each do |t| %>		
+		 <div class = 'tag'><span><%= t.name %></span></div> 
+		 <a href="#" onclick="tag_editor_remove_tag($(this).up()); return false;" title="Remove tag">x</a>
+	<% end %>
+	</span>
+	<input type="text" id = "tag_editor_input"/>
+</div>
+

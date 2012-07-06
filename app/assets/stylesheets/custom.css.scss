@@ -577,27 +577,6 @@ aside {
 
 /* forms */
 
-/* 
-input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
-  width: 100%;
-  padding: 10px;
-  height: auto;
-  margin-bottom: 15px;
-  @include box_sizing;
-}
- */
-
-/* 
-input{
-  display: block;  
-  border: 1px solid #bbb;
-  padding: 10px;
-  width: auto;
-  height: auto;
-  margin-bottom: 15px;
-}
- */
 
 #error_explanation {
   color: #f00;
@@ -972,10 +951,6 @@ div.ideabox {
 .pagination{
 	float: right;
 }
-
-
-
-
 
 
 
