@@ -23,11 +23,6 @@ ActiveRecord::Schema.define(:version => 20120702020839) do
     t.integer  "statistic_id"
   end
 
-  create_table "answers_tags", :force => true do |t|
-    t.integer "answer_id"
-    t.integer "tag_id"
-  end
-
   create_table "categories", :force => true do |t|
     t.string "name"
     t.string "question_id"
@@ -57,11 +52,6 @@ ActiveRecord::Schema.define(:version => 20120702020839) do
     t.integer  "statistic_id"
   end
 
-  create_table "questions_tags", :force => true do |t|
-    t.integer "question_id"
-    t.integer "tag_id"
-  end
-
   create_table "sessions", :force => true do |t|
     t.string   "session_id", :null => false
     t.text     "data"
@@ -84,8 +74,6 @@ ActiveRecord::Schema.define(:version => 20120702020839) do
     t.string  "name"
     t.integer "question_id"
     t.integer "answer_id"
-    t.integer "user_id"
-    t.integer "created_by"
   end
 
   create_table "users", :force => true do |t|
