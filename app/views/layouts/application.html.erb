@@ -48,7 +48,11 @@ $(document).ready(function(){
 		if (unicode == 188){
 			add_tag();
 		}
+		if (unicode == 10 && $(this).val().length==0){
+			$(this).prev().remove();
+		}
      }); 
+
 
 	$("#question_submit").click(function(event){
 		var tags_str = "";

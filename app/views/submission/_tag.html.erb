@@ -17,8 +17,7 @@
 			<% end %>
 			var tags = <%= ruby_tags.to_json.html_safe %>;
 			$( "#tag_editor_input" ).autocomplete({
-				source: tags,
-				disabled: false
+				source: tags
 			});
 });
 </script>
