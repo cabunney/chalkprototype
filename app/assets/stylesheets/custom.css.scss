@@ -1,19 +1,5 @@
-$navbarLinkColor:white; 
-$navbarHeight:50px; 
-$navbarLinkColorHover:#999; 
-$btnBackground:#999; 
-$dropdownLinkColorHover:#999; 
-$btnBackgroundHighlight:darken(white,10%); 
-//$linkColorHover:white; 
-//$linkColor:white; 
-$heroUnitHeadingColor:green; 
-@import "bootstrap";
+@import 'bootstrap';
 
-html, body {
-   margin-top:0px;
-   border-top:0px;
-   min-width:800px;
-}
 
 @font-face {
  	font-family: 'Lobster13Regular';
@@ -34,6 +20,13 @@ html, body {
  	font-family: 'FFF_Tusj';
     src: url(../fonts/FFF_Tusj/FFF_Tusj.ttf) format('truetype');
     font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+ 	font-family: 'CaviarDreams_Bold';
+    src: url(../fonts/Caviar-Dreams/CaviarDreams_Bold.ttf) format('truetype');
+    font-weight: bold;
     font-style: normal;
 }
 
@@ -142,65 +135,6 @@ p.pagetitle {
 }
 
 
-.pull-left {
-	font-family:'Lobster13Regular'; 
-	font-size:30px; 
-	padding-top:17px; 
-	color:white; 
-	text-shadow: black 0.1em 0.1em 0.2em;
-}
-
-
-.nav a{
-	position:relative;
-}
-
-.caret {
-	opacity:1; 
-}
-
-.caret:hover {
-	opacity:0.0; 
-}
-
-.nav a{
-	-webkit-transition:color .2s ease-in-out;  
-   -moz-transition:color .2s ease-in-out;  
-   -o-transition:color .2s ease-in-out ;  
-   transition:color .2s ease-in-out ;  
-   font-family:"arial"; 
-}
-
-
-
-.navbar div.container {
-	width:95%; 
-	min-width:800px; 
-	
-}
-
-.container {
-	width:90%; 
-}
-
-.navbar {
-	position:absolute;
-	top:0px; 
-	margin:none;
-	padding:none;
-	border:none; 
-	border-bottom:3px solid black; 	
-	width:100%; 
-}
-
-.navbar-inner {
-	margin:none;
-	padding:none;
-	border:none; 
-	height:45px; 
-	background:url(../images/chalkboard.jpg) no-repeat;
-	font-size:14px; 
-}
 
 
 @mixin box_sizing {
@@ -525,11 +459,7 @@ html {
   overflow-y: scroll;
 }
 
-body {
-  padding-top: 60px;
-  height:100%;
-  background-color:#FFFFFF;
-}
+
 
 section {
   overflow: auto;

@@ -3,27 +3,30 @@
     <div class="container">
       <nav>
       	<ul class = "nav pull-left">
-      	<li>Chalk</li>
+      	<li id = "site_title">Chalk</li>
+		<% if signed_in?%>
+		<li class = "navelement-left"><%=current_user.school_name%></li>	
+		<%end%>
 		</ul>
         <ul class="nav pull-right">
-          <li><%= link_to "Chalkboard", {:controller => :message_board, :action => :show}%></li>
+          <li class = "navelement-right <%= 'active' if params[:controller] == 'message_board' %>"><%= link_to "chalkboard", 	    {:controller => :message_board, :action => :show}%></li>
           <% if signed_in? %>
-            <li id="fat-menu" class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                Submit <b class="caret"></b>
-              </a>
-              <ul class="dropdown-menu">
-                <li><%= link_to "Question", :controller => :submission, :action => :QS %></li>
-                <li><%= link_to "Idea",  :controller => :submission, :action => :AS %></li>
-              </ul>
-            </li>
-			<li id="fat-menu" class="dropdown">
+            <!-- <li id="fat-menu" class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Submit <b class="caret"></b>
+                          </a>
+                          <ul class="dropdown-menu">
+                            <li><%= link_to "Question", :controller => :submission, :action => :QS %></li>
+                            <li><%= link_to "Idea",  :controller => :submission, :action => :AS %></li>
+                          </ul>
+                        </li> -->
+			<li  class="dropdown navelement-right">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <%=current_user.first_name + " " + current_user.last_name%> <b class="caret"></b>
               </a>
-              <ul class="dropdown-menu">
+              <ul class="dropdown-menu navelement-sub">
                 <li>
-                  <%= link_to "Sign out", signout_path, method: "delete" %>
+                  <%= link_to "sign out", signout_path, method: "delete" %>
                 </li>
               </ul>
             </li>
@@ -36,16 +39,3 @@
   </div>
 </header>
 
-<!--li id="fat-menu" class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-    Account <b class="caret"></b>
-  </a>
-  <ul class="dropdown-menu">
-    <li><%= link_to "Profile", current_user %></li>
-    <li><%= link_to "Settings", '#' %></li>
-    <li class="divider"></li>
-    <li>
-      <%= link_to "Sign out", signout_path, method: "delete" %>
-    </li>
-  </ul>
-</li-->
