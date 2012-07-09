@@ -40,14 +40,15 @@ Tagger.prototype.xhrHandler = function() {
       return;
   }
  //console.log(document.getElementById("results"));
- this.tagElement.innerHTML=this.xhr.responseText;
+ //this.tagElement.innerHTML=this.xhr.responseText;
+	this.tagElement.innerHTML
 }
 
 Tagger.prototype.sendAjaxRequest = function(){
 	var params = this.isQuestionName+"="+encodeURIComponent(this.isQuestion)
 		+"&"+this.idName+"="+encodeURIComponent(this.qaId.value)	
 		+"&"+this.userIdName+"="+encodeURIComponent(this.userId.value)
-		+"&"+this.tagTitle+"="+encodeURIComponent(this.tagInput.value);
+		+"&"+this.tagTitle+"="+encodeURIComponent(this.tagInput.value.substring(0,this.tagInput.value.length-1));
 	console.log("PARAMETERS"+params);
 	this.xhr.open("GET", this.tagItemAction+"?"+params,false); 
 	this.xhr.send(params);	

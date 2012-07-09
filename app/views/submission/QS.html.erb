@@ -20,25 +20,18 @@
   <td><%= form.text_area(:description, :class => "textarea") %></td>
   </tr>
   <tr class = "subrow">
-  <td><%= form.label(:description, "Tag your question:", :class =>"descript")%></td>
-  <td><%= form.hidden_field(:question_id, :id=> "tag_question_id", :value => @question.id) %></td>  
-  <td><%= form.hidden_field(:user_id, :id => "tag_user_id", :value => current_user.id) %></td>
-  <td><%= render :partial =>"tag"%></td>
+  <td><%= form.label(:description, "Tag your question:", :class =>"descript")%></td> 
+  <td><%= form.hidden_field(:tags, :id => "tag_names", :value =>"") %></td>
+  <%= render :partial =>"tag"%>
   </tr>
   <tr class = "subrow">
   <td><%= form.label(:category_id, "Categorize your question:", :class => "descript") %></td>
   <td><%= form.collection_select(:category_id, Category.all, :id, :name) %></td>
-  <td><p class = "submitbutton"><%= form.submit "submit question", class: "btn-small btn-primary bluebutton" %></p></td>
+  <td><p class = "submitbutton" id = "question_submit"><%= form.submit "submit question", class: "btn-small btn-primary bluebutton" %></p></td>
   </tr> 
 </table>
 
 
 <% end %> 
-<%= javascript_include_tag "Tagger" %>
- <script type="text/javascript">
- //<![CDATA[
-     new Tagger("tag_space",true, "tag_question_id","tag_user_id","tag_editor_input","tagItem","is_question","id","user_id","name");
- //]]>
- </script>
 </div>
 

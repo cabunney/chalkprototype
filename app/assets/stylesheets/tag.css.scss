@@ -1,34 +1,34 @@
 #tag_editor {
-width: 190px;
-height: 70px;
-overflow-y: auto;
-overflow-x: hidden;
-border: solid 1px #BBB;
-padding: 4px 5px;
-color: #222;
+	width: 190px;
+	height: 70px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	border: solid 1px #BBB;
+	padding: 4px 5px;
+	color: #222;
 }
 
 #tag_editor .tag {
-float: left;
-padding: 3px 5px;
-border: solid 1px #B7C963;
-background-color: #C7DA76;
-color: #111;
-margin: 0 5px 5px 0;
--webkit-border-radius: 2px;
--moz-border-radius: 2px;
-border-radius: 2px;
-font: 11px 'Lucida Grande';
+	float: left;
+	padding: 3px 5px;
+	border: solid 1px #B7C963;
+	background-color: #C7DA76;
+	color: #111;
+	margin: 0 5px 5px 0;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	font: 11px 'Lucida Grande';
 }
 
 #tag_editor_input {
-overflow: visible;
-background-color: transparent;
-color: #444!important;
-border: none;
-padding: 4px 0!important;
-margin: 0!important;
-outline: 0;
-font: 11px 'Lucida Grande',Verdana!important;
-width: 80px!important;
+	overflow: visible;
+	background-color: transparent;
+	color: #444!important;
+	border: none;
+	padding: 4px 0!important;
+	margin: 0!important;
+	outline: 0;
+	font: 11px 'Lucida Grande',Verdana!important;
+	width: 80px!important;
 }

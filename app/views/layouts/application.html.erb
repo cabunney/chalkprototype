@@ -32,6 +32,38 @@ jQuery.fn.submitWithAjax = function() {
 // Here's an example of the class that will be 'clicked'
 $(".vote").submitWithAjax();
 
+
+function add_tag() {
+		var tag_input = document.getElementById("tag_editor_input");
+		var tag_name = tag_input.value.substring(0,tag_input.value.length-1);
+		tag_input.value = "";
+		if (tag_name!=""){		
+			$("#tag_space").append("<span class = 'tag'><span class='tag_name'>"+tag_name+"</span><a href='#' onclick='$(this).parent().remove()'> x</a></span>");
+		}
+}
+
+$(document).ready(function(){
+	$("#tag_editor_input").keyup(function(event) {
+		var unicode=event.charCode? event.charCode : event.keyCode;
+		//188 is comma
+		if (unicode == 188){
+			add_tag();
+		}
+     }); 
+
+	$("#question_submit").click(function(event){
+		var tags_str = "";
+		$(".tag_name").each(function () {
+			   if (tags_str == "")
+				tags_str = $(this).text();
+			  else
+				tags_str += ","+$(this).text();
+		  });
+		$("#tag_names").val(tags_str);	
+		console.log(tags_str);
+	});
+});
+
 </script>
 
 
