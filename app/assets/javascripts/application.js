@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
-<<<<<<< HEAD
 //= require bootstrap
 
 jQuery.ajaxSetup({ 
@@ -27,6 +26,3 @@ jQuery.fn.submitWithAjax = function() {
   })
   return this;
 };
-=======
-
->>>>>>> 40669b0aa53edf2eeaa9359cfe2f9f8002b71cdd
