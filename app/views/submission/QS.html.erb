@@ -22,7 +22,7 @@
   <tr class = "subrow">
   <td><%= form.label(:description, "Tag your question:", :class =>"descript")%></td> 
   <td><%= form.hidden_field(:tags, :id => "tag_names", :value =>"") %></td>
-  <%= render :partial =>"tag"%>
+  <td><%= render :partial =>"tag"%></td>
   </tr>
   <tr class = "subrow">
   <td><%= form.label(:category_id, "Categorize your question:", :class => "descript") %></td>
