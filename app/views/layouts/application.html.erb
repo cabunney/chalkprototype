@@ -47,10 +47,15 @@ $(document).ready(function(){
 	$("#tag_editor_input").keyup(function(event) {
 		var unicode=event.charCode? event.charCode : event.keyCode;
 		//188 is comma
+		console.log(unicode);
 		if (unicode == 188){
 			add_tag();
 		}
+		if (unicode == 8 && $(this).val().length==0){
+			$(this).prev().children().last().remove();
+		}
      }); 
+
 
 	$("#question_submit").click(function(event){
 		var tags_str = "";
