@@ -8,9 +8,9 @@ class MessageBoardController < ApplicationController
     else
       @questions = Question.find(:all).sort{ |x,y| y.votes_for <=> x.votes_for }.paginate(:page => params[:page], :per_page => 10)   
       @answers = Answer.find(:all)  
-       @categories = Category.find(:all, :order =>'id DESC');
-  		  @question = Question.new   
-        @tags = []    
+      @categories = Category.find(:all, :order =>'id DESC');
+  		@question = Question.new   
+      @tags = []
     end
   end
   
@@ -141,9 +141,11 @@ def post_vote_detail
         end
       end
       @question.tags = @new_tags
+      @tags = []
 		     flash[:success] = "Successfully posted your question!"
     		 redirect_to(:controller => :message_board, :action => :show)
   		else
+  		  @tags=[]
    			 render(:action => :_dynamicinput)
   		end
 

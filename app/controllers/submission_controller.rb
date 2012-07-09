@@ -31,6 +31,7 @@ class SubmissionController < ApplicationController
         end
       end
       @question.tags = @new_tags
+      @tags = []
 		     flash[:success] = "Successfully posted your question!"
     		 redirect_to(:controller => :message_board, :action => :show)
   		else

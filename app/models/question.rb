@@ -8,9 +8,9 @@ class Question < ActiveRecord::Base
 	belongs_to	:category
 
   validates :user_id, presence: true
-	validates :title, presence: true, length: { maximum: 37 }, :allow_blank => false, uniqueness: { case_sensitive: false }
+
 	validates :description, presence: true, :allow_blank => false
-	validates :category, presence: true
+
 	
 	acts_as_voteable
 	acts_as_pushable
