@@ -1,14 +1,11 @@
 <%= stylesheet_link_tag 'board', :media => 'screen' %>
 <% provide(:title, "Message Board") %>
-<!--<ul id="idea-slider">
-	<% @questions.each do |q| %>
-		<li><div class = "answer-block"><img src="http://placekitten.com/300/200" alt="place holder" style = "float:left; margine 0 0 2px 10px;" /><%= q.description %></div></li>
-	<% end %>
-</ul> -->
+
 
 <div class = "container">
 	<div class = "row">
 		<div class = "span8">
+			<%= render :partial => "dynamicinput"%>
   			<h1>chalkboard
 				<small> a space for all current questions</small><small class = "linkright">
 					<div class="btn-group">
@@ -29,7 +26,6 @@
 	</div>
 </div>
 
-<!--<%= render :partial => "ideas" %>-->
 
 <%= render :partial => "questions" %>
 

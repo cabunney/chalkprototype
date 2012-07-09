@@ -1,0 +1,33 @@
+<div class = "container">
+	<div class = "row">
+		<div class = "span8">
+<%= form_for(:question, :url => {:action => :submitQ, :id => current_user.id}) do |form| %>
+  <%= form.hidden_field(:user_id, :value => current_user.id) %>  
+  <%= form.text_area(:description, :class => "textarea", :value => "ask a question...", :onfocus => "if(this.value == 'ask a question...') { this.value = ''; this.border = '1px black solid' }", :onblur => "if(this.value == ''){this.value = 'ask a question...'}", :id => "dynamicinput") %>
+ 	</div>
+<div class = "span8">
+
+  <%= form.hidden_field(:question_id, :id=> "tag_question_id", :value => @question.id) %>  
+  <%= form.hidden_field(:user_id, :id => "tag_user_id", :value => current_user.id) %>
+  <%= render :partial =>"tag"%>
+</div>
+<div class = "span2 offset6">
+ <%= form.submit "+ add new question", :id => "submitbutton"%>
+</div>
+</div>
+</div>
+ 
+<% end %>
+
+<script type='text/javascript'>
+$(document).ready(function(){
+$("#submitbutton").hover(
+function() {
+$(this).stop().animate({"opacity": "1"}, "fast");
+},
+function() {
+$(this).stop().animate({"opacity": "0.5"}, "fast");
+});
+ 
+});
+</script>
