@@ -7,7 +7,7 @@
 		</span>
 	<% end %>
 	</span>
-	<input type="text" id = "tag_editor_input"/>
+	<input type="text" id = "tag_editor_input" value = "tags (separate by a comma)" onfocus = "value = ''" onblur = "if (value == '') {value = 'tags (separate by a comma)'}" />
 </div>
 <script type = "text/javascript">
 		$(function() {

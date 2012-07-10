@@ -1,24 +1,29 @@
 #tag_editor {
-	width: 190px;
-	height: 70px;
+	width: 105%;
+	height: 30px;
 	overflow-y: auto;
 	overflow-x: hidden;
 	border: solid 1px #BBB;
-	padding: 4px 5px;
+	padding: 7px 5px;
 	color: #222;
+	background-color:white; 
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+	position:relative; 
+	top:-22px; 
+  
 }
 
 #tag_editor .tag {
 	float: left;
-	padding: 3px 5px;
+	padding: 4px 4px!important;
 	border: solid 1px #B7C963;
-	background-color: #C7DA76;
-	color: #111;
+	color: white;
 	margin: 0 5px 5px 0;
-	-webkit-border-radius: 2px;
-	-moz-border-radius: 2px;
-	border-radius: 2px;
-	font: 11px 'Lucida Grande';
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	font: 14px CaviarDreams_Bold;
+	background:#879A73; 
 }
 
 #tag_editor_input {
@@ -26,9 +31,28 @@
 	background-color: transparent;
 	color: #444!important;
 	border: none;
-	padding: 4px 0!important;
-	margin: 0!important;
-	outline: 0;
-	font: 11px 'Lucida Grande',Verdana!important;
-	width: 80px!important;
+	padding:5px 4px; 
+	height:16px; 
+	margin: 0 5px 5px 5px;
+	outline:0;
+	font: 14px CaviarDreams_Bold;
+	width: 200px; 
+}
+
+#tag_editor .tag a{
+	font-size:14px; 
+	color:white;
+}
+
+#tag_editor .tag a:hover{
+	text-decoration:none; 
+	color:black; 
+}
+
+
+.ui-menu-item {
+}
+.ui-autocomplete a{
+	font:14px CaviarDreams_Bold; 
+	color:black;
 }

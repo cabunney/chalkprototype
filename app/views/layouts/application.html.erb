@@ -39,7 +39,7 @@ function add_tag() {
 		var tag_name = tag_input.value.substring(0,tag_input.value.length-1);
 		tag_input.value = "";
 		if (tag_name!=""){		
-			$("#tag_space").append("<span class = 'tag'><span class='tag_name'>"+tag_name+"</span><a href='#' onclick='$(this).parent().remove()'> x</a></span>");
+			$("#tag_space").append("<span class = 'tag'><span class='tag_name'>"+tag_name+"</span><a href='#' 	onclick='$(this).parent().remove()'> x</a></span>");
 		}
 }
 
@@ -75,7 +75,9 @@ $(document).ready(function(){
 
 </head>
 <body>
+	<% if signed_in?%>
 	<%= render 'layouts/header' %>
+	<%end%>
 	  <% flash.each do |key, value| %>
 	  <div class="alert alert-<%= key %>"><%= value %></div>
 	  <% end %>
