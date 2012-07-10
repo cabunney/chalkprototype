@@ -1,0 +1,139 @@
+.page {
+ min-width:700px;
+ width:1200px;
+ max-width:1200px;
+}
+
+.banner {
+	margin:10px;
+}
+
+#sign_in_button {
+	width:150px; 
+	font-family:CaviarDreams_Bold; 
+	background:white; 
+	opacity:0.5;
+	color:black; 
+	font-size:14px; 
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+	border:2px gray solid; 
+}
+
+#frontpage_badge {
+	font:90px Lobster13Regular;
+	color:white;
+	text-shadow: -4px 2px 5px #000;
+	padding-left:20px;
+}
+
+#frontpage_tagline {
+	font:20px CaviarDreams_Bold;
+	color:white;
+	padding-top:40px;
+	padding-left:20px;
+	text-shadow: -4px 2px 5px #000;
+}
+
+h2.frontpage_section {
+	font:24px CaviarDreams_Bold;
+	color:black;
+	text-shadow:none;
+	display:block;
+	text-align:center;
+	margin-bottom:30px;
+}
+
+span.outline {
+	padding:5px 10px;
+	background:white;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+}
+
+.frontpage_description {
+	font:17px CaviarDreams_Bold;
+	padding-left:50px;
+	padding-top:100px;
+}
+
+.frontpage_horizontal {
+	color:black;
+	border:1px solid black;
+	opacity:0.5;
+	position:relative;
+	left:-2%;
+}
+
+#tabContainer ul{
+	  padding:none;
+	  overflow:hidden; /*Clearing float. */
+      border-bottom:4px solid black;
+      height:35px;
+      position:relative; /*Takings tabs to higher layer */
+	  left:-11.7%;
+      z-index:100;
+	  min-width:700px;
+	  width:118.3%;
+	  max-width:1200px;  
+ }
+
+ #tabContainer li{
+      float:left;
+      list-style:none;
+ }
+
+ #tabCenter {
+	margin-left:37%;
+}
+
+ #tabContainer li a{
+      background:transparent;
+	  font:18px CaviarDreams_Bold;
+      color:black;
+      cursor:pointer;
+      display:block;
+      height:35px;
+      line-height:35px;
+      padding:0 30px;
+      text-decoration:none;
+	  -moz-border-radius-topright: 7px;
+   	  border-top-right-radius: 7px;
+	  -moz-border-radius-topleft: 7px;
+   	  border-top-left-radius: 7px;
+ }
+
+ #tabContainer li a:hover{
+      background:black;
+	  color:white;
+ }
+
+ #tabContainer li a.active{
+	  opacity:0.6;
+      background:black;
+      color:white;
+ }
+
+.tabDetails{
+	  min-width:700px;
+	  max-width:1200px;
+	  position:relative;
+	  width:118.3%;
+	  left:-9%;
+	  top:-30px;	  
+	background: rgb(255, 255, 255);
+	background: rgba(255, 255, 255, 0.5);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+      margin:34px 0 0; /*1px less then actual tab height to fix the border gap between active tab &amp; tab detail section. */
+}
+ .tabContents{
+      padding:20px
+ }
+ .tabContents h1{
+      font:normal 24px/1.1em Georgia, "Times New Roman", Times, serif;
+      padding:0 0 10px;
+ }
+ .tabContents p{
+ padding:0 0 10px;
+ }

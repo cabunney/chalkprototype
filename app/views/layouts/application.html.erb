@@ -68,6 +68,27 @@ $(document).ready(function(){
 		$("#tag_names").val(tags_str);	
 		console.log(tags_str);
 	});
+	
+	// Here is the JQuery for Coulton's buttons 
+	$("#question_submit, #sign_in_button").hover(
+	function() {
+	$(this).stop().animate({"opacity": "1"}, "fast");
+	},
+	function() {
+	$(this).stop().animate({"opacity": "0.5"}, "fast");
+	});
+	
+	// JQuery for the frontpage tabs
+	$(".tabContents").hide();
+	$(".tabContents:first").show();
+	$("#tabContainer ul li a").click(function(){
+	     var activeTab = $(this).attr("href"); //save the clicked links target
+	     $("#tabContainer ul li a").removeClass("active"); // remove pre-highlighted tabs
+	     $(this).addClass("active"); //set this link to highlight
+	     $(".tabContents").hide(); // again hide pre-showing div
+	     $(activeTab).fadeIn(); //match the target div &amp; show it
+	});
+
 });
 
 </script>

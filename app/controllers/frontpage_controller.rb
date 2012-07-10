@@ -1,0 +1,3 @@
+class FrontpageController < ApplicationController
+
+end
