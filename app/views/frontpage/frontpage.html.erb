@@ -1,40 +1,52 @@
-<div class = "container page">
-	<div class = "row-fluid banner">
-		<div class = "span9"></div>
-		<div class = "span3">
+<div class = "page">
+		<div id = "topbar">
 			<form method="link" action="../sessions/new">
 			<input type="submit" value="Sign In" id = "sign_in_button">
 			</form>
 		</div>
-		<div class = "span3">
-			<span id = "frontpage_badge">Chalk</span>
+	
+		<div class = "clearline">
+			<div class = "titleline">
+			<span id = "frontpage_badge" class = "inline">Chalk</span>
+			<span id = "frontpage_tagline" class = "inline">Transforming school decision-making from the ground up.</span> 
+			</div>
 		</div>
-		<div class = "span8">
-			<span><p id = "frontpage_tagline">Transforming school decision-making from the ground up.</p></span> 
-		</div>
-		<div class = "span3"></div>
-	</div>
-	<div class = "row-fluid">
-		<div class = "span12">
+		
+	
 			<div id="tabContainer">
-			<ul>
+			<ul class = "tabbar">
 				<div id ="tabCenter">
-			    <li><a href="#tab1" class = "active">Learn More</a></li>
-			    <li><a href="#tab2">About Us</a></li>
+			    <li class = "list_none"><span name = "#tab1" class = "active tab">Learn More</span></li>
+			    <li class = "list_none"><span name ="#tab2" class = "tab">About Us</span></li>
 				</div>
 			</ul>
 			<div class="tabDetails">
 		    	<div id="tab1" class="tabContents">
-		        	<h2 class = "frontpage_section"><span class = "outline">What is Chalk?</span></h2>
-		            <div class = "row-fluid">
-						<div class = "span7 frontpage_description">
-							Chalk is a knowledge management tool that drives organizational learning across school systems. By crowdsourcing questions and ideas across all school staff, Chalk opens new channels for communication and builds collaborative capacity for scaling success.
-						</div>
-		
-						<div class = "span5">
-							<%=image_tag ("../images/chalkboard_screenshot.png")%>
-						</div>
-						<div class = "span12"><hr class = "frontpage_horizontal" /></div>
+		            <div class = "clearline">
+						<span class = "inline fifty">
+							<%=image_tag ("../images/version2_startconvo_site.png")%>
+						</span>
+						<span class = "inline fifty">
+							<h2 class = "frontpage_section" id = "frontpage_section1"><span class = "outline">What is Chalk?</span></h2>
+							<p class = "frontpage_description_2">a knowledge management tool that drives organizational learning across 
+								school systems</p>
+							<ul class = "frontpage_list">
+								<li class = "list_circle">crowd-sources questions and ideas from all school staff</li>
+								<li class = "list_circle">creates new channels for communication</li>
+								<li class = "list_circle">builds collaborative capacity for scaling success</li>
+							</ul>
+						</span>
+					</div>
+					<div class = "clearline section"><hr class = "frontpage_horizontal" /></div>
+					<div>
+			        <h2 class = "frontpage_section"><span class = "outline">Who will benefit from Chalk?</span></h2>
+					<div>
+						<h2 class = "frontpage_section">School Staff</h2>
+						<%=image_tag ("../images/chalk_lightbulb.png")%>
+					</div>
+					<div>
+						<h2 class = "frontpage_section">Administrators</h2>
+					</div>
 					</div>
 		        </div><!-- //tab1 -->
 		    	<div id="tab2" class="tabContents">
@@ -43,8 +55,7 @@
 		            <p>Donec et purus eget elit tristique consequat. Integer ut orci eu augue tristique viverra nec vitae odio. Nulla sem nibh, posuere quis condimentum vitae, posuere sit amet lectus. Morbi euismod tincidunt mauris ut scelerisque.</p>
 		        </div><!-- //tab2 -->
 			</div>
-		</div>
-	</div>
+	
 			
 </div>
 

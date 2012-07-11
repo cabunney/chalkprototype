@@ -78,12 +78,12 @@ $(document).ready(function(){
 	$(this).stop().animate({"opacity": "0.5"}, "fast");
 	});
 	
-	// JQuery for the frontpage tabs
+	// JQuery for the Coulton's frontpage tabs
 	$(".tabContents").hide();
 	$(".tabContents:first").show();
-	$("#tabContainer ul li a").click(function(){
-	     var activeTab = $(this).attr("href"); //save the clicked links target
-	     $("#tabContainer ul li a").removeClass("active"); // remove pre-highlighted tabs
+	$("#tabContainer ul li span").click(function(){
+	     var activeTab = $(this).attr("name"); //save the clicked links target
+	     $("#tabContainer ul li span").removeClass("active"); // remove pre-highlighted tabs
 	     $(this).addClass("active"); //set this link to highlight
 	     $(".tabContents").hide(); // again hide pre-showing div
 	     $(activeTab).fadeIn(); //match the target div &amp; show it
