@@ -15,7 +15,6 @@
 	  </tr>
 	  <tr>
 	  <td class = "quotetop"><div></div></td>
-	  <td class = "questionblock"><p class = "infotext">category: <%= i.category.name %></p></td>
 	  <td class = "quotetop"><div></div></td>
 
 	  </tr>
@@ -29,7 +28,7 @@
 		<% @question.answers().each do |i| %>
 		<div class = "well idea">
 			<% type ="Question" %>
-			<div class="page-header questiontitle"><h3><%= i.title.capitalize %><small>&nbsp&nbsp<%= i.category.name.downcase %></small></h3><div><% if current_user.id == i.user().id then%><%=link_to "edit", {:controller => :submission, :action => :editA, :id => i.id}, :class => "edit"%><%end%><%= image_tag("../images/ideas.png")%></div></div>
+			<div class="page-header questiontitle"><h3><small>&nbsp&nbsp</small></h3><div><% if current_user.id == i.user().id then%><%=link_to "edit", {:controller => :submission, :action => :editA, :id => i.id}, :class => "edit"%><%end%><%= image_tag("../images/ideas.png")%></div></div>
 			<div class = "upvotebox"><%= render :partial => "voting_item", :locals => {:item => i} %></div>
 			<div class = "asker answer"><%= i.user.first_name + " " + i.user.last_name +  " "%> answered, </div>
 			<div class="answerdescription">

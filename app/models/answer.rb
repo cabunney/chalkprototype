@@ -8,9 +8,7 @@ class Answer < ActiveRecord::Base
 
   validates :user_id, presence: true
   validates :question_id, presence: true
-  validates :title, presence: true, length: { maximum: 37 }, :allow_blank => false, uniqueness: { case_sensitive: false }
 	validates :description, presence: true
-	validates :category, presence: true
 
   acts_as_voteable
 

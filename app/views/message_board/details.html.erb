@@ -1,6 +1,5 @@
 <% @title = "Solution Space" %> 
 <!--<div class="page-header detail">
-  <h2><%=@question.title.capitalize%><small>&nbsp&nbsp<%=@question.category.name.downcase%></small></h2>  
 </div>-->
 
 <!--0<div class = "white">
@@ -19,14 +18,13 @@
 
   <tr>
   <td class = "quotetop"><div></div></td>
-  <td class = "questionblock"><p class = "infotext">category: <%= @question.category.name %></p></td>
   <td class = "quotetop"><div></div></td>
   </tr>
 </table>-->
 
 <div class="hero-unit question">
 
-  <div class = "detailtitle"><h2><%=@question.title.capitalize%><small>&nbsp&nbsp<%=@question.category.name.downcase%></small> <div class = "progressbar detail"><%= render :partial => "pushing", :locals => {:item => @question, :progress => @progress} %></div></h2>  </div>
+  <div class = "detailtitle"><h2><small>&nbsp&nbsp</small> <div class = "progressbar detail"><%= render :partial => "pushing", :locals => {:item => @question, :progress => @progress} %></div></h2>  </div>
   <table id = "questiontable" cellspacing = "0">
   <tr>
   <td class = "buttonbox">

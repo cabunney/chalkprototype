@@ -1,48 +1,4 @@
-.page {
-	margin-left:auto;
-	margin-right:auto;
-	min-width:700px;
-	width:1000px;
-}
 
-
-#topbar {
-	margin-top:20px;
-	float:right;
-	padding:0px;
-	margin-right:138px;
-	position:relative;
-	z-index:100;
-}
-
-.clearline {
-	clear:both;
-	margin:0px;
-	position:relative;
-	top:-20px;
-}
-
-.titleline {
-	margin-left:auto;
-	margin-right:auto;
-	min-width:800px;
-	width:800px;
-}
-
-span.inline {
-	display:inline;
-}
-
-.fifty  {
-	width:48%;
-	float:left;
-	padding:1%;
-}
-
-.ten {
-	width:10%;
-	float:left;
-}
 
 #sign_in_button {
 	width:150px; 
@@ -117,7 +73,7 @@ span.outline {
 
 .frontpage_horizontal {
 	color:black;
-	border:1px solid black;
+	border:1px solid transparent;
 	opacity:0.5;
 	position:relative;
 	top:10px;
@@ -146,6 +102,8 @@ span.outline {
 	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
  }
 
+
+
  #tabContainer li.list_none{
       float:left;
       list-style:none;
@@ -157,14 +115,14 @@ span.outline {
 }
 
  #tabCenter {
-	width:350px;
+	width:610px;
 	margin-left:auto;
 	margin-right:auto;
 }
 
- #tabContainer li span.tab{
+ #tabContainer li a.tab{
       background:transparent;
-	  font:18px CaviarDreams_Bold;
+	  font:16px CaviarDreams_Bold;
       color:black;
       cursor:pointer;
       display:block;
@@ -172,18 +130,16 @@ span.outline {
       line-height:35px;
       padding:0 30px;
       text-decoration:none;
-	  -moz-border-radius-topright: 7px;
-   	  border-top-right-radius: 7px;
-	  -moz-border-radius-topleft: 7px;
-   	  border-top-left-radius: 7px;
+	 
+
  }
 
- #tabContainer li span.tab:hover{
+ #tabContainer li a.tab:hover{
       background:black;
 	  color:white;
  }
 
- #tabContainer li span.tab.active{
+ #tabContainer li a.tab.active{
 	  opacity:0.6;
       background:black;
       color:white;
@@ -192,7 +148,8 @@ span.outline {
 .tabDetails{
 	-moz-border-radius: 7px;
 	border-radius: 7px;
-    width:100%;	  
+    width:100%;	
+  	height:auto;
 	background: rgb(255, 255, 255);
 	background: rgba(255, 255, 255, 0.5);
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);

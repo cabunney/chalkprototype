@@ -8,9 +8,10 @@ class MessageBoardController < ApplicationController
     else
       @questions = Question.find(:all).sort{ |x,y| y.votes_for <=> x.votes_for }.paginate(:page => params[:page], :per_page => 10)   
       @answers = Answer.find(:all)  
-      @categories = Category.find(:all, :order =>'id DESC');
+      @categories = Category.find(:all, :order =>'id DESC')
   		@question = Question.new   
       @tags = []
+      @top_tags = Tag.find(:all)
     end
   end
   

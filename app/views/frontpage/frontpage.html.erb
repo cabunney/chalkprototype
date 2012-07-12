@@ -1,9 +1,5 @@
 <div class = "page">
-		<div id = "topbar">
-			<form method="link" action="../sessions/new">
-			<input type="submit" value="Sign In" id = "sign_in_button">
-			</form>
-		</div>
+	
 	
 		<div class = "clearline">
 			<div class = "titleline">
@@ -16,8 +12,12 @@
 			<div id="tabContainer">
 			<ul class = "tabbar">
 				<div id ="tabCenter">
-			    <li class = "list_none"><span name = "#tab1" class = "active tab">Learn More</span></li>
-			    <li class = "list_none"><span name ="#tab2" class = "tab">About Us</span></li>
+			    <!-- <li class = "list_none"><span name = "#tab1" class = "tab">What is Chalk?</span></li>
+			  		 <li class = "list_none"><span name ="#tab2" class = "tab">How does Chalk work?</span></li>
+			  	     <li class = "list_none"><span name ="#tab3" class = "tab">Who uses Chalk?</span></li> -->
+				<li class = "list_none"><a href = "#tab1" class = "tab">What is Chalk?</a></li>
+				<li class = "list_none"><a href ="#tab2" class = "tab">How does Chalk work?</a></li>
+				<li class = "list_none"><a href ="#tab3" class = "tab">Who uses Chalk?</a></li>
 				</div>
 			</ul>
 			<div class="tabDetails">
@@ -37,23 +37,22 @@
 							</ul>
 						</span>
 					</div>
+		        </div>
 					<div class = "clearline section"><hr class = "frontpage_horizontal" /></div>
-					<div>
-			        <h2 class = "frontpage_section"><span class = "outline">Who will benefit from Chalk?</span></h2>
-					<div>
-						<h2 class = "frontpage_section">School Staff</h2>
-						<%=image_tag ("../images/chalk_lightbulb.png")%>
-					</div>
-					<div>
-						<h2 class = "frontpage_section">Administrators</h2>
-					</div>
-					</div>
-		        </div><!-- //tab1 -->
-		    	<div id="tab2" class="tabContents">
-		        	<h2 class = "frontpage_section"><Div Two</h1>
-		            <p>Sed gravida velit ut lorem dictum vitae venenatis dolor faucibus. In vehicula malesuada mi, vel semper sem porta in. Mauris suscipit lorem eget justo congue semper.</p>
-		            <p>Donec et purus eget elit tristique consequat. Integer ut orci eu augue tristique viverra nec vitae odio. Nulla sem nibh, posuere quis condimentum vitae, posuere sit amet lectus. Morbi euismod tincidunt mauris ut scelerisque.</p>
-		        </div><!-- //tab2 -->
+				<!-- //tab1 -->
+		    	<!-- <div id="tab3" class="tabContents">
+		    			        	
+		    							<div>
+		    					        <h2 class = "frontpage_section"><span class = "outline">Who will benefit from Chalk?</span></h2>
+		    							<div>
+		    								<h2 class = "frontpage_section">School Staff</h2>
+		    								<%=image_tag ("../images/chalk_lightbulb.png")%>
+		    							</div>
+		    							<div>
+		    								<h2 class = "frontpage_section">Administrators</h2>
+		    							</div>
+		    							</div>
+		    			        </div> --><!-- //tab3 -->
 			</div>
 	
 			

@@ -3,14 +3,16 @@
     <div class="container">
       <nav>
       	<ul class = "nav pull-left">
-      	<li id = "site_title">Chalk</li>
+      	<li><%= link_to "Chalk", {:controller => "frontpage", :action => "frontpage"}, :id => "site_title" %></li>
 		<% if signed_in?%>
-		<li class = "navelement-left"><%=current_user.school_name%></li>	
+		<li class = "navelement-left"><%=current_user.school_name%></li>
+		<% else %>	
+		<li class = "navelement-left">schools</li>
 		<%end%>
 		</ul>
         <ul class="nav pull-right">
+			<% if signed_in?%>
           <li class = "navelement-right <%= 'active' if params[:controller] == 'message_board' %>"><%= link_to "chalkboard", 	    {:controller => :message_board, :action => :show}%></li>
-          <% if signed_in? %>
             <!-- <li id="fat-menu" class="dropdown">
                           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             Submit <b class="caret"></b>
@@ -31,7 +33,7 @@
               </ul>
             </li>
           <% else %>
-            <li><%= link_to "Sign in", signin_path %></li>
+            <li><%= link_to "Sign in", signin_path, :class => "navelement-right" %></li>
           <% end %>
         </ul>
       </nav>

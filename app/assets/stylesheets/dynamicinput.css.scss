@@ -8,9 +8,10 @@
 	height:100px; 
 	font-size:18px; 
 	font-family:CaviarDreams_Bold; 
-	padding:20px;
+	margin:0px;
 	-moz-border-radius: 7px;
-	border-radius: 7px;  
+	border-radius: 7px 7px 0px 0px;
+	padding:5px;  
 }
 
 #question_submit {
@@ -20,9 +21,7 @@
 	opacity:0.5;
 	color:black; 
 	font-size:14px; 
-	position:relative; 
-	top:-15px;
-	right:-30px; 
+	margin-left:75.5%;
 	-moz-border-radius: 7px;
 	border-radius: 7px;
 	border:2px grey solid; 

@@ -10,16 +10,14 @@
  <%= javascript_include_tag "application" %>
 
  <%= stylesheet_link_tag 'application', :media => 'screen' %> 
- <%= stylesheet_link_tag 'custom', :media => 'screen' %>
- <%= stylesheet_link_tag 'navbar', :media => 'screen' %>
- <%= stylesheet_link_tag 'body', :media => 'screen' %>
- <%= stylesheet_link_tag 'dynamicsinput', :media => 'screen' %>
+
 
 
 
  
 <script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.js" type="text/javascript"></script>
+
 
 <script type="text/javascript">
 
@@ -42,6 +40,7 @@ function add_tag() {
 			$("#tag_space").append("<span class = 'tag'><span class='tag_name'>"+tag_name+"</span><a href='#' 	onclick='$(this).parent().remove()'> x</a></span>");
 		}
 }
+
 
 $(document).ready(function(){
 	$("#tag_editor_input").keyup(function(event) {
@@ -79,15 +78,18 @@ $(document).ready(function(){
 	});
 	
 	// JQuery for the Coulton's frontpage tabs
-	$(".tabContents").hide();
-	$(".tabContents:first").show();
-	$("#tabContainer ul li span").click(function(){
-	     var activeTab = $(this).attr("name"); //save the clicked links target
-	     $("#tabContainer ul li span").removeClass("active"); // remove pre-highlighted tabs
-	     $(this).addClass("active"); //set this link to highlight
-	     $(".tabContents").hide(); // again hide pre-showing div
-	     $(activeTab).fadeIn(); //match the target div &amp; show it
-	});
+	// $(".tabContents").hide();
+	// $(".tabContents:first").show();
+	// $("#tabContainer ul li span").click(function(){
+	//      var activeTab = $(this).attr("name"); //save the clicked links target
+	//      $("#tabContainer ul li span").removeClass("active"); // remove pre-highlighted tabs
+	//      $(this).addClass("active"); //set this link to highlight
+	//      $(".tabContents").hide(); // again hide pre-showing div
+	//      $(activeTab).fadeIn(); //match the target div &amp; show it
+	// });
+	
+
+
 
 });
 
@@ -96,9 +98,9 @@ $(document).ready(function(){
 
 </head>
 <body>
-	<% if signed_in?%>
+
 	<%= render 'layouts/header' %>
-	<%end%>
+
 	  <% flash.each do |key, value| %>
 	  <div class="alert alert-<%= key %>"><%= value %></div>
 	  <% end %>

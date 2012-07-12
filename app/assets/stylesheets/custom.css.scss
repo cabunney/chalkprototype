@@ -225,26 +225,7 @@ h2 small {
 	top:35px; 
 }
 
-.page-header.questiontitle {
-   background-color:transparent;
-   border:none; 
-   margin:none; 
-   height:auto;  
-   position:relative; 
-   top:-20px; 
-   border-bottom:1px solid black;  
-   -webkit-border-radius:0px; 
-   -moz-border-radius:0px;  
-   -o-border-radius:0px; 
-   height:12px; 
 
-}
-
-.page-header.questiontitle div {
-	float:right; 
-	position:relative; 
-	top:-10px; 
-}
 
 .page-header.questiontitle h3 {
 	color:#444; 
@@ -255,21 +236,6 @@ h2 small {
 	
 }
 
-.asker {
-	position:relative;
-	top:-30px;
-	left:7px;  	
-}
-
-.questiondescription {
-	font-size:16px; 
-	width:auto; 
-	font-weight:lighter; 
-	position:relative;
-	margin-left:30px;  
-	top:-25px; 
-	height:auto;
-}
 
 .asker.answer {
 	position:relative; 
@@ -308,26 +274,8 @@ h2 small {
 }
 
 
-.upvotebox {
-	float:left; 
-	max-width:10%;
-	position:relative;
-	top:-35px;
-	left:10px; 
-	max-height:57px;  
-    -webkit-transition:opacity .2s ease-in-out;  
-    -moz-transition:opacity .2s ease-in-out;  
-    -o-transition:opacity .2s ease-in-out ;  
-    transition:opacity .2s ease-in-out ; 
-    opacity:0.8; 
-    z-index:100; 
-}
 
-.votecounter {
-	text-align:center; 
-	max-height:10px; 
-	max-width:10%; 
-}
+
 
 .ideacounter {
 	max-width:20px; 
@@ -448,9 +396,7 @@ h1 .dropdown-menu a:hover {
 	
 }
 
-.questiondiv {
-	margin-top:30px; 
-}
+
 
 
 /* universal */

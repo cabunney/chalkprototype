@@ -1,0 +1,67 @@
+.questiondiv {
+	height:100%;
+}
+
+.whitebox_rounded {
+	background: rgba(255, 255, 255, 0.5);
+	border-radius:15px;
+	padding:0px 10px 10px;
+	width:100%;
+	height:auto;
+}
+
+.one_question {
+	padding:0px 10px 20px;
+	border-bottom:2px dotted white;
+}
+
+.one_question_topbar {
+   background:transparent;
+   height:40px; 
+   border:none;
+   margin-bottom:10px;
+
+}
+
+.display_tags {
+	float:left;
+	margin-top:15px;
+}
+
+.question_information {
+	float:right;
+}
+
+.asker {
+	
+}
+
+
+
+.questiondescription a{
+	font:20px Arial;
+	width:auto; 
+	font-weight:lighter; 
+	color:black;
+}
+
+.upvotebox {
+	float:left; 
+	max-width:10%;
+	position:relative;
+	top:-35px;
+	left:10px; 
+	max-height:57px;  
+    -webkit-transition:opacity .2s ease-in-out;  
+    -moz-transition:opacity .2s ease-in-out;  
+    -o-transition:opacity .2s ease-in-out ;  
+    transition:opacity .2s ease-in-out ; 
+    opacity:0.8; 
+    z-index:100; 
+}
+
+.votecounter {
+	text-align:center; 
+	max-height:10px; 
+	max-width:10%; 
+}

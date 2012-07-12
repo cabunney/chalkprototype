@@ -6,8 +6,16 @@
 #site_title {
 	font-family:"Lobster13Regular";
 	font-size:30px; 
+	padding:0px;
+	margin:0px;
+	color:white;
 	
 }
+
+#site_title:hover {
+	color:white;
+}
+
 
 .navelement-left {
 	font-family:"CaviarDreams_Bold"; 
