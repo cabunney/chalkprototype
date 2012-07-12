@@ -1,0 +1,22 @@
+.chart{
+  background: #fff;
+  border: solid 1px #ddd;
+  box-shadow: 0 0 4px rgba(0,0,0,.2);
+  font: 10px sans-serif;
+  position: relative;
+  width: 720px;
+}
+
+path {
+    stroke: steelblue;
+    stroke-width: 2;
+    fill: none;
+}
+ 
+line {
+    stroke: black;
+}
+ 
+text {
+    font-family: Arial;
+}

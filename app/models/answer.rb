@@ -13,5 +13,6 @@ class Answer < ActiveRecord::Base
 	validates :category, presence: true
 
   acts_as_voteable
-
+  is_impressionable :counter_cache => true
+  
 end

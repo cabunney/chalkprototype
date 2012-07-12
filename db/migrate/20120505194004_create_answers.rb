@@ -8,6 +8,7 @@ class CreateAnswers < ActiveRecord::Migration
       t.column :created_at,      :timestamp
       t.column :question_id, 	:integer
       t.column :statistic_id, 	:integer
+      t.column :impressions_count, :integer
     end
   end
   def down

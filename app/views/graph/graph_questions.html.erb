@@ -1,79 +1,81 @@
- <script type="text/javascript">
- //<![CDATA[
-    
-	var chart1; // globally available
-	$(document).ready(function() {
-	      chart1 = new Highcharts.Chart({
-	         chart: {
-	            renderTo: 'container',
-	            type: 'line', 
-	            showaxes:false
-	         },
-	         title: {
-	            text: 'ideas vs. problems',
-	            style: {
-	            	fontSize: '16px',
-	            	fontFamily: 'Georgia', 
-	            	fontWeight: 'bold', 
-	            	color: 'black'
-	            }
-	         },
-	         xAxis: {
-	            categories: ['Human Resources/Policies', 'Technology + Parental Engagement', 'ELL'],
-	            labels: {
-	             	style: {
-	             		fontSize: '12px'
-	             	}
-	             }
-	         },
-	         yAxis: {
-	            gridLineWidth: 2,
-	             min: -1, 
-	             labels: {
-	             	style: {
-	             		fontSize: '12px'
-	             	}
-	             }
-	        },
-	         plotOptions: {
-	            series: {
-	                lineWidth: 7,
-	                cursor: 'pointer',
-	                point: {
-	                    events: {
-	                        click: function() {
-	                            location.href = this.options.url;
-	                        }
-	                    }
-	                }
+<%= stylesheet_link_tag 'd3', :media => 'screen' %>
+<div class ="chart" id = "qa-chart"></div>
+<script type="text/javascript">
+	var names = <%= @names.to_json.html_safe %>;
+	var questions = <%= @questions.to_json.html_safe %>;
+	var answers = <%= @answers.to_json.html_safe %>;
+	var length = answers.length; 
+	if (questions.length > answers.length)
+		length = questions.length
+	console.log(length)
+	var w = 400,
+	h = 200,
+	margin = 20,
+	y = d3.scale.linear().domain([0, length]).range([0 + margin, h - margin]),
+	x = d3.scale.linear().domain([0, names.length]).range([0 + margin, w - margin])
+	var vis = d3.select("#qa-chart")
+	    .append("svg:svg")
+	    .attr("width", w)
+	    .attr("height", h)
+		//makes sure that our coordinate grid moves down 200 pixels.
+	var g = vis.append("svg:g")
+	    .attr("transform", "translate(0, 200)");
+	var qline = d3.svg.line()
+		    .x(function(d,i) { return x(i); })
+		    .y(function(d) { return -1 * y(d); })
+	var aline = d3.svg.line()
+			    .x(function(d,i) { return x(i); })
+			    .y(function(d) { return -1 * y(d); })
+	g.append("svg:path").attr("d", qline(questions));
+	g.append("svg:path").attr("d", aline(answers));
+	g.append("svg:line")
+	    .attr("x1", x(0))
+	    .attr("y1", -1 * y(0))
+	    .attr("x2", x(names.length))
+	    .attr("y2", -1 * y(0));
 
-	            }
+	g.append("svg:line")
+	    .attr("x1", x(0))
+	    .attr("y1", -1 * y(0))
+	    .attr("x2", x(0))
+	    .attr("y2", -1 * y(length));
+	
+		g.selectAll(".xLabel")
+		    .data(names)
+		    .enter().append("svg:text")
+		    .attr("class", "xLabel")
+		    .text(String)
+		    .attr("x", function(d) { return x(names.indexOf(d)) })
+		    .attr("y", 0)
+		    .attr("text-anchor", "middle")
 
+		g.selectAll(".yLabel")
+		    .data(y.ticks(4))
+		    .enter().append("svg:text")
+		    .attr("class", "yLabel")
+		    .text(String)
+		    .attr("x", 0)
+		    .attr("y", function(d) { return -1 * y(d) })
+		    .attr("text-anchor", "right")
+		    .attr("dy", 4)
+		
+			g.selectAll(".xTicks")
+			    .data(x.ticks(length))
+			    .enter().append("svg:line")
+			    .attr("class", "xTicks")
+			    .attr("x1", function(d) { return x(d); })
+			    .attr("y1", -1 * y(0))
+			    .attr("x2", function(d) { return x(d); })
+			    .attr("y2", -1 * y(-0.1))
 
-	        },
-	       tooltip: {
-				crosshairs: true,
-				shared: true
-			},
-	         series: [{
-	           	marker: {
-					symbol: 'circle',
-					radius: 8
-				},
-	            name: 'Ideas',
-	            data: [
-
-	            {y:1,  url: 'http://bing.com/search?q=foo'}, {y:0, url:'http://google.com'}, 4]
-	         }, {
-	         	marker: {
-					symbol: 'circle',
-					radius: 8
-				},
-	            name: 'Problems',
-	            data: [5, 7, 3]
-	         }]
-	      });
-	   });
-
- //]]>
- 
+			g.selectAll(".yTicks")
+			    .data(y.ticks(4))
+			    .enter().append("svg:line")
+			    .attr("class", "yTicks")
+			    .attr("y1", function(d) { return -1 * y(d); })
+			    .attr("x1", x(-0.1))
+			    .attr("y2", function(d) { return -1 * y(d); })
+			    .attr("x2", x(0))
+	
+	
+</script>

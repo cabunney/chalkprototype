@@ -7,9 +7,12 @@ class MessageBoardController < ApplicationController
       redirect_to root_path
     else
       @questions = Question.find(:all).sort{ |x,y| y.votes_for <=> x.votes_for }.paginate(:page => params[:page], :per_page => 10)   
+      @questions.each do |q|
+         impressionist(q) 
+      end
       @answers = Answer.find(:all)  
       @categories = Category.find(:all, :order =>'id DESC');
-  		@question = Question.new   
+  		@question = Question.new
       @tags = []
     end
   end
