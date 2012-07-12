@@ -7,6 +7,7 @@ class CreateQuestions < ActiveRecord::Migration
 	  t.column :user_id, 	    	:integer
     t.column :created_at, 		:timestamp 
     t.column :statistic_id, 	:integer
+    t.column :impressions_count, :integer
     end
   end
 

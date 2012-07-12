@@ -29,6 +29,7 @@
 				</div>
 			</div>
 			<!-- <div class = "upvotebox"><%= render :partial => "voting_item", :locals => {:item => i} %></div> -->
+			<!-- i.impressionist_count(:filter=>:session_hash) -->
 			<div class="questiondescription">
 				<% if i.description.length > 275
 					text = i.description[0..267].split[0...-1].map{|s| "#{s}"}.join(' ') + "..."
