@@ -15,7 +15,7 @@ class Question < ActiveRecord::Base
 	acts_as_voteable
 	acts_as_pushable
 	
-	is_impressionable :counter_cache => true
+  # is_impressionable :counter_cache => true
 	
 	self.per_page = 10
 end

@@ -7,9 +7,9 @@ class MessageBoardController < ApplicationController
       redirect_to root_path
     else
       @questions = Question.find(:all).sort{ |x,y| y.votes_for <=> x.votes_for }.paginate(:page => params[:page], :per_page => 10)   
-      @questions.each do |q|
-         impressionist(q) 
-      end
+      # @questions.each do |q|
+      #         impressionist(q) 
+      #      end
       @answers = Answer.find(:all)  
       @categories = Category.find(:all, :order =>'id DESC')
   		@question = Question.new   
@@ -38,6 +38,8 @@ class MessageBoardController < ApplicationController
         flash[:error] = "Please log in to see this question."
         redirect_to root_path
     else
+      @tags = []
+      @top_tags = Tag.find(:all)
   	  @question = Question.find_by_id(params[:id])
       @new_answer = Answer.new
       #details for all the votes on question

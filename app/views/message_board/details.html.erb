@@ -1,54 +1,24 @@
 <% @title = "Solution Space" %> 
-<!--<div class="page-header detail">
-</div>-->
 
-<!--0<div class = "white">
-<table id = "questiontable" cellspacing = "0">
-  <tr>
-  <td class = "quotetop"><%= image_tag "../images/openquote.png"%></td>
-  <td class = "questionblock"><p class = "questiontext"><%= @question.description %></p></td>
-  <td class = "quotebottom"><%= image_tag "../images/closequote.png"%></td>
-  </tr>
 
-  <tr>
-  <td class = "quotetop"><div></div></td>
-  <td class = "questionblock"><p class = "infotext">submitted by: <%= @question.user.first_name + " " +  @question.user.last_name %> | <%= @question.created_at %></p></td>
-  <td class = "quotetop"><div></div></td>
-  </tr>
 
-  <tr>
-  <td class = "quotetop"><div></div></td>
-  <td class = "quotetop"><div></div></td>
-  </tr>
-</table>-->
 
-<div class="hero-unit question">
-
-  <div class = "detailtitle"><h2><small>&nbsp&nbsp</small> <div class = "progressbar detail"><%= render :partial => "pushing", :locals => {:item => @question, :progress => @progress} %></div></h2>  </div>
-  <table id = "questiontable" cellspacing = "0">
-  <tr>
-  <td class = "buttonbox">
-  <div class = "upvotebox detail"><%= render :partial => "voting_item_details", :locals => {:item => @question}%></div>
-  </td>
-  <td class = "quotetop"><%= image_tag "../images/openquote.png"%></td>
-  <td class = "questionblock"><div class ="questiondetail"><%=@question.description%></div></td>	
-  <td class = "quotebottom"><%= image_tag "../images/closequote.png"%></td>
-  </tr>
-  </table> 
- <% if current_user.id == @question.user().id then%><%=link_to "edit", {:controller => :submission, :action => :editQDetail, :id => @question.id}, :class => "edit detail"%><%end%>
-<div class="alert alert-info detail">This question was asked by <%=@question.user().first_name + " " + @question.user().last_name%><br/> on <%=@question.created_at.in_time_zone.strftime("%m/%d/%Y at %I:%M%p.")%></div>
+<div class = "page">
+	<div class = "sixty">
+		<%= render :partial => "dynamicinput"%>
+  			
+		
+			<%= render :partial => "ideas"%>
+	</div>
+	<div class = "thirty border_left">
+			<div class = "sidebar">
+			<span class = "section_header">Trending topics</span>
+			<div class = "top_tags">
+			<%@top_tags.each do |tag|%>
+				<span class = "tag"><%=tag.name%></span>
+			<%end%>
+			</div>
+			</div>
+	</div>
 </div>
-
-
-
-
-<p class = "pagetitle middle">current ideas</p>
-
-<%= render :partial => "details_answers", :locals => {:answers => @answers}%>
-
-<div class = "divide2"></div>
-
-<%= render :partial => "answer_submission"%>
-
-
 
