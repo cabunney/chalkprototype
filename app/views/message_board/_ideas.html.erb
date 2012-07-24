@@ -13,7 +13,7 @@
 				</div>
 				<div class = "answer_information">
 					<% if current_user.id == i.user().id then%>
-						<%=link_to "edit", {:controller => :submission, :action => :editQ, :id => i.id}, 
+						<%=link_to "edit", {:controller => :submission, :action => :editA, :id => i.id}, 
 						:class => "edit"%>
 					<%end%>
 				</div>

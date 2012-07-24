@@ -11,10 +11,6 @@
 
 <%= form_for(:question, :url => {:action => :updateQ, :id => @question.id}) do |form| %>
   <tr class = "subrow">
-  <td><%= form.label(:title, "Name your question:", :class => "descript") %></td>
-  <td><%= form.text_field(:title, :class => "textfield") %></td>
-  </tr>
-  <tr class = "subrow">
   <td><%= form.label(:description, "Write our your question:", :class =>"descript")%></td>
   <td><%= form.text_area(:description, :class => "textarea") %></td>
   </tr>
@@ -24,9 +20,7 @@
   <td><%= render :partial =>"tag"%></td>
   </tr>
   <tr class = "subrow">
-  <td><%= form.label(:category_id, "Categorize your question:", :class => "descript") %></td>
-  <td><%= form.collection_select(:category_id, Category.all, :id, :name) %></td>
-  <td><p class = "submitbutton" id = "question_submit"><%= form.submit "edit answer", class: "btn-small btn-primary bluebutton" %></p></td>
+   <td><p class = "submitbutton" id = "question_submit"><%= form.submit "Update Question", class: "btn-small btn-primary bluebutton" %></p></td>
   </tr> 
 </table>
 

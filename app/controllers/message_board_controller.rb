@@ -11,10 +11,16 @@ class MessageBoardController < ApplicationController
       #         impressionist(q) 
       #      end
       @answers = Answer.find(:all)  
-      @categories = Category.find(:all, :order =>'id DESC')
   		@question = Question.new   
       @tags = []
-      @top_tags = Tag.find(:all)
+      @top_tags = []
+      Question.find(:all).each do |q|
+        q.tags.each do |t|
+          if !@top_tags.include?(t)
+            @top_tags << t
+          end
+        end
+      end
     end
   end
   
@@ -215,10 +221,16 @@ def post_vote_detail
         # @questions.each do |q|
         #         impressionist(q) 
         #      end
-        @categories = Category.find(:all, :order =>'id DESC')
-    		@question = Question.new   
+      	@question = Question.new   
         @tags = []
-        @top_tags = Tag.find(:all)
+        @top_tags = []
+        Question.find(:all).each do |q|
+          q.tags.each do |t|
+            if !@top_tags.include?(t)
+              @top_tags << t
+            end
+          end
+        end
       end
     
   end

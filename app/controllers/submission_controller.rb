@@ -122,6 +122,10 @@ class SubmissionController < ApplicationController
             flash[:error] = "You can only edit a question you submitted."
             redirect_to :controller => :message_board, :action => :details, :id => @question.id
          end
+             @tags = @question.tags
+              if !@tags
+                @tags = []
+              end
        end
        
     end
@@ -137,6 +141,10 @@ class SubmissionController < ApplicationController
              flash[:error] = "You can only edit an answer you submitted."
              redirect_to :controller => :message_board, :action => :show
           end
+          @tags = @answer.tags
+          if !@tags
+              @tags = []
+          end
         end
    end
    
@@ -145,8 +153,7 @@ class SubmissionController < ApplicationController
      @tags_string = params[:question][:tags]
    	 @tags = @tags_string.split(",")  
      @new_tags = []
-     
-   	 params[:question][:tags] = @new_tags
+   	 params[:question][:tags] = []
      if @question.update_attributes(params[:question])
         @tags.each do |t|
      	    t = t.strip
@@ -172,7 +179,26 @@ class SubmissionController < ApplicationController
    
     def updateQDetail
      @question = Question.find(params[:id])
+     @tags_string = params[:question][:tags]
+     params[:queston][:tags]=[]
+   	 @tags = @tags_string.split(",")  
+     @new_tags = []
+     
      if @question.update_attributes(params[:question])
+        @tags.each do |t|
+      	    t = t.strip
+      	    @old_tag = Tag.find_by_name(t)
+      	    if @old_tag
+      	      @new_tags << @old_tag
+      	    else
+      	      @tag = Tag.new
+      		    @tag.user_id = current_user.id
+              @tag.name = t
+              @tag.save
+              @new_tags << @tag;
+            end
+          end
+          @question.tags = @new_tags
        flash[:success] = "Updated your question!" 
        redirect_to :controller => :message_board, :action => :details, :id => @question.id
      else
@@ -182,7 +208,25 @@ class SubmissionController < ApplicationController
    
    def updateA
       @answer = Answer.find(params[:id])
+      @tags_string = params[:answer][:tags] 
+      params[:answer][:tags]=[]
+      @tags = @tags_string.split(",")  
+      @new_tags = []
       if @answer.update_attributes(params[:answer])
+         @tags.each do |t|
+       	    t = t.strip
+       	    @old_tag = Tag.find_by_name(t)
+       	    if @old_tag
+       	      @new_tags << @old_tag
+       	    else
+       	      @tag = Tag.new
+       		    @tag.user_id = current_user.id
+               @tag.name = t
+               @tag.save
+               @new_tags << @tag;
+             end
+           end
+           @answer.tags = @new_tags
         flash[:success] = "Updated your answer!" 
         redirect_to :controller => :message_board, :action => :details, :id => @answer.question().id
       else

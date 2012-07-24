@@ -11,17 +11,16 @@
 
 <%= form_for(:question, :url => {:action => :updateQDetail, :id => @question.id}) do |form| %>
   <tr class = "subrow">
-  <td><%= form.label(:title, "Name your question:", :class => "descript") %></td>
-  <td><%= form.text_field(:title, :class => "textfield") %></td>
-  </tr>
-  <tr class = "subrow">
   <td><%= form.label(:description, "Write our your question:", :class =>"descript")%></td>
   <td><%= form.text_area(:description, :class => "textarea") %></td>
   </tr>
   <tr class = "subrow">
-  <td><%= form.label(:category_id, "Categorize your question:", :class => "descript") %></td>
-  <td><%= form.collection_select(:category_id, Category.all, :id, :name) %></td>
-  <td><p class = "submitbutton"><%= form.submit "edit question", class: "btn-small btn-primary bluebutton" %></p></td>
+  <td><%= form.label(:description, "Tag your question:", :class =>"descript")%></td> 
+  <td><%= form.hidden_field(:tags, :id => "tag_names", :value =>params[:tags]) %></td>
+  <td><%= render :partial =>"tag"%></td>
+  </tr>
+  <tr class = "subrow">
+   <td><p class = "submitbutton" id = "question_submit"><%= form.submit "Update Question", class: "btn-small btn-primary bluebutton" %></p></td>
   </tr> 
 </table>
 
