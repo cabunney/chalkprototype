@@ -1,4 +1,4 @@
-.questiondiv {
+.answerdiv {
 	height:100%;
 }
 
@@ -10,19 +10,15 @@
 	height:auto;
 }
 
-.one_question {
+.one_answer {
 	padding:0px 10px 20px;
 	border-bottom:2px dotted white;
 }
 
-.one_question_zoom {
-	padding:0px 10px 20px;
-	margin-bottom:40px;
-	border-bottom:2px dotted white;
-}
 
 
-.one_question_topbar {
+
+.one_answer_topbar {
    background:transparent;
    height:40px; 
    border:none;
@@ -35,7 +31,7 @@
 	margin-top:15px;
 }
 
-.question_information {
+.answer_information {
 	float:right;
 }
 
@@ -45,19 +41,14 @@
 
 
 
-.questiondescription a{
+.answerdescription_zoom {
 	font:20px Arial;
 	width:auto; 
 	font-weight:lighter; 
 	color:black;
 }
 
-.questiondescription_zoom  {
-	font:30px Arial;
-	width:auto; 
-	font-weight:lighter; 
-	color:black;
-}
+
 
 .upvotebox {
 	float:left; 

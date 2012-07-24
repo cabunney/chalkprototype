@@ -52,31 +52,31 @@ class MessageBoardController < ApplicationController
   end
   
 
-  def post_answer
-      if !signed_in?
-        flash[:error] = "Please log in before submitting an answer."
-        redirect_to root_path
-      else
-          
-  	  @question = Question.find_by_id(params[:id])
-  	  @answers = @question.answers.sort{ |x,y| y.votes_for <=> x.votes_for }
-  	  @progress = @question.pushes_for.to_f/User.find(:all).count.to_f * 100
-  	  @new_answer = Answer.new
-  		if params[:answer][:title]== "Enter idea title..." 
-  		   flash.now[:error] = "Please enter a title for your answer"
-  		   render(:action => :details, :id => params[:id])
-  	  elsif params[:answer][:title]== "Enter idea description..." 
-  	     flash.now[:error] = "Please enter a description for your answer"
-  		   render(:action => :details, :id => params[:id])
-  	  elsif @new_answer.update_attributes(params[:answer]) then
-      		flash[:success] = "Successfully posted your answer!"
-          redirect_to(:action => :details, :id => params[:id])
-    	else
-    		  flash.now[:error] = @new_answer.errors.full_messages
-          render(:action => :details, :id => params[:id])
-    	end
-  	end
-  end
+  # def post_answer
+  #     if !signed_in?
+  #       flash[:error] = "Please log in before submitting an answer."
+  #       redirect_to root_path
+  #     else
+  #         
+  #     @question = Question.find_by_id(params[:id])
+  #     @answers = @question.answers.sort{ |x,y| y.votes_for <=> x.votes_for }
+  #     @progress = @question.pushes_for.to_f/User.find(:all).count.to_f * 100
+  #     @new_answer = Answer.new
+  #     if params[:answer][:title]== "Enter idea title..." 
+  #        flash.now[:error] = "Please enter a title for your answer"
+  #        render(:action => :details, :id => params[:id])
+  #     elsif params[:answer][:title]== "Enter idea description..." 
+  #        flash.now[:error] = "Please enter a description for your answer"
+  #        render(:action => :details, :id => params[:id])
+  #     elsif @new_answer.update_attributes(params[:answer]) then
+  #         flash[:success] = "Successfully posted your answer!"
+  #         redirect_to(:action => :details, :id => params[:id])
+  #     else
+  #         flash.now[:error] = @new_answer.errors.full_messages
+  #         render(:action => :details, :id => params[:id])
+  #     end
+  #   end
+  # end
   
   def post_vote
     if !signed_in?
