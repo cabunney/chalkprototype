@@ -152,9 +152,52 @@ def post_vote_detail
     		 redirect_to(:controller => :message_board, :action => :show)
   		else
   		  @tags=[]
-   			 render(:action => :_dynamicinput)
+   			 render(:action => :_dynamicinput_question)
   		end
 
+	end
+	
+  def submitA
+		 # if !signed_in?
+		 #         flash[:error] = "Please log in before submitting an answer."
+		 #         redirect_to root_path
+		 #       else
+          
+  	  @question = Question.find_by_id(params[:id])
+  	  @answers = @question.answers.sort{ |x,y| y.votes_for <=> x.votes_for }
+      # @progress = @question.pushes_for.to_f/User.find(:all).count.to_f * 100
+  	  @new_answer = Answer.new
+  	  @tags_string = params[:new_answer][:tags]
+  	  @tags = @tags_string.split(",")
+  	  @new_tags = []
+  		params[:new_answer][:tags] = @new_tags
+  		if @new_answer.update_attributes(params[:new_answer]) then
+  		  @tags.each do |t|
+    	    t = t.strip
+    	    @old_tag = Tag.find_by_name(t)
+    	    if @old_tag
+    	      @new_tags << @old_tag
+    	    else
+    	      @tag = Tag.new
+    		    @tag.user_id = current_user.id
+            @tag.name = t
+            @tag.save
+            @new_tags << @tag;
+          end
+        end
+        @new_answer.tags = @new_tags
+        @tags = []
+  		     flash[:success] = "Successfully posted your answer!"
+      		 redirect_to(:controller => :message_board, :action => :details, :id => params[:id])
+    		else
+    		  @tags=[]
+     			 render(:action => :_dynamicinput_answer)
+    		end
+  	  
+  	  
+  	  
+  
+  	
 	end
 	
 	
