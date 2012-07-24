@@ -1,0 +1,39 @@
+
+<div class = "one_question_zoom">	
+	<% type ="Question" %>
+	<% if !@question.answers().empty? 
+		pic = "../images/ideas.png"
+	   else
+	   	pic = "../images/noideas.png"
+	   end %>
+	<div class="one_question_topbar">
+		<div class = "display_tags">
+			<%@question.tags.each do |tag|%>
+				<span class = "inline tag"><%=tag.name%></span>
+			<%end%>
+		</div>
+		<div class = "question_information">
+			<% if current_user.id == @question.user().id then%>
+				<%=link_to "edit", {:controller => :submission, :action => :editQ, :id => @question.id}, 
+				:class => "edit"%>
+			<%end%>
+			<span class="label label-inverse ideacounter">
+				<%= pluralize(@question.answers.size, "answer")%>
+			</span>
+			<%= image_tag(pic, :class => "ideapic")%>
+		</div>
+	</div>
+	
+	<div class="questiondescription_zoom">
+		<% if @question.description.length > 275
+			text = @question.description[0..267].split[0...-1].map{|s| "#{s}"}.join(' ') + "..."
+		   else text = @question.description 
+		   end
+		 %> 
+		<%= text  %>			
+	</div>
+	<div class = "asker">
+		asked by <%= @question.user.first_name + " " + @question.user.last_name %> 
+		<!-- &nbsp<span class = "inline klout_score">55 </span> -->
+	</div>
+</div>
