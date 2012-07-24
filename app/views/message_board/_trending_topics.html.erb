@@ -1,0 +1,9 @@
+		<div class = "sidebar">
+		<span class = "section_header">Trending topics</span>
+		<div class = "top_tags">
+		<%@top_tags.each do |tag|%>
+				<span><%=link_to tag.name, {:action => :questions_by_tag, :id => tag.id}, 
+				:class => "tag"%></span>
+		<%end%>
+		</div>
+		</div>

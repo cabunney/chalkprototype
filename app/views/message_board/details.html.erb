@@ -11,14 +11,7 @@
 			<%= render :partial => "ideas"%>
 	</div>
 	<div class = "thirty border_left">
-			<div class = "sidebar">
-			<span class = "section_header">Trending topics</span>
-			<div class = "top_tags">
-			<%@top_tags.each do |tag|%>
-				<span class = "tag"><%=tag.name%></span>
-			<%end%>
-			</div>
-			</div>
+		<%= render :partial => "trending_topics"%>
 	</div>
 </div>
 

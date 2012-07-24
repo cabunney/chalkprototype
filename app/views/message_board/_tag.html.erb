@@ -1,4 +1,5 @@
 <%= stylesheet_link_tag 'tag', :media => 'screen' %>
+
 <div id = "tag_editor">
 	<span id = 'tag_space'>
 	<% @tags.each do |t| %>
@@ -7,7 +8,9 @@
 		</span>
 	<% end %>
 	</span>
+	<div class = "ui-widget">
 	<input type="text" id = "tag_editor_input" value = "tags (separate by a comma)" onfocus = "value = ''" onblur = "if (value == '') {value = 'tags (separate by a comma)'}" />
+	</div>
 </div>
 <script type = "text/javascript">
 		$(function() {
