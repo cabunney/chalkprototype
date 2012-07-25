@@ -1,0 +1,6 @@
+<div class = "helpful">
+	Was this answer helpful?
+	<%= link_to "yes", {:action => :post_vote, :id => i.id, :type => item.class.name, :remote => true },  :class => "vote" %>
+</div>
+
+

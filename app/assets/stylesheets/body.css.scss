@@ -46,6 +46,7 @@ html,body {
 	width:800px;
 }
 
+
 span.inline {
 	display:inline;
 }
@@ -121,4 +122,12 @@ span.inline {
 	background:#FF6347;
 	box-shadow: -3px 4px 2px #888888;
 	border-radius:3px;
+}
+
+.right-align {
+	float:right;
+}
+
+.left-align {
+	float:left;
 }

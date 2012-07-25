@@ -67,11 +67,27 @@
 	margin:10px;
 }
 
+.ui-autocomplete {
+	height:auto;
+}
 
 .ui-menu-item {
+	list-style:none;
+	width:200px;
+	padding-left:10px;
+	float:left;
+	
 }
 
-.ui-autocomplete a{
+.ui-autocomplete a {
 	font:14px CaviarDreams_Bold; 
 	color:black;
+
 }
+
+.ui-autocomplete li {
+	width:200px;
+	position:relative;
+}
+
+

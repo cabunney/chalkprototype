@@ -13,12 +13,12 @@
 .one_question {
 	padding:0px 10px 20px;
 	border-bottom:2px dotted white;
+
 }
 
 .one_question_zoom {
 	padding:0px 10px 20px;
 	margin-bottom:40px;
-	border-bottom:2px dotted white;
 }
 
 
@@ -78,4 +78,20 @@
 	text-align:center; 
 	max-height:10px; 
 	max-width:10%; 
+}
+
+.helpful_question {
+	width:100%;
+	margin-top:10px;
+	border-top:1px dotted white;
+	border-bottom:1px dotted white;
+	
+	padding-bottom:5px; 
+	padding-top:5px;
+	color:black;
+	height:16px;
+}
+
+.helpful_question a {
+	color:green;
 }

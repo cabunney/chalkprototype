@@ -1,18 +1,12 @@
 .answerdiv {
 	height:100%;
+	margin-bottom:15px;
 }
 
-.whitebox_rounded {
-	background: rgba(255, 255, 255, 0.5);
-	border-radius:15px;
-	padding:0px 10px 10px;
-	width:100%;
-	height:auto;
-}
+
 
 .one_answer {
-	padding:0px 10px 20px;
-	border-bottom:2px dotted white;
+	padding:0px 10px 5px;
 }
 
 
@@ -69,4 +63,20 @@
 	text-align:center; 
 	max-height:10px; 
 	max-width:10%; 
+}
+
+.helpful_answer {
+	width:100%;
+	margin-top:10px;
+	border-top:1px dotted white;
+	border-bottom:1px dotted white;
+	
+	padding-bottom:5px; 
+	padding-top:5px;
+	color:gray;
+	height:16px;
+}
+
+.helpful_answer a {
+	color:green;
 }

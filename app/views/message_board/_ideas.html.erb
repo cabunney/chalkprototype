@@ -1,7 +1,8 @@
-<div class = "whitebox_rounded answerdiv">
+
  	
 			<!-- if questions selected-->
 		<% @answers.each do |i| %>
+		<div class = "whitebox_rounded answerdiv">
 		<div class = "one_answer">
 		<div class = "answer">
 			<% type ="Answer" %>
@@ -25,9 +26,24 @@
 			<div class = "asker">
 				answered by <%= i.user.first_name + " " + i.user.last_name %> 
 			</div>
+			<div class = "helpful_answer">
+				<% if (!current_user.voted_for?(i)) %>
+				<div class = "left-align vote_msg">Was this answer helpful?
+				<%= link_to "yes", {:action => :post_vote, :id => i.id, :type => i.class.name, :remote => true },  :class => "vote" %>
+				</div>
+				<% elsif %>
+				<div class = "left-align">You found this helpful</div>
+				<%end%>
+				<% votes = i.votes_for%>
+				<div class = "right-align" id = <%= "'votes_#{i.class.name}_#{i.id}'".html_safe%>><%= pluralize(votes, "person",  )%> found this helpful</div>
+				
+			</div>
+
+			
+		</div>
 		</div>
 		</div>
 		<% end %>	
 
-</div>
+
 

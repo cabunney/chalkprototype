@@ -36,4 +36,16 @@
 		asked by <%= @question.user.first_name + " " + @question.user.last_name %> 
 		<!-- &nbsp<span class = "inline klout_score">55 </span> -->
 	</div>
+		<div class = "helpful_question">
+			<% if (!current_user.voted_for?(@question)) %>
+			<div class = "left-align vote_msg">Was this helpful?
+			<%= link_to "yes", {:action => :post_vote, :id => @question.id, :type => @question.class.name, :remote => true },  :class => "vote" %>
+			</div>
+			<% elsif %>
+			<div class = "left-align">You found this helpful</div>
+			<%end%>
+			<% votes = @question.votes_for%>
+			<div class = "right-align" id = <%= "'votes_#{@question.class.name}_#{@question.id}'".html_safe%>><%= pluralize(votes, "person",  )%> found this helpful</div>
+			
+		</div>
 </div>
