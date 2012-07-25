@@ -23,8 +23,13 @@
 			<%= image_tag(pic, :class => "ideapic")%>
 		</div>
 	</div>
-	
-	<div class="questiondescription_zoom">
+		<% if @question.category_id == 1%>
+			<div class = "questiondescription_zoom_admin">
+		<% elsif @question.category_id == 2%>
+			<div class = "questiondescription_zoom_new_teacher">
+		<% else %>
+			<div class="questiondescription_zoom">
+		<% end %>
 		<% if @question.description.length > 275
 			text = @question.description[0..267].split[0...-1].map{|s| "#{s}"}.join(' ') + "..."
 		   else text = @question.description 

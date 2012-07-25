@@ -16,7 +16,7 @@
 
 }
 
-.one_question_zoom {
+.one_question_zoom{
 	padding:0px 10px 20px;
 	margin-bottom:40px;
 }
@@ -43,13 +43,26 @@
 	
 }
 
-
-
 .questiondescription a{
 	font:20px Arial;
 	width:auto; 
 	font-weight:lighter; 
 	color:black;
+}
+
+
+.questiondescription_admin a{
+	font:20px Arial;
+	width:auto; 
+	font-weight:lighter; 
+	color: #7E2217;
+}
+
+.questiondescription_new_teacher a{
+	font:20px Arial;
+	width:auto; 
+	font-weight:lighter;
+	color:#1569C7;
 }
 
 .questiondescription_zoom  {
@@ -59,6 +72,19 @@
 	color:black;
 }
 
+.questiondescription_zoom_admin{
+	font:30px Arial;
+	width:auto; 
+	font-weight:lighter; 
+	color: #7E2217;
+}
+
+.questiondescription_zoom_new_teacher{
+	font:30px Arial;
+	width:auto; 
+	font-weight:lighter;
+	color: #1569C7;
+}
 .upvotebox {
 	float:left; 
 	max-width:10%;

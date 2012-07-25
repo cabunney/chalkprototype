@@ -29,7 +29,6 @@ jQuery.fn.submitWithAjax = function() {
 // Here's an example of the class that will be 'clicked'
 $(".vote").submitWithAjax();
 
-
 function add_tag() {
 		var tag_input = document.getElementById("tag_editor_input");
 		var tag_name = tag_input.value.substring(0,tag_input.value.length-1);
@@ -46,7 +45,6 @@ $(document).ready(function(){
 		var unicode=event.charCode? event.charCode : event.keyCode;
 		
 		//188 is comma
-		console.log(unicode);
 		if (unicode == 188){
 			add_tag();
 		}
@@ -66,7 +64,6 @@ $(document).ready(function(){
 				tags_str += ","+$(this).text();
 		  });
 		$("#tag_names").val(tags_str);	
-		console.log(tags_str);
 	});
 	
 	// Here is the JQuery for Coulton's buttons 
@@ -76,6 +73,12 @@ $(document).ready(function(){
 	},
 	function() {
 	$(this).stop().animate({"opacity": "0.5"}, "fast");
+	});
+	
+	$('#dynamicinput').live('keyup keydown', function(e) {
+	  var maxLen = 140;
+	  var left = maxLen - $(this).val().length;
+	  $('#char-count').html(left);
 	});
 	
 	// JQuery for the Coulton's frontpage tabs

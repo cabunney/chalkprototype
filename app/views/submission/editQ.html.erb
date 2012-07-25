@@ -8,9 +8,11 @@
 <div class = "twenty"></div>
 <div class = "sixty">
 <%= form_for(:question, :url => {:action => :updateQ, :id => @question.id}) do |form| %>
-  <%= form.text_area(:description, :id => "dynamicinput") %>
+  <%= form.text_area(:description, :id => "dynamicinput", :max_length=>140) %>
   <%= form.hidden_field(:tags, :id => "tag_names", :value =>params[:tags]) %>
+  <div class = "char_count"><span id="char-count">140</span></div>  
   <%= render :partial =>"tag"%>
+	
   <%= form.submit "update question", :id => "question_submit"%>
 <% end %> 
 </div>

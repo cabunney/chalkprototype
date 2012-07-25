@@ -1,6 +1,7 @@
 <div class = "whitebox_rounded questiondiv">
 			<!-- if questions selected-->
 		<% @questions.each do |i| %>
+	
 		<div class = "one_question">
 		<% if !i.answers().empty? 
 			pic = "../images/ideas.png"
@@ -31,8 +32,16 @@
 					<%= link_to image_tag(pic), {:action => :details, :id => i.id}, :class => "ideapic"%>
 				</div>
 			</div>
-						<!-- i.impressionist_count(:filter=>:session_hash) -->
-			<div class="questiondescription">
+			<!-- <div class = "upvotebox"><%= render :partial => "voting_item", :locals => {:item => i} %></div> -->
+			<!-- i.impressionist_count(:filter=>:session_hash) -->
+		
+				<% if i.category_id == 1%>
+					<div class = "questiondescription_admin">
+				<% elsif i.category_id == 2%>
+					<div class = "questiondescription_new_teacher">
+				<% else %>
+					<div class="questiondescription">
+				<% end %>
 				<% if i.description.length > 275
 					text = i.description[0..267].split[0...-1].map{|s| "#{s}"}.join(' ') + "..."
 				   else text = i.description 
