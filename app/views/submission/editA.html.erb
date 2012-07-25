@@ -1,29 +1,23 @@
 <% @title = "Edit Answer" %> 
-<div>
-<p  class = "submittitle">edit your answer.</p>
+<div class = "hundred center edit_title">
+	edit your answer for <br />
+	<span class = "edit_question">"<%= @answer.question.description%>"</span>
 </div>
-<div class = "middle">
 <% @answer.errors.full_messages.each do |msg| %>
   <p><%= msg %></p>
 <% end %>
 
-<table cellspacing = 0 class = "subtable">
-
-
-<%= form_for(:answer,:url => {:action => :updateA, :id => @answer.id}) do |form| %>
-  <tr class = "subrow">
-  <td><%= form.label(:description, "Write out your answer:", :class =>"descriptans")%></td>
-  <td><%= form.text_area(:description, :class => "textarea") %></td>
-  </tr>
-  <tr class = "subrow">
-  <td><%= form.label(:description, "Tag your answer:", :class =>"descript")%></td> 
-  <td><%= form.hidden_field(:tags, :id => "tag_names", :value =>params[:tags]) %></td>
-  <td><%= render :partial =>"tag"%></td>
-  </tr>
- <tr class = "subrow">
-   <td><p class = "submitbutton" id = "question_submit"><%= form.submit "Update Answer", class: "btn-small btn-primary bluebutton" %></p></td>
-</tr>
-</table>
+<div class = "twenty"></div>
+<div class = "sixty">
+<%= form_for(:answer, :url => {:action => :updateA, :id => @answer.id}) do |form| %>
+	  <%= form.text_area(:description, :id => "dynamicinput") %>
+	  <%= form.hidden_field(:tags, :id => "tag_names", :value =>params[:tags]) %>
+	  <%= render :partial =>"tag"%>
+	  <%= form.submit "update answer", :id => "question_submit"%>
 <% end %> 
-
 </div>
+<div class = "twenty"></div>
+
+
+
+

@@ -50,8 +50,18 @@ span.inline {
 	display:inline;
 }
 
+.italics {
+	font-style:italic;
+}
+
 .seventy {
 	width:66%;
+	float:left;
+	padding:2%;
+}
+
+.twenty {
+	width:16%;
 	float:left;
 	padding:2%;
 }
@@ -74,6 +84,12 @@ span.inline {
 
 .fifty  {
 	width:46%;
+	float:left;
+	padding:2%;
+}
+
+.hundred {
+	width:96%;
 	float:left;
 	padding:2%;
 }

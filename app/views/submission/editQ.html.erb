@@ -1,30 +1,18 @@
 <% @title = "Edit Question" %> 
-<div>
-<p  class = "submittitle">edit your question.</p>
+<div class = "hundred center edit_title">
+	edit your question
 </div>
-<div class = "middle">
 <% @question.errors.full_messages.each do |msg| %>
   <p><%= msg %></p>
 <% end %>
-
-<table cellspacing = 0 class = "subtable">
-
+<div class = "twenty"></div>
+<div class = "sixty">
 <%= form_for(:question, :url => {:action => :updateQ, :id => @question.id}) do |form| %>
-  <tr class = "subrow">
-  <td><%= form.label(:description, "Write our your question:", :class =>"descript")%></td>
-  <td><%= form.text_area(:description, :class => "textarea") %></td>
-  </tr>
-  <tr class = "subrow">
-  <td><%= form.label(:description, "Tag your question:", :class =>"descript")%></td> 
-  <td><%= form.hidden_field(:tags, :id => "tag_names", :value =>params[:tags]) %></td>
-  <td><%= render :partial =>"tag"%></td>
-  </tr>
-  <tr class = "subrow">
-   <td><p class = "submitbutton" id = "question_submit"><%= form.submit "Update Question", class: "btn-small btn-primary bluebutton" %></p></td>
-  </tr> 
-</table>
-
-
+  <%= form.text_area(:description, :id => "dynamicinput") %>
+  <%= form.hidden_field(:tags, :id => "tag_names", :value =>params[:tags]) %>
+  <%= render :partial =>"tag"%>
+  <%= form.submit "update question", :id => "question_submit"%>
 <% end %> 
-
 </div>
+<div class = "twenty"></div>
+
