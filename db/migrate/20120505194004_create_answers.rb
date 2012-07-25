@@ -10,7 +10,8 @@ class CreateAnswers < ActiveRecord::Migration
       t.column :statistic_id, 	:integer
       t.column :impressions_count, :integer
     end
-    
+  end
+  
   def down
   	drop_table :answers
   end

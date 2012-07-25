@@ -10,6 +10,7 @@
 	-moz-border-radius: 7px;
 	border-radius: 0px 0px 7px 7px;
 	padding:5px;
+	position:relative;
 
   
 }
@@ -67,8 +68,15 @@
 	margin:10px;
 }
 
+.ui-menu{
+	color: black;
+	width: 200px;
+	position: relative;
+	margin: 0px;
+}
 
-.ui-menu-item {
+.ui-autocomplete{
+color: white;
 }
 
 .ui-autocomplete a{

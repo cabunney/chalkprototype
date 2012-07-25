@@ -21,12 +21,16 @@ ActiveRecord::Schema.define(:version => 20120710035156) do
     t.datetime "created_at"
     t.integer  "question_id"
     t.integer  "statistic_id"
+    t.integer  "impressions_count"
   end
 
-  create_table "answers_tags", :force => true do |t|
+  create_table "answers_tags", :id => false, :force => true do |t|
     t.integer "answer_id"
     t.integer "tag_id"
   end
+
+  add_index "answers_tags", ["answer_id", "tag_id"], :name => "index_answers_tags_on_answer_id_and_tag_id"
+  add_index "answers_tags", ["tag_id", "answer_id"], :name => "index_answers_tags_on_tag_id_and_answer_id"
 
   create_table "categories", :force => true do |t|
     t.string "name"
@@ -79,12 +83,16 @@ ActiveRecord::Schema.define(:version => 20120710035156) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.integer  "statistic_id"
+    t.integer  "impressions_count"
   end
 
-  create_table "questions_tags", :force => true do |t|
+  create_table "questions_tags", :id => false, :force => true do |t|
     t.integer "question_id"
     t.integer "tag_id"
   end
+
+  add_index "questions_tags", ["question_id", "tag_id"], :name => "index_questions_tags_on_question_id_and_tag_id"
+  add_index "questions_tags", ["tag_id", "question_id"], :name => "index_questions_tags_on_tag_id_and_question_id"
 
   create_table "sessions", :force => true do |t|
     t.string   "session_id", :null => false
