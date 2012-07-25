@@ -1,6 +1,6 @@
 class LoadCategories < ActiveRecord::Migration
   def up
-  	cats = ["Assessment","Classroom Management","Common Core","Lesson Plans", 
+  	cats = ["Administrator","New Teacher","Common Core","Lesson Plans", 
     "Literacy", "Parents",  "Professional Learning",
     "Resources","Technology"]
     cats.each do |c|

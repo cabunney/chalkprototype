@@ -101,10 +101,10 @@ class SubmissionController < ApplicationController
         redirect_to :signin
        else
          @question = Question.find(params[:id])
-         if current_user.id!=@question.user_id
-            flash[:error] = "You can only edit a question you submitted."
-            redirect_to :controller => :message_board, :action => :show
-         end
+         #if current_user.id!=@question.user_id
+          #  flash[:error] = "You can only edit a question you submitted."
+           # redirect_to :controller => :message_board, :action => :show
+         #end
          @tags = @question.tags
          if !@tags
            @tags = []
