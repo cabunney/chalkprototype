@@ -4,14 +4,11 @@
 
 <%= form_for(:question, :url => {:action => :submitQ, :id => current_user.id}) do |form| %>
       <%= form.hidden_field(:user_id, :value => current_user.id) %>  
-      <%= form.text_area(:description, :value => "ask a question...", :onfocus => "if(this.value == 'ask a question...') { this.value = '' }", :onblur => "if(this.value == ''){this.value = 'ask a question...'}", :id => "dynamicinput") %>
- 
+      <%= form.text_area(:description, :value => "ask a question...", :onfocus => "if(this.value == 'ask a question...') { this.value = '' }", :onblur => "if(this.value == ''){this.value = 'ask a question...'}", :id => "dynamicinput", :maxlength => 140) %>
+	 <div class = "char_count"><span id="char-count">140</span></div>
 	  <%= form.hidden_field(:tags, :id => "tag_names", :value =>"") %>
 	  <%= render :partial =>"tag"%>
-
-
 
       <%= form.submit "+ add new question", :id => "question_submit"%>
 
 <% end %>
-
