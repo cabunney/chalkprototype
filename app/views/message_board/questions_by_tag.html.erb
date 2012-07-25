@@ -1,6 +1,8 @@
 <div class = "page">
 	<div class = "sixty">
 		<%= render :partial => "dynamicinput_question"%>
+		<%@tag_id = params[:id]%>
+		 <div id = "all_tags"><%= link_to "display all questions", { :action => :show }, :class =>"display_all" %></div>	
 		<%= render :partial => "questions"%>
 	</div>
 	<div class = "thirty border_left">

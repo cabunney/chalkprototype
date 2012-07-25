@@ -16,5 +16,5 @@ class Question < ActiveRecord::Base
 	
   # is_impressionable :counter_cache => true
 	
-	self.per_page = 10
+	self.per_page = 6
 end

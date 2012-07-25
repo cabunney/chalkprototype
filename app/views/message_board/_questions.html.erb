@@ -1,5 +1,4 @@
 <div class = "whitebox_rounded questiondiv">
-    <div id = "all_tags"><%= link_to "All Tags", { :action => :show }, class: "btn-small btn-primary bluebutton" %></div> 	
 			<!-- if questions selected-->
 		<% @questions.each do |i| %>
 		<div class = "one_question">
@@ -13,7 +12,11 @@
 			<div class="one_question_topbar">
 				<div class = "display_tags">
 					<%i.tags.each do |tag|%>
+						<%if @tag_id.to_i != tag.id.to_i%>
 						<span class = "inline tag"><%=tag.name%></span>
+						<%else%>
+						<span class = "inline tag tag_highlight"><%=tag.name%></span>
+						<%end%>
 					<%end%>
 				</div>
 				<div class = "question_information">

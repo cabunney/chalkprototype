@@ -131,3 +131,22 @@ span.inline {
 .left-align {
 	float:left;
 }
+
+.display_all {
+	width:150px; 
+	font-family:CaviarDreams_Bold; 
+	color:black; 
+	background:white;
+	opacity:0.5;
+	font-size:14px; 
+	padding:5px;
+	border-radius: 7px;
+	position:relative;
+	top:-10px; 
+}
+
+.display_all:hover {
+	text-decoration:none;
+	color:black;
+}
+

@@ -6,7 +6,7 @@ class MessageBoardController < ApplicationController
       flash[:error] = "Please log in to see the message board."
       redirect_to root_path
     else
-      @questions = Question.find(:all).sort{ |x,y| y.votes_for <=> x.votes_for }.paginate(:page => params[:page], :per_page => 10)   
+      @questions = Question.find(:all).sort{ |x,y| y.votes_for <=> x.votes_for }.paginate(:page => params[:page], :per_page => 6)   
       # @questions.each do |q|
       #         impressionist(q) 
       #      end
@@ -217,7 +217,7 @@ def post_vote_detail
         flash[:error] = "Please log in to see the message board."
         redirect_to root_path
       else
-        @questions = Tag.find_by_id(params[:id]).questions.sort{ |x,y| y.votes_for <=> x.votes_for }.paginate(:page => params[:page], :per_page => 10) 
+        @questions = Tag.find_by_id(params[:id]).questions.sort{ |x,y| y.votes_for <=> x.votes_for }.paginate(:page => params[:page], :per_page => 6) 
         # @questions.each do |q|
         #         impressionist(q) 
         #      end
